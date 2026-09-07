@@ -8,10 +8,14 @@ export default function App() {
   useEffect(() => {
     let unlisten: (() => void) | undefined;
 
-    fetchCharacters().then(setCharacters);
-    onCharacterUpdated(() => {
-      fetchCharacters().then(setCharacters);
-    }).then((fn) => {
+    const load = () => {
+      fetchCharacters()
+        .then(setCharacters)
+        .catch((err) => console.error("[vana-haven] failed to fetch characters", err));
+    };
+
+    load();
+    onCharacterUpdated(load).then((fn) => {
       unlisten = fn;
     });
 

@@ -11,7 +11,7 @@ struct AppState {
 
 #[tauri::command]
 fn get_characters(state: tauri::State<AppState>) -> Result<Vec<db::Character>, String> {
-    let conn = state.db.lock().map_err(|e| e.to_string())?;
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
     db::list_characters(&conn).map_err(|e| e.to_string())
 }
 
