@@ -12,10 +12,20 @@ use tokio::net::{TcpListener, TcpStream};
 pub fn spawn_listener(listener: TcpListener, db: Arc<Mutex<Connection>>, app: AppHandle) {
     tauri::async_runtime::spawn(async move {
         loop {
-            let Ok((stream, _)) = listener.accept().await else { continue };
-            let db = Arc::clone(&db);
-            let app = app.clone();
-            tauri::async_runtime::spawn(handle_connection(stream, db, app));
+            match listener.accept().await {
+                Ok((stream, _)) => {
+                    let db = Arc::clone(&db);
+                    let app = app.clone();
+                    tauri::async_runtime::spawn(handle_connection(stream, db, app));
+                }
+                Err(e) => {
+                    // Un-throttled retry here would busy-spin a CPU core right
+                    // while the user is playing FFXI — the one time this app
+                    // must not cost frame time. Log and back off instead.
+                    eprintln!("[vana-haven] accept() failed: {e}");
+                    tokio::time::sleep(std::time::Duration::from_millis(500)).await;
+                }
+            }
         }
     });
 }
@@ -31,21 +41,32 @@ async fn handle_connection(stream: TcpStream, db: Arc<Mutex<Connection>>, app: A
         match protocol::parse_message(&line) {
             Ok(AddonMessage::Handshake { game_character_id, name }) => {
                 let character = db::Character { game_character_id, name, last_seen_at: now };
-                let ok = {
+                let result = {
                     let conn = db.lock().unwrap();
-                    db::upsert_character(&conn, &character).is_ok()
+                    db::upsert_character(&conn, &character)
                 };
-                if ok {
-                    let _ = app.emit("character-updated", character.game_character_id);
+                match result {
+                    Ok(()) => {
+                        let _ = app.emit("character-updated", character.game_character_id);
+                    }
+                    Err(e) => eprintln!(
+                        "[vana-haven] failed to save character {}: {e}",
+                        character.game_character_id
+                    ),
                 }
             }
             Ok(AddonMessage::Heartbeat { game_character_id }) => {
                 let conn = db.lock().unwrap();
-                let _ = db::touch_character(&conn, game_character_id, &now);
+                if let Err(e) = db::touch_character(&conn, game_character_id, &now) {
+                    eprintln!("[vana-haven] failed to update heartbeat for {game_character_id}: {e}");
+                }
             }
-            Err(_) => {
-                // Malformed line from the addon: skip it, keep the connection open
-                // rather than dropping the whole session over one bad message.
+            Err(e) => {
+                // Skip the bad line and keep the connection open rather than
+                // dropping the whole session over one malformed message — but
+                // log it, since a real-addon encoding mismatch (Task 12) with
+                // silent failure here is nearly undebuggable otherwise.
+                eprintln!("[vana-haven] ignoring malformed message: {e} (raw: {line})");
             }
         }
     }
