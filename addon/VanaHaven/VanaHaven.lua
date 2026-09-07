@@ -59,15 +59,34 @@ end
 local function finish_connect()
     if not connecting_sock then return end
     local ready = socket.select(nil, { connecting_sock }, 0)
-    if ready and #ready > 0 then
-        sock = connecting_sock
+    if not ready or #ready == 0 then return end
+
+    -- A non-blocking connect()'s socket becomes writable whether the connect
+    -- succeeded OR failed (e.g. connection refused, app not running) —
+    -- writable alone doesn't prove success. getpeername() only succeeds on a
+    -- genuinely connected socket, so use it to tell the two cases apart
+    -- rather than declaring "connected" prematurely.
+    if not connecting_sock:getpeername() then
+        connecting_sock:close()
         connecting_sock = nil
-        backoff_seconds = nil
-        local info = player_info()
-        if info then
-            sock:send(protocol.build_handshake(info.id, info.name))
-        end
+        backoff_seconds = protocol.next_backoff_seconds(backoff_seconds)
+        return
+    end
+
+    sock = connecting_sock
+    connecting_sock = nil
+    backoff_seconds = nil
+    local info = player_info()
+    local handshake_ok = true
+    if info then
+        handshake_ok = sock:send(protocol.build_handshake(info.id, info.name)) ~= nil
+    end
+    if handshake_ok then
         windower.add_to_chat(207, "[VanaHaven] connected")
+    else
+        sock:close()
+        sock = nil
+        backoff_seconds = protocol.next_backoff_seconds(backoff_seconds)
     end
 end
 
@@ -101,8 +120,9 @@ windower.register_event("login", function()
     -- connection stayed open (e.g. switching characters via /send).
     if not sock then return end
     local info = player_info()
-    if info then
-        sock:send(protocol.build_handshake(info.id, info.name))
+    if info and sock:send(protocol.build_handshake(info.id, info.name)) == nil then
+        sock:close()
+        sock = nil
     end
 end)
 
