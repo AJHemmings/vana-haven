@@ -12,10 +12,17 @@ local PORT_FILE_SUFFIX = "\\com.vanahaven.desktop\\port.txt"
 
 local sock = nil
 local connecting_sock = nil
+local connecting_since = nil
 local backoff_seconds = nil
 local last_attempt = 0
 local last_heartbeat = 0
 local HEARTBEAT_INTERVAL = 5
+-- On Windows, a failed non-blocking connect() is signaled via Winsock's
+-- exceptfds — but LuaSocket's socket.select() only ever builds a read set
+-- and a write set (see luasocket/src/select.c), so a refused connection
+-- never shows up as "ready" here at all. Success still does. That means
+-- failure can only be detected by timing out a pending connect ourselves.
+local CONNECT_TIMEOUT = 3
 
 local function player_info()
     local player = windower.ffxi.get_player()
@@ -50,43 +57,57 @@ local function try_connect()
     local ok, err = s:connect(HOST, resolve_port())
     if ok or err == "timeout" then
         connecting_sock = s
+        connecting_since = now
     else
         s:close()
         backoff_seconds = protocol.next_backoff_seconds(backoff_seconds)
     end
 end
 
+local function fail_pending_connect()
+    connecting_sock:close()
+    connecting_sock = nil
+    connecting_since = nil
+    backoff_seconds = protocol.next_backoff_seconds(backoff_seconds)
+end
+
 local function finish_connect()
     if not connecting_sock then return end
     local ready = socket.select(nil, { connecting_sock }, 0)
-    if not ready or #ready == 0 then return end
+    if ready and #ready > 0 then
+        -- Writable fires here whether the connect succeeded OR failed on
+        -- some LuaSocket builds/platforms — getpeername() only succeeds on a
+        -- genuinely connected socket, so confirm before declaring success.
+        if not connecting_sock:getpeername() then
+            fail_pending_connect()
+            return
+        end
 
-    -- A non-blocking connect()'s socket becomes writable whether the connect
-    -- succeeded OR failed (e.g. connection refused, app not running) —
-    -- writable alone doesn't prove success. getpeername() only succeeds on a
-    -- genuinely connected socket, so use it to tell the two cases apart
-    -- rather than declaring "connected" prematurely.
-    if not connecting_sock:getpeername() then
-        connecting_sock:close()
+        sock = connecting_sock
         connecting_sock = nil
-        backoff_seconds = protocol.next_backoff_seconds(backoff_seconds)
+        connecting_since = nil
+        backoff_seconds = nil
+        local info = player_info()
+        local handshake_ok = true
+        if info then
+            handshake_ok = sock:send(protocol.build_handshake(info.id, info.name)) ~= nil
+        end
+        if handshake_ok then
+            windower.add_to_chat(207, "[VanaHaven] connected")
+        else
+            sock:close()
+            sock = nil
+            backoff_seconds = protocol.next_backoff_seconds(backoff_seconds)
+        end
         return
     end
 
-    sock = connecting_sock
-    connecting_sock = nil
-    backoff_seconds = nil
-    local info = player_info()
-    local handshake_ok = true
-    if info then
-        handshake_ok = sock:send(protocol.build_handshake(info.id, info.name)) ~= nil
-    end
-    if handshake_ok then
-        windower.add_to_chat(207, "[VanaHaven] connected")
-    else
-        sock:close()
-        sock = nil
-        backoff_seconds = protocol.next_backoff_seconds(backoff_seconds)
+    -- Not ready yet. On Windows a refused/failed connect never becomes ready
+    -- at all (see the CONNECT_TIMEOUT comment above) — so a pending connect
+    -- that's been sitting this long is almost certainly a failure LuaSocket
+    -- can't report to us, not a slow-but-healthy one on loopback.
+    if os.clock() - connecting_since > CONNECT_TIMEOUT then
+        fail_pending_connect()
     end
 end
 
