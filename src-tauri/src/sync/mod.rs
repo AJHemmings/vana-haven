@@ -42,7 +42,7 @@ async fn handle_connection(stream: TcpStream, db: Arc<Mutex<Connection>>, app: A
             Ok(AddonMessage::Handshake { game_character_id, name }) => {
                 let character = db::Character { game_character_id, name, last_seen_at: now };
                 let result = {
-                    let conn = db.lock().unwrap();
+                    let conn = db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
                     db::upsert_character(&conn, &character)
                 };
                 match result {
@@ -56,7 +56,7 @@ async fn handle_connection(stream: TcpStream, db: Arc<Mutex<Connection>>, app: A
                 }
             }
             Ok(AddonMessage::Heartbeat { game_character_id }) => {
-                let conn = db.lock().unwrap();
+                let conn = db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
                 if let Err(e) = db::touch_character(&conn, game_character_id, &now) {
                     eprintln!("[vana-haven] failed to update heartbeat for {game_character_id}: {e}");
                 }
