@@ -1,0 +1,33 @@
+# AI-reference only — specs and plans must never be committed
+docs/superpowers/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Rust / Tauri
+src-tauri/target/
+# Cargo.lock is committed deliberately — this is an application, not a
+# library, and lockfiles should be reproducible across machines.
+
+# Env
+.env
+.env.local
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local data (per-machine SQLite db, addon-side character data)
+*.db
+*.sqlite
+*.sqlite3
