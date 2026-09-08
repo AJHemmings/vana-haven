@@ -9,3 +9,6 @@ Limbus progress - fed live by an in-game Windower addon.
 - App: `npm install`, then `npm run tauri dev`
 - Addon: copy `addon/VanaHaven` into your `Windower4/addons/` folder, then
   `//lua l vanahaven` in-game.
+
+## Thanks
+- Inspired by suspiciousman3187 Alexandria: https://github.com/suspiciousman3187/Alexandria
