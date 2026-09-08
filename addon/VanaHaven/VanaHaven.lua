@@ -17,11 +17,11 @@ local backoff_seconds = nil
 local last_attempt = 0
 local last_heartbeat = 0
 local HEARTBEAT_INTERVAL = 5
--- On Windows, a failed non-blocking connect() is signaled via Winsock's
--- exceptfds — but LuaSocket's socket.select() only ever builds a read set
--- and a write set (see luasocket/src/select.c), so a refused connection
--- never shows up as "ready" here at all. Success still does. That means
--- failure can only be detected by timing out a pending connect ourselves.
+-- Neither a successful nor a failed non-blocking connect reliably shows up
+-- via socket.select()'s write-set in this runtime (confirmed via live
+-- testing) — connect completion is polled via getpeername() instead (see
+-- finish_connect), so both outcomes are handled by timing out a pending
+-- connect ourselves rather than waiting on select() to report anything.
 local CONNECT_TIMEOUT = 3
 
 local function player_info()
@@ -52,9 +52,10 @@ local function try_connect()
     if backoff_seconds and now - last_attempt < backoff_seconds then return end
     last_attempt = now
 
+    local port = resolve_port()
     local s = socket.tcp()
     s:settimeout(0)
-    local ok, err = s:connect(HOST, resolve_port())
+    local ok, err = s:connect(HOST, port)
     if ok or err == "timeout" then
         connecting_sock = s
         connecting_since = now
@@ -73,16 +74,15 @@ end
 
 local function finish_connect()
     if not connecting_sock then return end
-    local ready = socket.select(nil, { connecting_sock }, 0)
-    if ready and #ready > 0 then
-        -- Writable fires here whether the connect succeeded OR failed on
-        -- some LuaSocket builds/platforms — getpeername() only succeeds on a
-        -- genuinely connected socket, so confirm before declaring success.
-        if not connecting_sock:getpeername() then
-            fail_pending_connect()
-            return
-        end
 
+    -- socket.select()'s write-set was observed NOT reliably signaling
+    -- readiness for a connecting socket in this runtime (confirmed via
+    -- live in-game testing: it never fired within CONNECT_TIMEOUT even for
+    -- connections that genuinely completed at the TCP level). Polling
+    -- getpeername() directly avoids depending on select() here at all — it
+    -- fails until the handshake completes, then succeeds once it has.
+    local peer = connecting_sock:getpeername()
+    if peer then
         sock = connecting_sock
         connecting_sock = nil
         connecting_since = nil
@@ -102,10 +102,9 @@ local function finish_connect()
         return
     end
 
-    -- Not ready yet. On Windows a refused/failed connect never becomes ready
-    -- at all (see the CONNECT_TIMEOUT comment above) — so a pending connect
-    -- that's been sitting this long is almost certainly a failure LuaSocket
-    -- can't report to us, not a slow-but-healthy one on loopback.
+    -- Not connected yet — getpeername() fails until the handshake completes
+    -- (or forever, if the connect was refused). Give up after a few seconds
+    -- either way rather than waiting indefinitely.
     if os.clock() - connecting_since > CONNECT_TIMEOUT then
         fail_pending_connect()
     end
