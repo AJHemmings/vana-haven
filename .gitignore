@@ -1,5 +1,6 @@
 # AI-reference only — specs and plans must never be committed
 docs/superpowers/
+.superpowers/
 
 # Node
 node_modules/
