@@ -61,8 +61,37 @@ async fn handle_connection(stream: TcpStream, db: Arc<Mutex<Connection>>, app: A
                     eprintln!("[vana-haven] failed to update heartbeat for {game_character_id}: {e}");
                 }
             }
-            Ok(AddonMessage::JobLevels { .. }) => {
-                // TODO(Task 4): save to character_jobs and emit character-updated.
+            Ok(AddonMessage::JobLevels { game_character_id, main_job_id, sub_job_id, jobs }) => {
+                let conn = db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+                match db::resolve_character_id(&conn, game_character_id) {
+                    Ok(Some(character_id)) => {
+                        let job_levels: Vec<db::JobLevel> = jobs
+                            .into_iter()
+                            .map(|j| db::JobLevel {
+                                job_id: j.job_id,
+                                level: j.level,
+                                master_level: j.master_level,
+                                mastered: j.mastered,
+                            })
+                            .collect();
+                        let saved = db::replace_character_jobs(&conn, character_id, &job_levels).is_ok()
+                            && db::update_character_jobs_summary(&conn, character_id, main_job_id, sub_job_id).is_ok();
+                        if saved {
+                            let _ = app.emit("character-updated", game_character_id);
+                        } else {
+                            eprintln!("[vana-haven] failed to save job levels for {game_character_id}");
+                        }
+                    }
+                    Ok(None) => {
+                        // A job_levels message arrived before this character's first
+                        // Handshake — shouldn't normally happen (the addon always
+                        // handshakes first on connect) but isn't structurally
+                        // prevented. Same "log and skip" treatment as a malformed
+                        // message, not a crash.
+                        eprintln!("[vana-haven] ignoring job_levels for unknown character {game_character_id}");
+                    }
+                    Err(e) => eprintln!("[vana-haven] failed to resolve character {game_character_id}: {e}"),
+                }
             }
             Err(e) => {
                 // Skip the bad line and keep the connection open rather than
