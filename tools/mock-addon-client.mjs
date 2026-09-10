@@ -20,6 +20,20 @@ const socket = createConnection({ host: "127.0.0.1", port }, () => {
   console.log(`Connected to Vana Haven app on port ${port}`);
   socket.write(JSON.stringify({ type: "handshake", game_character_id: 99999, name: "MockCharacter" }) + "\n");
 
+  const jobs = Array.from({ length: 22 }, (_, i) => ({
+    job_id: i + 1,
+    level: i === 3 ? 99 : 0, // job_id 4 (BLM) at 99, everything else unplayed
+    master_level: i === 3 ? 12 : 0,
+    mastered: i === 3,
+  }));
+  socket.write(JSON.stringify({
+    type: "job_levels",
+    game_character_id: 99999,
+    main_job_id: 4,
+    sub_job_id: 20,
+    jobs,
+  }) + "\n");
+
   setInterval(() => {
     socket.write(JSON.stringify({ type: "heartbeat", game_character_id: 99999 }) + "\n");
   }, 5000);
