@@ -74,12 +74,12 @@ async fn handle_connection(stream: TcpStream, db: Arc<Mutex<Connection>>, app: A
                                 mastered: j.mastered,
                             })
                             .collect();
-                        let saved = db::replace_character_jobs(&conn, character_id, &job_levels).is_ok()
-                            && db::update_character_jobs_summary(&conn, character_id, main_job_id, sub_job_id).is_ok();
-                        if saved {
-                            let _ = app.emit("character-updated", game_character_id);
-                        } else {
-                            eprintln!("[vana-haven] failed to save job levels for {game_character_id}");
+                        match db::replace_character_jobs(&conn, character_id, &job_levels) {
+                            Ok(()) => match db::update_character_jobs_summary(&conn, character_id, main_job_id, sub_job_id) {
+                                Ok(()) => { let _ = app.emit("character-updated", game_character_id); }
+                                Err(e) => eprintln!("[vana-haven] failed to save job summary for {game_character_id}: {e}"),
+                            },
+                            Err(e) => eprintln!("[vana-haven] failed to save job levels for {game_character_id}: {e}"),
                         }
                     }
                     Ok(None) => {
