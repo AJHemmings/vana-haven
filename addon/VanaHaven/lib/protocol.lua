@@ -9,6 +9,16 @@ function protocol.build_heartbeat(game_character_id)
     return json.encode({ type = "heartbeat", game_character_id = game_character_id }) .. "\n"
 end
 
+function protocol.build_job_levels(game_character_id, main_job_id, sub_job_id, jobs)
+    return json.encode({
+        type = "job_levels",
+        game_character_id = game_character_id,
+        main_job_id = main_job_id,
+        sub_job_id = sub_job_id,
+        jobs = jobs,
+    }) .. "\n"
+end
+
 -- Exponential backoff capped at 30s: 1, 2, 4, 8, 16, 30, 30, ...
 function protocol.next_backoff_seconds(previous_seconds)
     if not previous_seconds or previous_seconds <= 0 then
