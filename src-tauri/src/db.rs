@@ -1,12 +1,30 @@
 use rusqlite::{Connection, Result};
 
 pub fn init_db(conn: &Connection) -> Result<()> {
+    // This project's bundled SQLite defaults PRAGMA foreign_keys to ON (unlike
+    // stock SQLite, where it's OFF unless explicitly enabled). Pin it to OFF
+    // explicitly so behavior doesn't depend on that build detail; the
+    // REFERENCES clause below is kept for documentation of intent.
+    conn.execute_batch("PRAGMA foreign_keys = OFF;")?;
+
     conn.execute(
         "CREATE TABLE IF NOT EXISTS characters (
             id INTEGER PRIMARY KEY,
             game_character_id INTEGER NOT NULL UNIQUE,
             name TEXT NOT NULL,
             last_seen_at TEXT NOT NULL
+        )",
+        (),
+    )?;
+
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS character_jobs (
+            character_id INTEGER NOT NULL REFERENCES characters(id),
+            job_id INTEGER NOT NULL,
+            level INTEGER NOT NULL,
+            master_level INTEGER NOT NULL,
+            mastered INTEGER NOT NULL,
+            PRIMARY KEY (character_id, job_id)
         )",
         (),
     )?;
@@ -49,6 +67,55 @@ pub fn list_characters(conn: &Connection) -> Result<Vec<Character>> {
             game_character_id: row.get(0)?,
             name: row.get(1)?,
             last_seen_at: row.get(2)?,
+        })
+    })?;
+    rows.collect()
+}
+
+#[derive(Debug, PartialEq, Clone, serde::Serialize)]
+pub struct JobLevel {
+    pub job_id: i64,
+    pub level: i64,
+    pub master_level: i64,
+    pub mastered: bool,
+}
+
+pub fn replace_character_jobs(conn: &Connection, character_id: i64, jobs: &[JobLevel]) -> Result<()> {
+    conn.execute("BEGIN", ())?;
+    let result = (|| -> Result<()> {
+        conn.execute("DELETE FROM character_jobs WHERE character_id = ?1", (character_id,))?;
+        for job in jobs {
+            conn.execute(
+                "INSERT INTO character_jobs (character_id, job_id, level, master_level, mastered)
+                 VALUES (?1, ?2, ?3, ?4, ?5)",
+                (character_id, job.job_id, job.level, job.master_level, job.mastered),
+            )?;
+        }
+        Ok(())
+    })();
+    match result {
+        Ok(()) => {
+            conn.execute("COMMIT", ())?;
+            Ok(())
+        }
+        Err(e) => {
+            let _ = conn.execute("ROLLBACK", ());
+            Err(e)
+        }
+    }
+}
+
+pub fn get_character_jobs(conn: &Connection, character_id: i64) -> Result<Vec<JobLevel>> {
+    let mut stmt = conn.prepare(
+        "SELECT job_id, level, master_level, mastered FROM character_jobs
+         WHERE character_id = ?1 ORDER BY job_id",
+    )?;
+    let rows = stmt.query_map((character_id,), |row| {
+        Ok(JobLevel {
+            job_id: row.get(0)?,
+            level: row.get(1)?,
+            master_level: row.get(2)?,
+            mastered: row.get(3)?,
         })
     })?;
     rows.collect()
@@ -113,5 +180,49 @@ mod tests {
         touch_character(&conn, 12345, "2026-09-07T14:30:00Z").unwrap();
 
         assert_eq!(list_characters(&conn).unwrap()[0].last_seen_at, "2026-09-07T14:30:00Z");
+    }
+
+    #[test]
+    fn get_character_jobs_is_empty_for_unknown_character() {
+        let conn = setup();
+        assert_eq!(get_character_jobs(&conn, 1).unwrap(), vec![]);
+    }
+
+    #[test]
+    fn replace_character_jobs_inserts_all_rows() {
+        let conn = setup();
+        let jobs = vec![
+            JobLevel { job_id: 1, level: 75, master_level: 0, mastered: false },
+            JobLevel { job_id: 22, level: 99, master_level: 12, mastered: true },
+        ];
+        replace_character_jobs(&conn, 1, &jobs).unwrap();
+        assert_eq!(get_character_jobs(&conn, 1).unwrap(), jobs);
+    }
+
+    #[test]
+    fn replace_character_jobs_replaces_wholesale_not_incrementally() {
+        let conn = setup();
+        replace_character_jobs(&conn, 1, &[
+            JobLevel { job_id: 1, level: 50, master_level: 0, mastered: false },
+            JobLevel { job_id: 2, level: 10, master_level: 0, mastered: false },
+        ]).unwrap();
+
+        // Second call omits job_id 2 entirely — it must be gone afterward, not stale.
+        replace_character_jobs(&conn, 1, &[
+            JobLevel { job_id: 1, level: 51, master_level: 0, mastered: false },
+        ]).unwrap();
+
+        let jobs = get_character_jobs(&conn, 1).unwrap();
+        assert_eq!(jobs, vec![JobLevel { job_id: 1, level: 51, master_level: 0, mastered: false }]);
+    }
+
+    #[test]
+    fn get_character_jobs_only_returns_rows_for_the_given_character() {
+        let conn = setup();
+        replace_character_jobs(&conn, 1, &[JobLevel { job_id: 1, level: 50, master_level: 0, mastered: false }]).unwrap();
+        replace_character_jobs(&conn, 2, &[JobLevel { job_id: 1, level: 99, master_level: 5, mastered: true }]).unwrap();
+
+        assert_eq!(get_character_jobs(&conn, 1).unwrap()[0].level, 50);
+        assert_eq!(get_character_jobs(&conn, 2).unwrap()[0].level, 99);
     }
 }
