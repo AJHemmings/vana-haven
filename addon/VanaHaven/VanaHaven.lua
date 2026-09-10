@@ -4,6 +4,7 @@ _addon.version = "0.1.0"
 _addon.commands = { "vanahaven", "vh" }
 
 local socket = require("socket")
+local packets = require("packets")
 local protocol = require("lib/protocol")
 
 local HOST = "127.0.0.1"
@@ -17,6 +18,11 @@ local backoff_seconds = nil
 local last_attempt = 0
 local last_heartbeat = 0
 local HEARTBEAT_INTERVAL = 5
+-- Packet 0x01B only fires on login/job-change, not on every TCP reconnect.
+-- Caching the last-built job-levels payload lets us resend it once after a
+-- successful (re)connect (see finish_connect) so a restarted app still gets
+-- the player's current job levels without needing a fresh 0x01B to fire.
+local last_job_levels_payload = nil
 -- Neither a successful nor a failed non-blocking connect reliably shows up
 -- via socket.select()'s write-set in this runtime (confirmed via live
 -- testing) — connect completion is polled via getpeername() instead (see
@@ -94,6 +100,9 @@ local function finish_connect()
         end
         if handshake_ok then
             windower.add_to_chat(207, "[VanaHaven] connected")
+            if last_job_levels_payload then
+                sock:send(last_job_levels_payload)
+            end
         else
             sock:close()
             sock = nil
@@ -124,6 +133,67 @@ local function send_heartbeat()
         sock = nil
     end
 end
+
+-- Job id -> full FFXI job name, as used by the keys packets.parse('incoming', data)
+-- produces for packet 0x01B (see docs/job-levels-packet-research.md). Index = job id,
+-- matching the canonical order src/jobs.ts's JOBS array already uses.
+local JOB_NAMES = {
+    [1] = "Warrior",
+    [2] = "Monk",
+    [3] = "White Mage",
+    [4] = "Black Mage",
+    [5] = "Red Mage",
+    [6] = "Thief",
+    [7] = "Paladin",
+    [8] = "Dark Knight",
+    [9] = "Beastmaster",
+    [10] = "Bard",
+    [11] = "Ranger",
+    [12] = "Samurai",
+    [13] = "Ninja",
+    [14] = "Dragoon",
+    [15] = "Summoner",
+    [16] = "Blue Mage",
+    [17] = "Corsair",
+    [18] = "Puppetmaster",
+    [19] = "Dancer",
+    [20] = "Scholar",
+    [21] = "Geomancer",
+    [22] = "Rune Fencer",
+}
+
+-- p is the table returned by packets.parse('incoming', data) for the 0x01B chunk
+-- that triggered this. It's passed in explicitly rather than read from an outer
+-- closure since it only exists for the duration of that one incoming-chunk event.
+local function send_job_levels(p)
+    local info = player_info()
+    local player = windower.ffxi.get_player()
+    if not info or not player then return end
+
+    local jobs = {}
+    for job_id = 1, 22 do
+        local name = JOB_NAMES[job_id]
+        table.insert(jobs, {
+            job_id = job_id,
+            level = p[name .. " Level"] or 0,
+            master_level = p[name .. " Master Level"] or 0,
+            mastered = p[name .. " Master"] or false,
+        })
+    end
+
+    local payload = protocol.build_job_levels(info.id, player.main_job_id or 0, player.sub_job_id or 0, jobs)
+    last_job_levels_payload = payload
+    if sock then
+        sock:send(payload)
+    end
+end
+
+windower.register_event("incoming chunk", function(id, data)
+    if id ~= 0x01B then return end
+    local p = packets.parse('incoming', data)
+    if not p then return end
+    send_job_levels(p)
+end)
 
 windower.register_event("prerender", function()
     if connecting_sock then
