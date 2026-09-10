@@ -1,12 +1,6 @@
 use rusqlite::{Connection, Result};
 
 pub fn init_db(conn: &Connection) -> Result<()> {
-    // This project's bundled SQLite defaults PRAGMA foreign_keys to ON (unlike
-    // stock SQLite, where it's OFF unless explicitly enabled). Pin it to OFF
-    // explicitly so behavior doesn't depend on that build detail; the
-    // REFERENCES clause below is kept for documentation of intent.
-    conn.execute_batch("PRAGMA foreign_keys = OFF;")?;
-
     conn.execute(
         "CREATE TABLE IF NOT EXISTS characters (
             id INTEGER PRIMARY KEY,
@@ -191,6 +185,11 @@ mod tests {
     #[test]
     fn replace_character_jobs_inserts_all_rows() {
         let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
         let jobs = vec![
             JobLevel { job_id: 1, level: 75, master_level: 0, mastered: false },
             JobLevel { job_id: 22, level: 99, master_level: 12, mastered: true },
@@ -202,6 +201,11 @@ mod tests {
     #[test]
     fn replace_character_jobs_replaces_wholesale_not_incrementally() {
         let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
         replace_character_jobs(&conn, 1, &[
             JobLevel { job_id: 1, level: 50, master_level: 0, mastered: false },
             JobLevel { job_id: 2, level: 10, master_level: 0, mastered: false },
@@ -219,6 +223,16 @@ mod tests {
     #[test]
     fn get_character_jobs_only_returns_rows_for_the_given_character() {
         let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        upsert_character(&conn, &Character {
+            game_character_id: 67890,
+            name: "Zootog".to_string(),
+            last_seen_at: "2026-09-07T13:00:00Z".to_string(),
+        }).unwrap();
         replace_character_jobs(&conn, 1, &[JobLevel { job_id: 1, level: 50, master_level: 0, mastered: false }]).unwrap();
         replace_character_jobs(&conn, 2, &[JobLevel { job_id: 1, level: 99, master_level: 5, mastered: true }]).unwrap();
 
