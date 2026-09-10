@@ -20,6 +20,9 @@ src-tauri/gen/
 .env
 .env.local
 
+# Git worktrees (isolated workspaces for agentic implementation work)
+.worktrees/
+
 # Editor / OS
 .vscode/*
 !.vscode/extensions.json
