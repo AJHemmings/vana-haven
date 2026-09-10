@@ -50,6 +50,23 @@ describe("JobsScreen", () => {
     expect(await screen.findByText("BLM Lv.99 / SCH Lv.49")).toBeInTheDocument();
   });
 
+  it("shows the main job alone when no sub job is equipped", async () => {
+    vi.spyOn(bridge, "fetchCharacter").mockResolvedValue({
+      game_character_id: 1,
+      name: "Gozoto",
+      main_job_id: 4,
+      sub_job_id: 0,
+    });
+    vi.spyOn(bridge, "fetchCharacterJobs").mockResolvedValue([
+      { job_id: 4, level: 99, master_level: 12, mastered: true },
+    ]);
+
+    renderAt("1");
+
+    expect(await screen.findByText("BLM Lv.99")).toBeInTheDocument();
+    expect(screen.queryByText("BLM Lv.99 / SCH Lv.49")).not.toBeInTheDocument();
+  });
+
   it("shows all 22 jobs in canonical order, even ones with no data", async () => {
     vi.spyOn(bridge, "fetchCharacter").mockResolvedValue({
       game_character_id: 1,
