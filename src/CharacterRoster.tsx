@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export type Character = {
   game_character_id: number;
   name: string;
@@ -19,7 +21,12 @@ export default function CharacterRoster({ characters }: Props) {
     <ul className="divide-y divide-neutral-800">
       {characters.map((character) => (
         <li key={character.game_character_id} className="py-2">
-          <span className="font-medium">{character.name}</span>
+          <Link
+            to={`/character/${character.game_character_id}`}
+            className="font-medium hover:underline"
+          >
+            {character.name}
+          </Link>
         </li>
       ))}
     </ul>
