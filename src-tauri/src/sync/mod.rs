@@ -61,6 +61,9 @@ async fn handle_connection(stream: TcpStream, db: Arc<Mutex<Connection>>, app: A
                     eprintln!("[vana-haven] failed to update heartbeat for {game_character_id}: {e}");
                 }
             }
+            Ok(AddonMessage::JobLevels { .. }) => {
+                // TODO(Task 4): save to character_jobs and emit character-updated.
+            }
             Err(e) => {
                 // Skip the bad line and keep the connection open rather than
                 // dropping the whole session over one malformed message — but
