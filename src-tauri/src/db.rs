@@ -1,4 +1,5 @@
 use rusqlite::{Connection, Result};
+use rusqlite::OptionalExtension;
 
 pub fn init_db(conn: &Connection) -> Result<()> {
     conn.execute(
@@ -7,6 +8,29 @@ pub fn init_db(conn: &Connection) -> Result<()> {
             game_character_id INTEGER NOT NULL UNIQUE,
             name TEXT NOT NULL,
             last_seen_at TEXT NOT NULL
+        )",
+        (),
+    )?;
+
+    for stmt in [
+        "ALTER TABLE characters ADD COLUMN main_job_id INTEGER",
+        "ALTER TABLE characters ADD COLUMN sub_job_id INTEGER",
+    ] {
+        match conn.execute(stmt, ()) {
+            Ok(_) => {}
+            Err(e) if e.to_string().contains("duplicate column name") => {}
+            Err(e) => return Err(e),
+        }
+    }
+
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS character_jobs (
+            character_id INTEGER NOT NULL REFERENCES characters(id),
+            job_id INTEGER NOT NULL,
+            level INTEGER NOT NULL,
+            master_level INTEGER NOT NULL,
+            mastered INTEGER NOT NULL,
+            PRIMARY KEY (character_id, job_id)
         )",
         (),
     )?;
@@ -52,6 +76,102 @@ pub fn list_characters(conn: &Connection) -> Result<Vec<Character>> {
         })
     })?;
     rows.collect()
+}
+
+#[derive(Debug, PartialEq, Clone, serde::Serialize)]
+pub struct JobLevel {
+    pub job_id: i64,
+    pub level: i64,
+    pub master_level: i64,
+    pub mastered: bool,
+}
+
+pub fn replace_character_jobs(conn: &Connection, character_id: i64, jobs: &[JobLevel]) -> Result<()> {
+    conn.execute("BEGIN", ())?;
+    let result = (|| -> Result<()> {
+        conn.execute("DELETE FROM character_jobs WHERE character_id = ?1", (character_id,))?;
+        for job in jobs {
+            conn.execute(
+                "INSERT INTO character_jobs (character_id, job_id, level, master_level, mastered)
+                 VALUES (?1, ?2, ?3, ?4, ?5)",
+                (character_id, job.job_id, job.level, job.master_level, job.mastered),
+            )?;
+        }
+        Ok(())
+    })();
+    match result {
+        Ok(()) => {
+            conn.execute("COMMIT", ())?;
+            Ok(())
+        }
+        Err(e) => {
+            let _ = conn.execute("ROLLBACK", ());
+            Err(e)
+        }
+    }
+}
+
+pub fn get_character_jobs(conn: &Connection, character_id: i64) -> Result<Vec<JobLevel>> {
+    let mut stmt = conn.prepare(
+        "SELECT job_id, level, master_level, mastered FROM character_jobs
+         WHERE character_id = ?1 ORDER BY job_id",
+    )?;
+    let rows = stmt.query_map((character_id,), |row| {
+        Ok(JobLevel {
+            job_id: row.get(0)?,
+            level: row.get(1)?,
+            master_level: row.get(2)?,
+            mastered: row.get(3)?,
+        })
+    })?;
+    rows.collect()
+}
+
+#[derive(Debug, PartialEq, serde::Serialize)]
+pub struct CharacterDetail {
+    pub game_character_id: i64,
+    pub name: String,
+    pub main_job_id: Option<i64>,
+    pub sub_job_id: Option<i64>,
+}
+
+pub fn resolve_character_id(conn: &Connection, game_character_id: i64) -> Result<Option<i64>> {
+    conn.query_row(
+        "SELECT id FROM characters WHERE game_character_id = ?1",
+        (game_character_id,),
+        |row| row.get(0),
+    )
+    .optional()
+}
+
+pub fn get_character(conn: &Connection, game_character_id: i64) -> Result<Option<CharacterDetail>> {
+    conn.query_row(
+        "SELECT game_character_id, name, main_job_id, sub_job_id FROM characters
+         WHERE game_character_id = ?1",
+        (game_character_id,),
+        |row| {
+            Ok(CharacterDetail {
+                game_character_id: row.get(0)?,
+                name: row.get(1)?,
+                main_job_id: row.get(2)?,
+                sub_job_id: row.get(3)?,
+            })
+        },
+    )
+    .optional()
+}
+
+pub fn update_character_jobs_summary(
+    conn: &Connection,
+    character_id: i64,
+    main_job_id: i64,
+    sub_job_id: i64,
+) -> Result<()> {
+    conn.execute(
+        "UPDATE characters SET main_job_id = ?1, sub_job_id = ?2 WHERE id = ?3",
+        (main_job_id, sub_job_id, character_id),
+    )?;
+    Ok(())
 }
 
 #[cfg(test)]
@@ -113,5 +233,151 @@ mod tests {
         touch_character(&conn, 12345, "2026-09-07T14:30:00Z").unwrap();
 
         assert_eq!(list_characters(&conn).unwrap()[0].last_seen_at, "2026-09-07T14:30:00Z");
+    }
+
+    #[test]
+    fn get_character_jobs_is_empty_for_unknown_character() {
+        let conn = setup();
+        assert_eq!(get_character_jobs(&conn, 1).unwrap(), vec![]);
+    }
+
+    #[test]
+    fn replace_character_jobs_inserts_all_rows() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        let jobs = vec![
+            JobLevel { job_id: 1, level: 75, master_level: 0, mastered: false },
+            JobLevel { job_id: 22, level: 99, master_level: 12, mastered: true },
+        ];
+        replace_character_jobs(&conn, 1, &jobs).unwrap();
+        assert_eq!(get_character_jobs(&conn, 1).unwrap(), jobs);
+    }
+
+    #[test]
+    fn replace_character_jobs_replaces_wholesale_not_incrementally() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        replace_character_jobs(&conn, 1, &[
+            JobLevel { job_id: 1, level: 50, master_level: 0, mastered: false },
+            JobLevel { job_id: 2, level: 10, master_level: 0, mastered: false },
+        ]).unwrap();
+
+        // Second call omits job_id 2 entirely — it must be gone afterward, not stale.
+        replace_character_jobs(&conn, 1, &[
+            JobLevel { job_id: 1, level: 51, master_level: 0, mastered: false },
+        ]).unwrap();
+
+        let jobs = get_character_jobs(&conn, 1).unwrap();
+        assert_eq!(jobs, vec![JobLevel { job_id: 1, level: 51, master_level: 0, mastered: false }]);
+    }
+
+    #[test]
+    fn get_character_jobs_only_returns_rows_for_the_given_character() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        upsert_character(&conn, &Character {
+            game_character_id: 67890,
+            name: "Zootog".to_string(),
+            last_seen_at: "2026-09-07T13:00:00Z".to_string(),
+        }).unwrap();
+        replace_character_jobs(&conn, 1, &[JobLevel { job_id: 1, level: 50, master_level: 0, mastered: false }]).unwrap();
+        replace_character_jobs(&conn, 2, &[JobLevel { job_id: 1, level: 99, master_level: 5, mastered: true }]).unwrap();
+
+        assert_eq!(get_character_jobs(&conn, 1).unwrap()[0].level, 50);
+        assert_eq!(get_character_jobs(&conn, 2).unwrap()[0].level, 99);
+    }
+
+    #[test]
+    fn init_db_is_idempotent_across_repeated_calls() {
+        let conn = Connection::open_in_memory().unwrap();
+        init_db(&conn).unwrap();
+        init_db(&conn).unwrap(); // must not error on the second call's ALTER TABLEs
+    }
+
+    #[test]
+    fn resolve_character_id_returns_none_for_unknown_game_id() {
+        let conn = setup();
+        assert_eq!(resolve_character_id(&conn, 99999).unwrap(), None);
+    }
+
+    #[test]
+    fn resolve_character_id_returns_internal_id_for_known_character() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+
+        let id = resolve_character_id(&conn, 12345).unwrap();
+        assert!(id.is_some());
+    }
+
+    #[test]
+    fn get_character_returns_none_for_unknown_game_id() {
+        let conn = setup();
+        assert_eq!(get_character(&conn, 99999).unwrap(), None);
+    }
+
+    #[test]
+    fn get_character_returns_null_main_sub_job_before_first_report() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+
+        let detail = get_character(&conn, 12345).unwrap().unwrap();
+        assert_eq!(detail.name, "Gozoto");
+        assert_eq!(detail.main_job_id, None);
+        assert_eq!(detail.sub_job_id, None);
+    }
+
+    #[test]
+    fn update_character_jobs_summary_sets_main_and_sub_job() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        let character_id = resolve_character_id(&conn, 12345).unwrap().unwrap();
+
+        update_character_jobs_summary(&conn, character_id, 4, 20).unwrap();
+
+        let detail = get_character(&conn, 12345).unwrap().unwrap();
+        assert_eq!(detail.main_job_id, Some(4));
+        assert_eq!(detail.sub_job_id, Some(20));
+    }
+
+    #[test]
+    fn update_character_jobs_summary_allows_zero_sub_job_id() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        let character_id = resolve_character_id(&conn, 12345).unwrap().unwrap();
+
+        // sub_job_id 0 is a real, valid value meaning "no sub job equipped" — not
+        // an error and not treated as absence.
+        update_character_jobs_summary(&conn, character_id, 4, 0).unwrap();
+
+        let detail = get_character(&conn, 12345).unwrap().unwrap();
+        assert_eq!(detail.sub_job_id, Some(0));
     }
 }

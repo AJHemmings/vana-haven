@@ -15,6 +15,28 @@ fn get_characters(state: tauri::State<AppState>) -> Result<Vec<db::Character>, S
     db::list_characters(&conn).map_err(|e| e.to_string())
 }
 
+#[tauri::command]
+fn get_character(
+    game_character_id: i64,
+    state: tauri::State<AppState>,
+) -> Result<Option<db::CharacterDetail>, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    db::get_character(&conn, game_character_id).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn get_character_jobs(
+    game_character_id: i64,
+    state: tauri::State<AppState>,
+) -> Result<Vec<db::JobLevel>, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    let character_id = db::resolve_character_id(&conn, game_character_id).map_err(|e| e.to_string())?;
+    match character_id {
+        Some(id) => db::get_character_jobs(&conn, id).map_err(|e| e.to_string()),
+        None => Ok(vec![]),
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -43,7 +65,7 @@ pub fn run() {
 
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![get_characters])
+        .invoke_handler(tauri::generate_handler![get_characters, get_character, get_character_jobs])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
