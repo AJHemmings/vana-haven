@@ -165,10 +165,16 @@ local JOB_NAMES = {
 -- p is the table returned by packets.parse('incoming', data) for the 0x01B chunk
 -- that triggered this. It's passed in explicitly rather than read from an outer
 -- closure since it only exists for the duration of that one incoming-chunk event.
+--
+-- Main/sub job ids come from p["Main Job"]/p["Sub Job"] (the same packet), NOT
+-- from windower.ffxi.get_player() — confirmed live (Task 14 Step 3) that the
+-- player object still reports the PREVIOUS job for one event after a job
+-- change, while the packet's own fields already carry the new one. Reading
+-- from get_player() here reproduced an off-by-one bug: the UI always lagged
+-- one job change behind.
 local function send_job_levels(p)
     local info = player_info()
-    local player = windower.ffxi.get_player()
-    if not info or not player then return end
+    if not info then return end
 
     local jobs = {}
     for job_id = 1, 22 do
@@ -181,7 +187,7 @@ local function send_job_levels(p)
         })
     end
 
-    local payload = protocol.build_job_levels(info.id, player.main_job_id or 0, player.sub_job_id or 0, jobs)
+    local payload = protocol.build_job_levels(info.id, p["Main Job"] or 0, p["Sub Job"] or 0, jobs)
     last_job_levels_payload = payload
     if sock then
         sock:send(payload)
