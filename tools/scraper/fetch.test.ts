@@ -201,6 +201,25 @@ test("fetchWikitextBatch re-keys a redirected page's content by the originally-r
     assert.equal(result.get("Acad. Mortarboard"), undefined);
   }));
 
+test("fetchWikitextBatch resolves a chained (double) redirect back to the originally-requested title", () =>
+  withTempCacheDir(async (cacheDir) => {
+    const fetchJson = async () => ({
+      query: {
+        redirects: [
+          { from: "Theophany Pantaloons +4", to: "Theo. Pantaloons +4" },
+          { from: "Theo. Pantaloons +4", to: "Theo. Pant. +4" },
+        ],
+        pages: [{ title: "Theo. Pant. +4", revisions: [{ slots: { main: { content: "real item content" } } }] }],
+      },
+    });
+
+    const result = await fetchWikitextBatch(["Theophany Pantaloons +4"], { fetchJson, cacheDir, sleepFn: async () => {} });
+
+    assert.equal(result.get("Theophany Pantaloons +4"), "real item content");
+    assert.equal(result.get("Theo. Pantaloons +4"), undefined);
+    assert.equal(result.get("Theo. Pant. +4"), undefined);
+  }));
+
 test("fetchCategoryMembers only returns main-namespace (ns=0) titles, filtering out User:/Template: pages", () =>
   withTempCacheDir(async (cacheDir) => {
     const fetchJson = async () => ({

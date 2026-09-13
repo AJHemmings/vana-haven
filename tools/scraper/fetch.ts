@@ -165,8 +165,24 @@ export async function fetchWikitextBatch(titles: string[], deps: ScraperDeps = {
       resolvedToRequested.set(redirect.to, redirect.from);
     }
 
+    // Walks the full redirect chain, not just one hop — confirmed live that BG-Wiki
+    // has at least one double redirect ("Theophany Pantaloons +4" -> "Theo.
+    // Pantaloons +4" -> "Theo. Pant. +4"), where a single lookup would resolve back
+    // to the intermediate name instead of the originally-requested one. The `seen`
+    // guard defends against a redirect cycle (shouldn't happen on a real wiki, but
+    // would infinite-loop here without it).
+    function resolveOriginalTitle(finalTitle: string): string {
+      let current = finalTitle;
+      const seen = new Set<string>();
+      while (resolvedToRequested.has(current) && !seen.has(current)) {
+        seen.add(current);
+        current = resolvedToRequested.get(current)!;
+      }
+      return current;
+    }
+
     for (const page of typed.query?.pages ?? []) {
-      const requestedTitle = resolvedToRequested.get(page.title) ?? page.title;
+      const requestedTitle = resolveOriginalTitle(page.title);
       const content = page.revisions?.[0]?.slots?.main?.content ?? "";
       result.set(requestedTitle, content);
       writeCache(cacheDir, `wikitext:${requestedTitle}`, content);
