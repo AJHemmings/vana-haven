@@ -29,6 +29,7 @@ test("does not match a template whose name is a different template with a shared
   const wikitext = "{{Relic + Set\n|plus=1\n|relic job=Red Mage\n}}";
   assert.deepEqual(findTemplateBlocks(wikitext, "Relic Set"), []);
   assert.equal(findTemplateBlocks(wikitext, "Relic + Set").length, 1);
+  assert.deepEqual(findTemplateBlocks("{{Relic Setter\n|x=1\n}}", "Relic Set"), []);
 });
 
 // Real case from Duelist's Attire Set's "+2" tier block: a relic stats field embeds
@@ -76,4 +77,9 @@ test("parseTemplateFields ignores lines that aren't |key=value pairs", () => {
   const block = "{{Foo\n|a=1\nsome free text\n}}";
   const fields = parseTemplateFields(block);
   assert.deepEqual(Object.keys(fields), ["a"]);
+});
+
+test("does not return a bogus block when a template is never closed", () => {
+  const wikitext = "before\n{{Foo\n|a=1\n|b=2\nafter with no closing braces at all";
+  assert.deepEqual(findTemplateBlocks(wikitext, "Foo"), []);
 });

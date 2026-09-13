@@ -36,8 +36,10 @@ export function findTemplateBlocks(wikitext: string, templateName: string): stri
       }
     }
 
-    blocks.push(wikitext.slice(start, i));
-    searchFrom = i;
+    if (depth === 0) {
+      blocks.push(wikitext.slice(start, i));
+    }
+    searchFrom = i || start + marker.length;
   }
 
   return blocks;
