@@ -38,3 +38,7 @@ npm-debug.log*
 *.db
 *.sqlite
 *.sqlite3
+
+# Scraper's local response cache (tools/scraper/out/*.json IS committed — see
+# tools/scraper/config.ts and the design spec §7)
+tools/scraper/.cache/

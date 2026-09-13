@@ -8,7 +8,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:scraper": "node --test \"tools/scraper/**/*.test.ts\""
   },
   "dependencies": {
     "@tauri-apps/api": "^2.11.0",
