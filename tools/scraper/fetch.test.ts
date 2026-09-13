@@ -154,3 +154,34 @@ test("sleeps between two real network requests sharing the same throttle state",
 
     assert.equal(sleepCalls.length, 1);
   }));
+
+test("a title containing an apostrophe round-trips through the cache correctly", () =>
+  withTempCacheDir(async (cacheDir) => {
+    let callCount = 0;
+    const title = "Duelist's Attire Set";
+    const fetchJson = async () => {
+      callCount++;
+      return {
+        query: {
+          pages: [{ title, revisions: [{ slots: { main: { content: "relic wikitext" } } }] }],
+        },
+      };
+    };
+    const deps = { fetchJson, cacheDir, sleepFn: async () => {} };
+
+    const first = await fetchWikitextBatch([title], deps);
+    const second = await fetchWikitextBatch([title], deps);
+
+    assert.equal(first.get(title), "relic wikitext");
+    assert.equal(second.get(title), "relic wikitext");
+    assert.equal(callCount, 1);
+  }));
+
+test("fetchCategoryMembers surfaces a MediaWiki API error instead of silently returning an empty list", () =>
+  withTempCacheDir(async (cacheDir) => {
+    const fetchJson = async () => ({ error: { code: "invalidcategory", info: "The category name you entered was invalid." } });
+    await assert.rejects(
+      () => fetchCategoryMembers("Some Category", { fetchJson, cacheDir, sleepFn: async () => {} }),
+      /invalidcategory/
+    );
+  }));
