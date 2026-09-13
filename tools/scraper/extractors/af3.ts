@@ -1,4 +1,4 @@
-import { findTemplateBlocks, parseTemplateFields } from "../wikitext.ts";
+import { findTemplateBlocks, parseTemplateFields, stripWikiLink } from "../wikitext.ts";
 import type { ExtractedEntry } from "../types.ts";
 
 const SLOTS = ["head", "body", "hands", "legs", "feet"] as const;
@@ -8,13 +8,15 @@ export function extractAf3(wikitext: string): ExtractedEntry[] {
 
   for (const block of findTemplateBlocks(wikitext, "R Artifact Set 2")) {
     const fields = parseTemplateFields(block);
-    const job = fields["jobs"];
-    if (!job) continue;
+    const rawJob = fields["jobs"];
+    if (!rawJob) continue;
+    const job = stripWikiLink(rawJob);
     const tier = fields["plus"]?.trim() ? fields["plus"].trim() : "0";
 
     for (const slot of SLOTS) {
-      const itemName = fields[slot];
-      if (!itemName) continue;
+      const rawItemName = fields[slot];
+      if (!rawItemName) continue;
+      const itemName = stripWikiLink(rawItemName);
       results.push({ job, setType: "af3", slot, tier, itemName });
     }
   }

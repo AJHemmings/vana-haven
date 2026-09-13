@@ -68,3 +68,16 @@ export function parseTemplateFields(block: string): Record<string, string> {
 
   return fields;
 }
+
+/**
+ * Strips MediaWiki wikilink syntax from a field value: "[[Target]]" -> "Target",
+ * "[[Target|Display text]]" -> "Display text". Confirmed live that some AF3 job
+ * fields use jobs=[[Scholar]] while most use jobs=Scholar — inconsistent wiki
+ * authoring across pages, not a parsing bug. Returns the input unchanged if it
+ * isn't wrapped as a wikilink.
+ */
+export function stripWikiLink(value: string): string {
+  const match = value.match(/^\[\[([^\]|]+)(?:\|([^\]]+))?\]\]$/);
+  if (!match) return value;
+  return match[2] ?? match[1];
+}

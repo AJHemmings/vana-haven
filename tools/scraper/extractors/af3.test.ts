@@ -87,3 +87,17 @@ test("skips a slot that is missing from an otherwise-populated tier block", () =
   assert.equal(entries.length, 4);
   assert.ok(!entries.some((e) => e.slot === "hands"));
 });
+
+test("strips wikilink syntax from a bracketed jobs= value", () => {
+  const fixtureWithBracketedJob = `{{Armor Set Table
+|Armor Set 1=
+{{R Artifact Set 2
+|plus=
+|jobs=[[Scholar]]
+|head=Academic's Mortarboard
+}}
+}}`;
+  const entries = extractAf3(fixtureWithBracketedJob);
+  assert.equal(entries.length, 1);
+  assert.equal(entries[0].job, "Scholar");
+});

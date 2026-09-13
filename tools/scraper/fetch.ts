@@ -98,8 +98,16 @@ export async function fetchCategoryMembers(category: string, deps: ScraperDeps =
   )}&cmlimit=500&format=json`;
   const data = await fetchJson(url);
   assertNoMediaWikiError(data, url);
-  const typed = data as { query?: { categorymembers?: { title: string }[] } };
-  const titles = (typed.query?.categorymembers ?? []).map((m) => m.title);
+  const typed = data as { query?: { categorymembers?: { title: string; ns: number }[] } };
+  // ns === 0 is MediaWiki's main/article namespace — real page content. Other
+  // namespaces (2 = User, 10 = Template, etc.) can legitimately contain the same
+  // templates this tool searches for (e.g. a user's draft/sandbox page), which
+  // would otherwise get misclassified as real set-overview pages. Confirmed live:
+  // BG-Wiki's AF3 category includes exactly this case (a User: sandbox page with
+  // real {{Armor Set Table}} content, producing a spurious duplicate entry).
+  const titles = (typed.query?.categorymembers ?? [])
+    .filter((m) => m.ns === 0)
+    .map((m) => m.title);
 
   writeCache(cacheDir, cacheKey, titles);
   return titles;

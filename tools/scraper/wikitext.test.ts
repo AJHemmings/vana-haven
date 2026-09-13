@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { findTemplateBlocks, parseTemplateFields } from "./wikitext.ts";
+import { findTemplateBlocks, parseTemplateFields, stripWikiLink } from "./wikitext.ts";
 
 test("findTemplateBlocks finds a single simple block", () => {
   const wikitext = "before\n{{Foo\n|a=1\n|b=2\n}}\nafter";
@@ -82,4 +82,16 @@ test("parseTemplateFields ignores lines that aren't |key=value pairs", () => {
 test("does not return a bogus block when a template is never closed", () => {
   const wikitext = "before\n{{Foo\n|a=1\n|b=2\nafter with no closing braces at all";
   assert.deepEqual(findTemplateBlocks(wikitext, "Foo"), []);
+});
+
+test("stripWikiLink strips a plain wikilink", () => {
+  assert.equal(stripWikiLink("[[Scholar]]"), "Scholar");
+});
+
+test("stripWikiLink uses the display text of a piped wikilink", () => {
+  assert.equal(stripWikiLink("[[Scholar|SCH]]"), "SCH");
+});
+
+test("stripWikiLink returns a plain (non-wikilink) value unchanged", () => {
+  assert.equal(stripWikiLink("Scholar"), "Scholar");
 });

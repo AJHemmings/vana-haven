@@ -66,3 +66,17 @@ test("extracts the +1 tier with tier read from the block's own plus= field", () 
 test("returns an empty array for wikitext with no R Empyrean Set 2 template", () => {
   assert.deepEqual(extractEmpyrean("no armor set data here"), []);
 });
+
+test("strips wikilink syntax from a bracketed jobs= value", () => {
+  const fixtureWithBracketedJob = `{{Armor Set Table
+|Armor Set 1=
+{{R Empyrean Set 2
+|plus=
+|jobs=[[Paladin]]
+|head=Chevalier's Armet
+}}
+}}`;
+  const entries = extractEmpyrean(fixtureWithBracketedJob);
+  assert.equal(entries.length, 1);
+  assert.equal(entries[0].job, "Paladin");
+});

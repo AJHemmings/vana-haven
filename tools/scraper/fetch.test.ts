@@ -15,7 +15,7 @@ test("fetchCategoryMembers calls fetchJson and caches the result on first call",
     let callCount = 0;
     const fetchJson = async () => {
       callCount++;
-      return { query: { categorymembers: [{ title: "Page A" }, { title: "Page B" }] } };
+      return { query: { categorymembers: [{ title: "Page A", ns: 0 }, { title: "Page B", ns: 0 }] } };
     };
 
     const titles = await fetchCategoryMembers("Some Category", { fetchJson, cacheDir, sleepFn: async () => {} });
@@ -29,7 +29,7 @@ test("fetchCategoryMembers returns cached titles without calling fetchJson on a 
     let callCount = 0;
     const fetchJson = async () => {
       callCount++;
-      return { query: { categorymembers: [{ title: "Page A" }] } };
+      return { query: { categorymembers: [{ title: "Page A", ns: 0 }] } };
     };
     const deps = { fetchJson, cacheDir, sleepFn: async () => {} };
 
@@ -45,7 +45,7 @@ test("fetchCategoryMembers bypasses the cache when force is true", () =>
     let callCount = 0;
     const fetchJson = async () => {
       callCount++;
-      return { query: { categorymembers: [{ title: "Page A" }] } };
+      return { query: { categorymembers: [{ title: "Page A", ns: 0 }] } };
     };
     const deps = { fetchJson, cacheDir, sleepFn: async () => {} };
 
@@ -120,7 +120,7 @@ test("does not sleep before the first real network request across a shared throt
   withTempCacheDir(async (cacheDir) => {
     const sleepCalls: number[] = [];
     const throttleState = { hasMadeRequest: false };
-    const fetchJson = async () => ({ query: { categorymembers: [{ title: "Page A" }] } });
+    const fetchJson = async () => ({ query: { categorymembers: [{ title: "Page A", ns: 0 }] } });
 
     await fetchCategoryMembers("Some Category", {
       fetchJson,
@@ -139,7 +139,7 @@ test("sleeps between two real network requests sharing the same throttle state",
   withTempCacheDir(async (cacheDir) => {
     const sleepCalls: number[] = [];
     const throttleState = { hasMadeRequest: false };
-    const fetchJson = async () => ({ query: { categorymembers: [{ title: "Page A" }] } });
+    const fetchJson = async () => ({ query: { categorymembers: [{ title: "Page A", ns: 0 }] } });
     const deps = {
       fetchJson,
       cacheDir,
@@ -184,4 +184,21 @@ test("fetchCategoryMembers surfaces a MediaWiki API error instead of silently re
       () => fetchCategoryMembers("Some Category", { fetchJson, cacheDir, sleepFn: async () => {} }),
       /invalidcategory/
     );
+  }));
+
+test("fetchCategoryMembers only returns main-namespace (ns=0) titles, filtering out User:/Template: pages", () =>
+  withTempCacheDir(async (cacheDir) => {
+    const fetchJson = async () => ({
+      query: {
+        categorymembers: [
+          { title: "Atrophy Armor Set", ns: 0 },
+          { title: "User:SomeEditor/Sandbox", ns: 2 },
+          { title: "Template:R Artifact Set 2", ns: 10 },
+        ],
+      },
+    });
+
+    const titles = await fetchCategoryMembers("Some Category", { fetchJson, cacheDir, sleepFn: async () => {} });
+
+    assert.deepEqual(titles, ["Atrophy Armor Set"]);
   }));

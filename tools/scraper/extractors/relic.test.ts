@@ -90,3 +90,16 @@ test("returns 15 total entries (5 slots x 3 populated tiers)", () => {
 test("returns an empty array for wikitext with neither Relic template", () => {
   assert.deepEqual(extractRelic("no relic data here"), []);
 });
+
+test("strips wikilink syntax from a bracketed relic job= value", () => {
+  const fixtureWithBracketedJob = `{{Armor Set Table
+|Armor Set 1=
+{{Relic Set
+|relic job=[[Some Job]]
+|relic head=Duelist's Chapeau
+}}
+}}`;
+  const entries = extractRelic(fixtureWithBracketedJob);
+  assert.equal(entries.length, 1);
+  assert.equal(entries[0].job, "Some Job");
+});

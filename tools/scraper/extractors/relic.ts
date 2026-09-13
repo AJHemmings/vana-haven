@@ -1,4 +1,4 @@
-import { findTemplateBlocks, parseTemplateFields } from "../wikitext.ts";
+import { findTemplateBlocks, parseTemplateFields, stripWikiLink } from "../wikitext.ts";
 import type { ExtractedEntry } from "../types.ts";
 
 const RELIC_SLOT_FIELDS = ["relic head", "relic body", "relic hands", "relic legs", "relic feet"] as const;
@@ -12,26 +12,30 @@ export function extractRelic(wikitext: string): ExtractedEntry[] {
 
   for (const block of findTemplateBlocks(wikitext, "Relic Set")) {
     const fields = parseTemplateFields(block);
-    const job = fields["relic job"];
+    const rawJob = fields["relic job"];
     // Same job guard as af3.ts/empyrean.ts — see empyrean.ts's Task 5 comment for why.
-    if (!job) continue;
+    if (!rawJob) continue;
+    const job = stripWikiLink(rawJob);
 
     for (const fieldName of RELIC_SLOT_FIELDS) {
-      const itemName = fields[fieldName];
-      if (!itemName) continue;
+      const rawItemName = fields[fieldName];
+      if (!rawItemName) continue;
+      const itemName = stripWikiLink(rawItemName);
       results.push({ job, setType: "relic", slot: slotFromFieldName(fieldName), tier: "0", itemName });
     }
   }
 
   for (const block of findTemplateBlocks(wikitext, "Relic + Set")) {
     const fields = parseTemplateFields(block);
-    const job = fields["relic job"];
-    if (!job) continue;
+    const rawJob = fields["relic job"];
+    if (!rawJob) continue;
+    const job = stripWikiLink(rawJob);
     const tier = fields["plus"]?.trim() ? fields["plus"].trim() : "0";
 
     for (const fieldName of RELIC_SLOT_FIELDS) {
-      const itemName = fields[fieldName];
-      if (!itemName) continue;
+      const rawItemName = fields[fieldName];
+      if (!rawItemName) continue;
+      const itemName = stripWikiLink(rawItemName);
       results.push({ job, setType: "relic", slot: slotFromFieldName(fieldName), tier, itemName });
     }
   }
