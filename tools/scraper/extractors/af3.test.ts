@@ -115,3 +115,17 @@ test("strips wikilink syntax from a bracketed slot item-name value", () => {
   assert.equal(entries.length, 1);
   assert.equal(entries[0].itemName, "Atrophy Chapeau");
 });
+
+test("strips the {{!}} pipe-trick from a slot item-name value", () => {
+  const fixtureWithPipeTrick = `{{Armor Set Table
+|Armor Set 1=
+{{R Artifact Set 2
+|plus=
+|jobs=Corsair
+|hands=Laksa. Gants{{!}}Laksamana's Gants
+}}
+}}`;
+  const entries = extractAf3(fixtureWithPipeTrick);
+  assert.equal(entries.length, 1);
+  assert.equal(entries[0].itemName, "Laksa. Gants");
+});

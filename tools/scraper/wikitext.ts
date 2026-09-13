@@ -81,3 +81,17 @@ export function stripWikiLink(value: string): string {
   if (!match) return value;
   return (match[2] ?? match[1]).trim();
 }
+
+/**
+ * Strips MediaWiki's "{{!}}" pipe-trick from a field value: some BG-Wiki fields
+ * write "RealTitle{{!}}Display Text" outside of [[ ]] brackets, since a literal
+ * "|" inside a template parameter would be misread as a new parameter. Confirmed
+ * live on a real field ("Laksa. Gants +2{{!}}Laksamana's Gants +2"). Takes the
+ * text before "{{!}}" as the real title. Returns the input unchanged if it
+ * doesn't contain "{{!}}".
+ */
+export function stripPipeTrick(value: string): string {
+  const index = value.indexOf("{{!}}");
+  if (index === -1) return value;
+  return value.slice(0, index).trim();
+}

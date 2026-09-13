@@ -186,6 +186,21 @@ test("fetchCategoryMembers surfaces a MediaWiki API error instead of silently re
     );
   }));
 
+test("fetchWikitextBatch re-keys a redirected page's content by the originally-requested title", () =>
+  withTempCacheDir(async (cacheDir) => {
+    const fetchJson = async () => ({
+      query: {
+        redirects: [{ from: "Academic's Mortarboard", to: "Acad. Mortarboard" }],
+        pages: [{ title: "Acad. Mortarboard", revisions: [{ slots: { main: { content: "real item content" } } }] }],
+      },
+    });
+
+    const result = await fetchWikitextBatch(["Academic's Mortarboard"], { fetchJson, cacheDir, sleepFn: async () => {} });
+
+    assert.equal(result.get("Academic's Mortarboard"), "real item content");
+    assert.equal(result.get("Acad. Mortarboard"), undefined);
+  }));
+
 test("fetchCategoryMembers only returns main-namespace (ns=0) titles, filtering out User:/Template: pages", () =>
   withTempCacheDir(async (cacheDir) => {
     const fetchJson = async () => ({

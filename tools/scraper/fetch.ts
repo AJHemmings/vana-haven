@@ -141,17 +141,35 @@ export async function fetchWikitextBatch(titles: string[], deps: ScraperDeps = {
 
     const url = `${API_BASE}?action=query&prop=revisions&rvprop=content&rvslots=main&titles=${encodeURIComponent(
       batch.join("|")
-    )}&format=json&formatversion=2`;
+    )}&format=json&formatversion=2&redirects=1`;
     const data = await fetchJson(url);
     assertNoMediaWikiError(data, url);
     const typed = data as {
-      query?: { pages?: { title: string; revisions?: { slots?: { main?: { content?: string } } }[] }[] };
+      query?: {
+        redirects?: { from: string; to: string }[];
+        pages?: { title: string; revisions?: { slots?: { main?: { content?: string } } }[] }[];
+      };
     };
 
+    // redirects=1 makes MediaWiki auto-follow a redirect stub (e.g. "Academic's
+    // Mortarboard" -> "Acad. Mortarboard") and return the target page's real
+    // content — but pages[].title comes back as the RESOLVED title, not what was
+    // actually requested. Re-key by the originally-requested title (via this
+    // redirect map) so a caller looking up by the name it asked for (e.g. an item
+    // name exactly as written on a set-overview page) still gets a hit. Confirmed
+    // live that this is the dominant naming pattern for BG-Wiki item pages, not
+    // an edge case — most full display names are redirect stubs to an abbreviated
+    // real title.
+    const resolvedToRequested = new Map<string, string>();
+    for (const redirect of typed.query?.redirects ?? []) {
+      resolvedToRequested.set(redirect.to, redirect.from);
+    }
+
     for (const page of typed.query?.pages ?? []) {
+      const requestedTitle = resolvedToRequested.get(page.title) ?? page.title;
       const content = page.revisions?.[0]?.slots?.main?.content ?? "";
-      result.set(page.title, content);
-      writeCache(cacheDir, `wikitext:${page.title}`, content);
+      result.set(requestedTitle, content);
+      writeCache(cacheDir, `wikitext:${requestedTitle}`, content);
     }
   }
 

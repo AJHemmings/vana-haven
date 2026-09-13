@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { findTemplateBlocks, parseTemplateFields, stripWikiLink } from "./wikitext.ts";
+import { findTemplateBlocks, parseTemplateFields, stripPipeTrick, stripWikiLink } from "./wikitext.ts";
 
 test("findTemplateBlocks finds a single simple block", () => {
   const wikitext = "before\n{{Foo\n|a=1\n|b=2\n}}\nafter";
@@ -98,4 +98,12 @@ test("stripWikiLink returns a plain (non-wikilink) value unchanged", () => {
 
 test("stripWikiLink trims whitespace around the pipe in a piped wikilink", () => {
   assert.equal(stripWikiLink("[[Scholar | SCH]]"), "SCH");
+});
+
+test("stripPipeTrick takes the text before {{!}} as the real title", () => {
+  assert.equal(stripPipeTrick("Laksa. Gants +2{{!}}Laksamana's Gants +2"), "Laksa. Gants +2");
+});
+
+test("stripPipeTrick returns a value without {{!}} unchanged", () => {
+  assert.equal(stripPipeTrick("Atrophy Tights +3"), "Atrophy Tights +3");
 });
