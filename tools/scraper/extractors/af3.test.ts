@@ -70,3 +70,20 @@ test("returns 10 total entries (5 slots x 2 tiers present in the fixture)", () =
 test("returns an empty array for wikitext with no R Artifact Set 2 template", () => {
   assert.deepEqual(extractAf3("no armor set data here"), []);
 });
+
+test("skips a slot that is missing from an otherwise-populated tier block", () => {
+  const fixtureWithMissingSlot = `{{Armor Set Table
+|Armor Set 1=
+{{R Artifact Set 2
+|plus=
+|jobs=Red Mage
+|head=Atrophy Chapeau
+|body=Atrophy Tabard
+|legs=Atrophy Tights
+|feet=Atrophy Boots
+}}
+}}`;
+  const entries = extractAf3(fixtureWithMissingSlot);
+  assert.equal(entries.length, 4);
+  assert.ok(!entries.some((e) => e.slot === "hands"));
+});

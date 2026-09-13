@@ -9,6 +9,7 @@ export function extractAf3(wikitext: string): ExtractedEntry[] {
   for (const block of findTemplateBlocks(wikitext, "R Artifact Set 2")) {
     const fields = parseTemplateFields(block);
     const job = fields["jobs"];
+    if (!job) continue;
     const tier = fields["plus"]?.trim() ? fields["plus"].trim() : "0";
 
     for (const slot of SLOTS) {
