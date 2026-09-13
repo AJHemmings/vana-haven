@@ -14,6 +14,10 @@ export type DiscoverDeps = {
 
 export async function discoverCategory(categoryId: CategoryId, deps: DiscoverDeps = {}): Promise<DiscoveryManifest> {
   const { fetchCategoryMembersFn = fetchCategoryMembers, fetchWikitextBatchFn = fetchWikitextBatch, ...fetchDeps } = deps;
+  // Default throttleState HERE, not just in main() — this is the function that
+  // actually owns both fetch calls, so it must guarantee they share one throttle
+  // timeline regardless of whether the caller remembered to build one.
+  fetchDeps.throttleState ??= { hasMadeRequest: false };
   const config = CATEGORIES[categoryId];
   const extractor = EXTRACTORS[categoryId];
 
@@ -25,10 +29,15 @@ export async function discoverCategory(categoryId: CategoryId, deps: DiscoverDep
   for (const title of memberTitles) {
     const wikitext = wikitextByTitle.get(title);
 
-    if (wikitext !== undefined && findTemplateBlocks(wikitext, "Armor Set Table").length > 0) {
+    if (wikitext === undefined) {
+      manifest.unmatched.push({
+        pageTitle: title,
+        reason: "no wikitext returned for this title — possible title mismatch, deleted page, or fetch gap",
+      });
+    } else if (findTemplateBlocks(wikitext, "Armor Set Table").length > 0) {
       const job = extractor(wikitext)[0]?.job ?? "Unknown";
       manifest.matched.push({ job, setType: categoryId, setPageTitle: title });
-    } else if (wikitext !== undefined && findTemplateBlocks(wikitext, "item").length > 0) {
+    } else if (findTemplateBlocks(wikitext, "item").length > 0) {
       // An individual item page — expected category membership, not logged.
     } else {
       manifest.unmatched.push({
@@ -67,8 +76,9 @@ async function main() {
   const outPath = join(OUTPUT_DIR, `discovered-${categoryArg}.json`);
   writeFileSync(outPath, JSON.stringify(manifest, null, 2));
 
+  const unresolvedJobCount = manifest.matched.filter((m) => m.job === "Unknown").length;
   console.log(
-    `[scraper] wrote ${outPath} — matched ${manifest.matched.length}, unmatched ${manifest.unmatched.length}, missingJobs: ${manifest.missingJobs.join(", ") || "none"}`
+    `[scraper] wrote ${outPath} — matched ${manifest.matched.length}${unresolvedJobCount ? ` (${unresolvedJobCount} with unresolved job — review before running extract.ts)` : ""}, unmatched ${manifest.unmatched.length}, missingJobs: ${manifest.missingJobs.join(", ") || "none"}`
   );
 }
 

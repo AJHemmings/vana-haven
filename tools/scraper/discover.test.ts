@@ -68,4 +68,5 @@ test("a page missing from the wikitext map entirely is treated as unmatched, not
 
   assert.equal(manifest.unmatched.length, 1);
   assert.equal(manifest.unmatched[0].pageTitle, "Some Oddly Templated Page");
+  assert.match(manifest.unmatched[0].reason, /no wikitext returned/);
 });
