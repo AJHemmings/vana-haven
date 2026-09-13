@@ -3,24 +3,24 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { CATEGORIES, OUTPUT_DIR, type CategoryId } from "./config.ts";
 import { fetchWikitextBatch, type ScraperDeps } from "./fetch.ts";
-import { findTemplateBlocks } from "./wikitext.ts";
+import { findTemplateBlocks, parseTemplateFields } from "./wikitext.ts";
 import { EXTRACTORS } from "./extractors/index.ts";
 import type { DiscoveryManifest, ExtractedEntry, FinalEntry } from "./types.ts";
 
-function resolveItemId(wikitext: string | undefined, itemName: string): number | null {
+export function resolveItemId(wikitext: string | undefined, itemName: string): number | null {
   if (!wikitext) {
     console.warn(`[scraper] no item page found for "${itemName}" — itemId set to null`);
     return null;
   }
 
   const itemBlocks = findTemplateBlocks(wikitext, "item");
-  const match = itemBlocks[0]?.match(/\|ffxidb=(\d+)/);
-  if (!match) {
+  const ffxidb = itemBlocks[0] ? parseTemplateFields(itemBlocks[0])["ffxidb"] : undefined;
+  if (!ffxidb) {
     console.warn(`[scraper] "${itemName}" has no ffxidb field — itemId set to null`);
     return null;
   }
 
-  return Number(match[1]);
+  return Number(ffxidb);
 }
 
 export async function extractCategory(categoryId: CategoryId, deps: ScraperDeps = {}): Promise<FinalEntry[]> {
@@ -28,26 +28,47 @@ export async function extractCategory(categoryId: CategoryId, deps: ScraperDeps 
   // fetchWikitextBatch calls below, so it must guarantee they share one throttle
   // timeline regardless of whether the caller remembered to build one. Same fix
   // applied to discoverCategory after Task 7's code review found the same gap.
-  deps.throttleState ??= { hasMadeRequest: false };
+  // Builds a fresh object via spread rather than mutating the caller's `deps`
+  // directly, matching discoverCategory's approach in discover.ts.
+  const fetchDeps: ScraperDeps = { ...deps, throttleState: deps.throttleState ?? { hasMadeRequest: false } };
 
   const manifestPath = join(OUTPUT_DIR, `discovered-${categoryId}.json`);
   if (!existsSync(manifestPath)) {
     throw new Error(`No manifest found at ${manifestPath} — run discover.ts for "${categoryId}" first.`);
   }
-  const manifest: DiscoveryManifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+  let manifest: DiscoveryManifest;
+  try {
+    const parsed = JSON.parse(readFileSync(manifestPath, "utf8"));
+    if (!parsed || !Array.isArray(parsed.matched)) {
+      throw new Error("missing or invalid \"matched\" array");
+    }
+    manifest = parsed;
+  } catch (err) {
+    throw new Error(
+      `Manifest at ${manifestPath} is corrupted or has an unexpected shape (${(err as Error).message}) — re-run discover.ts for "${categoryId}".`
+    );
+  }
+
+  if (manifest.matched.length === 0) {
+    console.warn(`[scraper] manifest for "${categoryId}" has zero matched pages — writing an empty gearsets file`);
+  }
 
   const extractor = EXTRACTORS[categoryId];
   const setPageTitles = manifest.matched.map((m) => m.setPageTitle);
-  const setWikitext = await fetchWikitextBatch(setPageTitles, deps);
+  const setWikitext = await fetchWikitextBatch(setPageTitles, fetchDeps);
 
   const rawEntries: ExtractedEntry[] = [];
   for (const { setPageTitle } of manifest.matched) {
-    const wikitext = setWikitext.get(setPageTitle) ?? "";
+    const wikitext = setWikitext.get(setPageTitle);
+    if (wikitext === undefined) {
+      console.warn(`[scraper] no wikitext found for set page "${setPageTitle}" — its entries will be missing from the output`);
+      continue;
+    }
     rawEntries.push(...extractor(wikitext));
   }
 
   const itemNames = [...new Set(rawEntries.map((e) => e.itemName))];
-  const itemWikitext = await fetchWikitextBatch(itemNames, deps);
+  const itemWikitext = await fetchWikitextBatch(itemNames, fetchDeps);
 
   return rawEntries.map((entry) => ({
     ...entry,
