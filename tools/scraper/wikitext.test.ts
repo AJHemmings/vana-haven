@@ -95,3 +95,7 @@ test("stripWikiLink uses the display text of a piped wikilink", () => {
 test("stripWikiLink returns a plain (non-wikilink) value unchanged", () => {
   assert.equal(stripWikiLink("Scholar"), "Scholar");
 });
+
+test("stripWikiLink trims whitespace around the pipe in a piped wikilink", () => {
+  assert.equal(stripWikiLink("[[Scholar | SCH]]"), "SCH");
+});

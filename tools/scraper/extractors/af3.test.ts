@@ -101,3 +101,17 @@ test("strips wikilink syntax from a bracketed jobs= value", () => {
   assert.equal(entries.length, 1);
   assert.equal(entries[0].job, "Scholar");
 });
+
+test("strips wikilink syntax from a bracketed slot item-name value", () => {
+  const fixtureWithBracketedItemName = `{{Armor Set Table
+|Armor Set 1=
+{{R Artifact Set 2
+|plus=
+|jobs=Red Mage
+|head=[[Atrophy Chapeau]]
+}}
+}}`;
+  const entries = extractAf3(fixtureWithBracketedItemName);
+  assert.equal(entries.length, 1);
+  assert.equal(entries[0].itemName, "Atrophy Chapeau");
+});

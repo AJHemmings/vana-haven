@@ -79,5 +79,5 @@ export function parseTemplateFields(block: string): Record<string, string> {
 export function stripWikiLink(value: string): string {
   const match = value.match(/^\[\[([^\]|]+)(?:\|([^\]]+))?\]\]$/);
   if (!match) return value;
-  return match[2] ?? match[1];
+  return (match[2] ?? match[1]).trim();
 }
