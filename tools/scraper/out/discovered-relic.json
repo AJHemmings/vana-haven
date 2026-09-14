@@ -1,0 +1,105 @@
+{
+  "matched": [
+    {
+      "job": "Dark Knight",
+      "setType": "relic",
+      "setPageTitle": "Abyss Armor Set"
+    },
+    {
+      "job": "Scholar",
+      "setType": "relic",
+      "setPageTitle": "Argute Attire Set"
+    },
+    {
+      "job": "Thief",
+      "setType": "relic",
+      "setPageTitle": "Assassin's Attire Set"
+    },
+    {
+      "job": "Bard",
+      "setType": "relic",
+      "setPageTitle": "Bard's Attire Set"
+    },
+    {
+      "job": "White Mage",
+      "setType": "relic",
+      "setPageTitle": "Cleric's Attire Set"
+    },
+    {
+      "job": "Corsair",
+      "setType": "relic",
+      "setPageTitle": "Commodore Attire Set"
+    },
+    {
+      "job": "Dancer",
+      "setType": "relic",
+      "setPageTitle": "Etoile Attire Set"
+    },
+    {
+      "job": "Ninja",
+      "setType": "relic",
+      "setPageTitle": "Koga Garb Set"
+    },
+    {
+      "job": "Monk",
+      "setType": "relic",
+      "setPageTitle": "Melee Attire Set"
+    },
+    {
+      "job": "Blue Mage",
+      "setType": "relic",
+      "setPageTitle": "Mirage Attire Set"
+    },
+    {
+      "job": "Beastmaster",
+      "setType": "relic",
+      "setPageTitle": "Monster Armor Set"
+    },
+    {
+      "job": "Puppetmaster",
+      "setType": "relic",
+      "setPageTitle": "Pantin Attire Set"
+    },
+    {
+      "job": "Samurai",
+      "setType": "relic",
+      "setPageTitle": "Saotome Armor Set"
+    },
+    {
+      "job": "Ranger",
+      "setType": "relic",
+      "setPageTitle": "Scout's Attire Set"
+    },
+    {
+      "job": "Black Mage",
+      "setType": "relic",
+      "setPageTitle": "Sorcerer's Attire Set"
+    },
+    {
+      "job": "Summoner",
+      "setType": "relic",
+      "setPageTitle": "Summoner's Attire Set"
+    },
+    {
+      "job": "Paladin",
+      "setType": "relic",
+      "setPageTitle": "Valor Armor Set"
+    },
+    {
+      "job": "Warrior",
+      "setType": "relic",
+      "setPageTitle": "Warrior's Armor Set"
+    },
+    {
+      "job": "Dragoon",
+      "setType": "relic",
+      "setPageTitle": "Wyrm Armor Set"
+    }
+  ],
+  "unmatched": [],
+  "missingJobs": [
+    "Red Mage",
+    "Geomancer",
+    "Rune Fencer"
+  ]
+}

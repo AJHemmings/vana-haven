@@ -1,0 +1,4394 @@
+[
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Academic's Mortarboard",
+    "itemId": 27683
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Academic's Gown",
+    "itemId": 27827
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Academic's Bracers",
+    "itemId": 27963
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Academic's Pants",
+    "itemId": 28110
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Academic's Loafers",
+    "itemId": 28243
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Academic's Mortarboard +1",
+    "itemId": 27704
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Academic's Gown +1",
+    "itemId": 27848
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Academic's Bracers +1",
+    "itemId": 27984
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Academic's Pants +1",
+    "itemId": 28131
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Academic's Loafers +1",
+    "itemId": 28264
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Academic's Mortarboard +2",
+    "itemId": 23060
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Academic's Gown +2",
+    "itemId": 23127
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Academic's Bracers +2",
+    "itemId": 23194
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Academic's Pants +2",
+    "itemId": 23261
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Academic's Loafers +2",
+    "itemId": 23328
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Academic's Mortarboard +3",
+    "itemId": 23395
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Academic's Gown +3",
+    "itemId": 23462
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Academic's Bracers +3",
+    "itemId": 23529
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Academic's Pants +3",
+    "itemId": 23596
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Academic's Loafers +3",
+    "itemId": 23663
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Academic's Mortarboard +4",
+    "itemId": 23915
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Academic's Gown +4",
+    "itemId": 23960
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Academic's Bracers +4",
+    "itemId": 24005
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Academic's Pants +4",
+    "itemId": 24050
+  },
+  {
+    "job": "Scholar",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Academic's Loafers +4",
+    "itemId": 24095
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Anchorite's Crown",
+    "itemId": 27664
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Anchorite's Cyclas",
+    "itemId": 27808
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Anchorite's Gloves",
+    "itemId": 27944
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Anchorite's Hose",
+    "itemId": 28091
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Anchorite's Gaiters",
+    "itemId": 28224
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Anchorite's Crown +1",
+    "itemId": 27685
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Anchorite's Cyclas +1",
+    "itemId": 27829
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Anchorite's Gloves +1",
+    "itemId": 27965
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Anchorite's Hose +1",
+    "itemId": 28112
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Anchorite's Gaiters +1",
+    "itemId": 28245
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Anchorite's Crown +2",
+    "itemId": 23041
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Anchorite's Cyclas +2",
+    "itemId": 23108
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Anchorite's Gloves +2",
+    "itemId": 23175
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Anchorite's Hose +2",
+    "itemId": 23242
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Anchorite's Gaiters +2",
+    "itemId": 23309
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Anchorite's Crown +3",
+    "itemId": 23376
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Anchorite's Cyclas +3",
+    "itemId": 23443
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Anchorite's Gloves +3",
+    "itemId": 23510
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Anchorite's Hose +3",
+    "itemId": 23577
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Anchorite's Gaiters +3",
+    "itemId": 23644
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Anchorite's Crown +4",
+    "itemId": 23896
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Anchorite's Cyclas +4",
+    "itemId": 23941
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Anchorite's Gloves +4",
+    "itemId": 23986
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Anchorite's Hose +4",
+    "itemId": 24031
+  },
+  {
+    "job": "Monk",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Anchorite's Gaiters +4",
+    "itemId": 24076
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Assimilator's Keffiyeh",
+    "itemId": 27678
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Assimilator's Jubbah",
+    "itemId": 27822
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Assimilator's Bazubands",
+    "itemId": 27958
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Assimilator's Shalwar",
+    "itemId": 28105
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Assimilator's Charuqs",
+    "itemId": 28238
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Assimilator's Keffiyeh +1",
+    "itemId": 27699
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Assimilator's Jubbah +1",
+    "itemId": 27843
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Assimilator's Bazubands +1",
+    "itemId": 27979
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Assimilator's Shalwar +1",
+    "itemId": 28126
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Assimilator's Charuqs +1",
+    "itemId": 28259
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Assimilator's Keffiyeh +2",
+    "itemId": 23055
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Assimilator's Jubbah +2",
+    "itemId": 23122
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Assimilator's Bazubands +2",
+    "itemId": 23189
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Assimilator's Shalwar +2",
+    "itemId": 23256
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Assimilator's Charuqs +2",
+    "itemId": 23323
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Assimilator's Keffiyeh +3",
+    "itemId": 23390
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Assimilator's Jubbah +3",
+    "itemId": 23457
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Assimilator's Bazubands +3",
+    "itemId": 23524
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Assimilator's Shalwar +3",
+    "itemId": 23591
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Assimilator's Charuqs +3",
+    "itemId": 23658
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Assimilator's Keffiyeh +4",
+    "itemId": 23910
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Assimilator's Jubbah +4",
+    "itemId": 23955
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Assimilator's Bazubands +4",
+    "itemId": 24000
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Assimilator's Shalwar +4",
+    "itemId": 24045
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Assimilator's Charuqs +4",
+    "itemId": 24090
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Atrophy Chapeau",
+    "itemId": 27667
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Atrophy Tabard",
+    "itemId": 27811
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Atrophy Gloves",
+    "itemId": 27947
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Atrophy Tights",
+    "itemId": 28094
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Atrophy Boots",
+    "itemId": 28227
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Atrophy Chapeau +1",
+    "itemId": 27688
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Atrophy Tabard +1",
+    "itemId": 27832
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Atrophy Gloves +1",
+    "itemId": 27968
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Atrophy Tights +1",
+    "itemId": 28115
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Atrophy Boots +1",
+    "itemId": 28248
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Atrophy Chapeau +2",
+    "itemId": 23044
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Atrophy Tabard +2",
+    "itemId": 23111
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Atrophy Gloves +2",
+    "itemId": 23178
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Atrophy Tights +2",
+    "itemId": 23245
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Atrophy Boots +2",
+    "itemId": 23312
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Atrophy Chapeau +3",
+    "itemId": 23379
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Atrophy Tabard +3",
+    "itemId": 23446
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Atrophy Gloves +3",
+    "itemId": 23513
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Atrophy Tights +3",
+    "itemId": 23580
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Atrophy Boots +3",
+    "itemId": 23647
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Atrophy Chapeau +4",
+    "itemId": 23899
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Atrophy Tabard +4",
+    "itemId": 23944
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Atrophy Gloves +4",
+    "itemId": 23989
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Atrophy Tights +4",
+    "itemId": 24034
+  },
+  {
+    "job": "Red Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Atrophy Boots +4",
+    "itemId": 24079
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Brioso Roundlet",
+    "itemId": 27672
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Brioso Justaucorps",
+    "itemId": 27816
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Brioso Cuffs",
+    "itemId": 27952
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Brioso Cannions",
+    "itemId": 28099
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Brioso Slippers",
+    "itemId": 28232
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Brioso Roundlet +1",
+    "itemId": 27693
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Brioso Justaucorps +1",
+    "itemId": 27837
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Brioso Cuffs +1",
+    "itemId": 27973
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Brioso Cannions +1",
+    "itemId": 28120
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Brioso Slippers +1",
+    "itemId": 28253
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Brioso Roundlet +2",
+    "itemId": 23049
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Brioso Justaucorps +2",
+    "itemId": 23116
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Brioso Cuffs +2",
+    "itemId": 23183
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Brioso Cannions +2",
+    "itemId": 23250
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Brioso Slippers +2",
+    "itemId": 23317
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Brioso Roundlet +3",
+    "itemId": 23384
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Brioso Justaucorps +3",
+    "itemId": 23451
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Brioso Cuffs +3",
+    "itemId": 23518
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Brioso Cannions +3",
+    "itemId": 23585
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Brioso Slippers +3",
+    "itemId": 23652
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Brioso Roundlet +4",
+    "itemId": 23904
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Brioso Justaucorps +4",
+    "itemId": 23949
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Brioso Cuffs +4",
+    "itemId": 23994
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Brioso Cannions +4",
+    "itemId": 24039
+  },
+  {
+    "job": "Bard",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Brioso Slippers +4",
+    "itemId": 24084
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Convoker's Horn",
+    "itemId": 27677
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Convoker's Doublet",
+    "itemId": 27821
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Convoker's Bracers",
+    "itemId": 27957
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Convoker's Spats",
+    "itemId": 28104
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Convoker's Pigaches",
+    "itemId": 28237
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Convoker's Horn +1",
+    "itemId": 27698
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Convoker's Doublet +1",
+    "itemId": 27842
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Convoker's Bracers +1",
+    "itemId": 27978
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Convoker's Spats +1",
+    "itemId": 28125
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Convoker's Pigaches +1",
+    "itemId": 28258
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Convoker's Horn +2",
+    "itemId": 23054
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Convoker's Doublet +2",
+    "itemId": 23121
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Convoker's Bracers +2",
+    "itemId": 23188
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Convoker's Spats +2",
+    "itemId": 23255
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Convoker's Pigaches +2",
+    "itemId": 23322
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Convoker's Horn +3",
+    "itemId": 23389
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Convoker's Doublet +3",
+    "itemId": 23456
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Convoker's Bracers +3",
+    "itemId": 23523
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Convoker's Spats +3",
+    "itemId": 23590
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Convoker's Pigaches +3",
+    "itemId": 23657
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Convoker's Horn +4",
+    "itemId": 23909
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Convoker's Doublet +4",
+    "itemId": 23954
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Convoker's Bracers +4",
+    "itemId": 23999
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Convoker's Spats +4",
+    "itemId": 24044
+  },
+  {
+    "job": "Summoner",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Convoker's Pigaches +4",
+    "itemId": 24089
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Foire Taj",
+    "itemId": 27680
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Foire Tobe",
+    "itemId": 27824
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Foire Dastanas",
+    "itemId": 27960
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Foire Churidars",
+    "itemId": 28107
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Foire Babouches",
+    "itemId": 28240
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Foire Taj +1",
+    "itemId": 27701
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Foire Tobe +1",
+    "itemId": 27845
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Foire Dastanas +1",
+    "itemId": 27981
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Foire Churidars +1",
+    "itemId": 28128
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Foire Babouches +1",
+    "itemId": 28261
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Foire Taj +2",
+    "itemId": 23057
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Foire Tobe +2",
+    "itemId": 23124
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Foire Dastanas +2",
+    "itemId": 23191
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Foire Churidars +2",
+    "itemId": 23258
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Foire Babouches +2",
+    "itemId": 23325
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Foire Taj +3",
+    "itemId": 23392
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Foire Tobe +3",
+    "itemId": 23459
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Foire Dastanas +3",
+    "itemId": 23526
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Foire Churidars +3",
+    "itemId": 23593
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Foire Babouches +3",
+    "itemId": 23660
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Foire Taj +4",
+    "itemId": 23912
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Foire Tobe +4",
+    "itemId": 23957
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Foire Dastanas +4",
+    "itemId": 24002
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Foire Churidars +4",
+    "itemId": 24047
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Foire Babouches +4",
+    "itemId": 24092
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Geomancy Galero",
+    "itemId": 27786
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Geomancy Tunic",
+    "itemId": 27926
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Geomancy Mitaines",
+    "itemId": 28066
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Geomancy Pants",
+    "itemId": 28206
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Geomancy Sandals",
+    "itemId": 28346
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Geomancy Galero +1",
+    "itemId": 27705
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Geomancy Tunic +1",
+    "itemId": 27849
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Geomancy Mitaines +1",
+    "itemId": 27985
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Geomancy Pants +1",
+    "itemId": 28132
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Geomancy Sandals +1",
+    "itemId": 28265
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Geomancy Galero +2",
+    "itemId": 23061
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Geomancy Tunic +2",
+    "itemId": 23128
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Geomancy Mitaines +2",
+    "itemId": 23195
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Geomancy Pants +2",
+    "itemId": 23262
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Geomancy Sandals +2",
+    "itemId": 23329
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Geomancy Galero +3",
+    "itemId": 23396
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Geomancy Tunic +3",
+    "itemId": 23463
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Geomancy Mitaines +3",
+    "itemId": 23530
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Geomancy Pants +3",
+    "itemId": 23597
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Geomancy Sandals +3",
+    "itemId": 23664
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Geomancy Galero +4",
+    "itemId": 23916
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Geomancy Tunic +4",
+    "itemId": 23961
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Geomancy Mitaines +4",
+    "itemId": 24006
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Geomancy Pants +4",
+    "itemId": 24051
+  },
+  {
+    "job": "Geomancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Geomancy Sandals +4",
+    "itemId": 24096
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Hachiya Hatsuburi",
+    "itemId": 27675
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Hachiya Chainmail",
+    "itemId": 27819
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Hachiya Tekko",
+    "itemId": 27955
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Hachiya Hakama",
+    "itemId": 28102
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Hachiya Kyahan",
+    "itemId": 28235
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Hachiya Hatsuburi +1",
+    "itemId": 27696
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Hachiya Chainmail +1",
+    "itemId": 27840
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Hachiya Tekko +1",
+    "itemId": 27976
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Hachiya Hakama +1",
+    "itemId": 28123
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Hachiya Kyahan +1",
+    "itemId": 28256
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Hachiya Hatsuburi +2",
+    "itemId": 23052
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Hachiya Chainmail +2",
+    "itemId": 23119
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Hachiya Tekko +2",
+    "itemId": 23186
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Hachiya Hakama +2",
+    "itemId": 23253
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Hachiya Kyahan +2",
+    "itemId": 23320
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Hachiya Hatsuburi +3",
+    "itemId": 23387
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Hachiya Chainmail +3",
+    "itemId": 23454
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Hachiya Tekko +3",
+    "itemId": 23521
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Hachiya Hakama +3",
+    "itemId": 23588
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Hachiya Kyahan +3",
+    "itemId": 23655
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Hachiya Hatsuburi +4",
+    "itemId": 23907
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Hachiya Chainmail +4",
+    "itemId": 23952
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Hachiya Tekko +4",
+    "itemId": 23997
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Hachiya Hakama +4",
+    "itemId": 24042
+  },
+  {
+    "job": "Ninja",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Hachiya Kyahan +4",
+    "itemId": 24087
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Ignominy Burgeonet",
+    "itemId": 27670
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Ignominy Cuirass",
+    "itemId": 27814
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Ignominy Gauntlets",
+    "itemId": 27950
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Ignominy Flanchard",
+    "itemId": 28097
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Ignominy Sollerets",
+    "itemId": 28230
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Ignominy Burgeonet +1",
+    "itemId": 27691
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Ignominy Cuirass +1",
+    "itemId": 27835
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Ignominy Gauntlets +1",
+    "itemId": 27971
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Ignominy Flanchard +1",
+    "itemId": 28118
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Ignominy Sollerets +1",
+    "itemId": 28251
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Ignominy Burgeonet +2",
+    "itemId": 23047
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Ignominy Cuirass +2",
+    "itemId": 23114
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Ignominy Gauntlets +2",
+    "itemId": 23181
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Ignominy Flanchard +2",
+    "itemId": 23248
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Ignominy Sollerets +2",
+    "itemId": 23315
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Ignominy Burgeonet +3",
+    "itemId": 23382
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Ignominy Cuirass +3",
+    "itemId": 23449
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Ignominy Gauntlets +3",
+    "itemId": 23516
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Ignominy Flanchard +3",
+    "itemId": 23583
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Ignominy Sollerets +3",
+    "itemId": 23650
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Ignominy Burgeonet +4",
+    "itemId": 23902
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Ignominy Cuirass +4",
+    "itemId": 23947
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Ignominy Finger Gauntlets +4",
+    "itemId": 23992
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Ignominy Flanchard +4",
+    "itemId": 24037
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Ignominy Sollerets +4",
+    "itemId": 24082
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Laksamana's Tricorne",
+    "itemId": 27679
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Laksamana's Frac",
+    "itemId": 27823
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Laksamana's Gants",
+    "itemId": 27959
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Laksamana's Trews",
+    "itemId": 28106
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Laksamana's Bottes",
+    "itemId": 28239
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Laksamana's Hat +1",
+    "itemId": 27700
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Laksamana's Frac +1",
+    "itemId": 27844
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Laksamana's Gants +1",
+    "itemId": 27980
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Laksamana's Trews +1",
+    "itemId": 28127
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Laksamana's Bottes +1",
+    "itemId": 28260
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Laksamana's Tricorne +2",
+    "itemId": 23056
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Laksamana's Frac +2",
+    "itemId": 23123
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Laksa. Gants +2",
+    "itemId": 23190
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Laksamana's Trews +2",
+    "itemId": 23257
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Laksamana's Bottes +2",
+    "itemId": 23324
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Laksamana's Tricorne +3",
+    "itemId": 23391
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Laksamana's Frac +3",
+    "itemId": 23458
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Laksamana's Gants +3",
+    "itemId": 23525
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Laksamana's Trews +3",
+    "itemId": 23592
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Laksamana's Bottes +3",
+    "itemId": 23659
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Laksamana's Tricorne +4",
+    "itemId": 23911
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Laksamana's Frac +4",
+    "itemId": 23956
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Laksamana's Gants +4",
+    "itemId": 24001
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Laksamana's Trews +4",
+    "itemId": 24046
+  },
+  {
+    "job": "Corsair",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Laksamana's Bottes +4",
+    "itemId": 24091
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Maxixi Tiara",
+    "itemId": 27681
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Maxixi Casaque",
+    "itemId": 27825
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Maxixi Bangles",
+    "itemId": 27961
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Maxixi Tights",
+    "itemId": 28108
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Maxixi Toe Shoes",
+    "itemId": 28241
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Maxixi Tiara +1",
+    "itemId": 27702
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Maxixi Casaque +1",
+    "itemId": 27846
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Maxixi Bangles +1",
+    "itemId": 27982
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Maxixi Tights +1",
+    "itemId": 28129
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Maxixi Toe Shoes +1",
+    "itemId": 28262
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Maxixi Tiara +2",
+    "itemId": 23058
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Maxixi Casaque +2",
+    "itemId": 23125
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Maxixi Bangles +2",
+    "itemId": 23192
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Maxixi Tights +2",
+    "itemId": 23259
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Maxixi Toe Shoes +2",
+    "itemId": 23326
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Maxixi Tiara +3",
+    "itemId": 23393
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Maxixi Casaque +3",
+    "itemId": 23460
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Maxixi Bangles +3",
+    "itemId": 23527
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Maxixi Tights +3",
+    "itemId": 23594
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Maxixi Toe Shoes +3",
+    "itemId": 23661
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Maxixi Tiara +4",
+    "itemId": 23913
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Maxixi Casaque +4",
+    "itemId": 23958
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Maxixi Bangles +4",
+    "itemId": 24003
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Maxixi Tights +4",
+    "itemId": 24048
+  },
+  {
+    "job": "Dancer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Maxixi Toe Shoes +4",
+    "itemId": 24093
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Orion Beret",
+    "itemId": 27673
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Orion Jerkin",
+    "itemId": 27817
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Orion Bracers",
+    "itemId": 27953
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Orion Socks",
+    "itemId": 28233
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Orion Beret +1",
+    "itemId": 27694
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Orion Jerkin +1",
+    "itemId": 27838
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Orion Bracers +1",
+    "itemId": 27974
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Orion Braccae +1",
+    "itemId": 28121
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Orion Socks +1",
+    "itemId": 28254
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Orion Beret +2",
+    "itemId": 23050
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Orion Jerkin +2",
+    "itemId": 23117
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Orion Bracers +2",
+    "itemId": 23184
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Orion Braccae +2",
+    "itemId": 23251
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Orion Socks +2",
+    "itemId": 23318
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Orion Beret +3",
+    "itemId": 23385
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Orion Jerkin +3",
+    "itemId": 23452
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Orion Bracers +3",
+    "itemId": 23519
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Orion Braccae +3",
+    "itemId": 23586
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Orion Socks +3",
+    "itemId": 23653
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Orion Beret +4",
+    "itemId": 23905
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Orion Jerkin +4",
+    "itemId": 23950
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Orion Bracers +4",
+    "itemId": 23995
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Orion Braccae +4",
+    "itemId": 24040
+  },
+  {
+    "job": "Ranger",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Orion Socks +4",
+    "itemId": 24085
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Pillager's Bonnet",
+    "itemId": 27668
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Pillager's Vest",
+    "itemId": 27812
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Pillager's Armlets",
+    "itemId": 27948
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Pillager's Culottes",
+    "itemId": 28095
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Pillager's Poulaines",
+    "itemId": 28228
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Pillager's Bonnet +1",
+    "itemId": 27689
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Pillager's Vest +1",
+    "itemId": 27833
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Pillager's Armlets +1",
+    "itemId": 27969
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Pillager's Culottes +1",
+    "itemId": 28116
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Pillager's Poulaines +1",
+    "itemId": 28249
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Pillager's Bonnet +2",
+    "itemId": 23045
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Pillager's Vest +2",
+    "itemId": 23112
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Pillager's Armlets +2",
+    "itemId": 23179
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Pillager's Culottes +2",
+    "itemId": 23246
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Pillager's Poulaines +2",
+    "itemId": 23313
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Pillager's Bonnet +3",
+    "itemId": 23380
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Pillager's Vest +3",
+    "itemId": 23447
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Pillager's Armlets +3",
+    "itemId": 23514
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Pillager's Culottes +3",
+    "itemId": 23581
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Pillager's Poulaines +3",
+    "itemId": 23648
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Pillager's Bonnet +4",
+    "itemId": 23900
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Pillager's Vest +4",
+    "itemId": 23945
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Pillager's Armlets +4",
+    "itemId": 23990
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Pillager's Culottes +4",
+    "itemId": 24035
+  },
+  {
+    "job": "Thief",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Pillager's Poulaines +4",
+    "itemId": 24080
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Pummeler's Mask",
+    "itemId": 27663
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Pummeler's Lorica",
+    "itemId": 27807
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Pummeler's Mufflers",
+    "itemId": 27943
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Pummeler's Cuisses",
+    "itemId": 28090
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Pummeler's Calligae",
+    "itemId": 28223
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Pummeler's Mask +1",
+    "itemId": 27684
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Pummeler's Lorica +1",
+    "itemId": 27828
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Pummeler's Mufflers +1",
+    "itemId": 27964
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Pummeler's Cuisses +1",
+    "itemId": 28111
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Pummeler's Calligae +1",
+    "itemId": 28244
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Pummeler's Mask +2",
+    "itemId": 23040
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Pummeler's Lorica +2",
+    "itemId": 23107
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Pummeler's Mufflers +2",
+    "itemId": 23174
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Pummeler's Cuisses +2",
+    "itemId": 23241
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Pummeler's Calligae +2",
+    "itemId": 23308
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Pummeler's Mask +3",
+    "itemId": 23375
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Pummeler's Lorica +3",
+    "itemId": 23442
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Pummeler's Mufflers +3",
+    "itemId": 23509
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Pummeler's Cuisses +3",
+    "itemId": 23576
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Pummeler's Calligae +3",
+    "itemId": 23643
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Pummeler's Mask +4",
+    "itemId": 23895
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Pummeler's Lorica +4",
+    "itemId": 23940
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Pummeler's Mufflers +4",
+    "itemId": 23985
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Pummeler's Cuisses +4",
+    "itemId": 24030
+  },
+  {
+    "job": "Warrior",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Pummeler's Calligae +4",
+    "itemId": 24075
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Reverence Coronet",
+    "itemId": 27669
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Reverence Surcoat",
+    "itemId": 27813
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Reverence Gauntlets",
+    "itemId": 27949
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Reverence Breeches",
+    "itemId": 28096
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Reverence Leggings",
+    "itemId": 28229
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Reverence Coronet +1",
+    "itemId": 27690
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Reverence Surcoat +1",
+    "itemId": 27834
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Reverence Gauntlets +1",
+    "itemId": 27970
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Reverence Breeches +1",
+    "itemId": 28117
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Reverence Leggings +1",
+    "itemId": 28250
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Reverence Coronet +2",
+    "itemId": 23046
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Reverence Surcoat +2",
+    "itemId": 23113
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Reverence Gauntlets +2",
+    "itemId": 23180
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Reverence Breeches +2",
+    "itemId": 23247
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Reverence Leggings +2",
+    "itemId": 23314
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Reverence Coronet +3",
+    "itemId": 23381
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Reverence Surcoat +3",
+    "itemId": 23448
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Reverence Gauntlets +3",
+    "itemId": 23515
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Reverence Breeches +3",
+    "itemId": 23582
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Reverence Leggings +3",
+    "itemId": 23649
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Reverence Coronet +4",
+    "itemId": 23901
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Reverence Surcoat +4",
+    "itemId": 23946
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Reverence Gauntlets +4",
+    "itemId": 23991
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Reverence Breeches +4",
+    "itemId": 24036
+  },
+  {
+    "job": "Paladin",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Reverence Leggings +4",
+    "itemId": 24081
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Runeist Bandeau",
+    "itemId": 27787
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Runeist Coat",
+    "itemId": 27927
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Runeist Mitons",
+    "itemId": 28067
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Runeist Trousers",
+    "itemId": 28207
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Runeist Bottes",
+    "itemId": 28347
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Runeist Bandeau +1",
+    "itemId": 27706
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Runeist Coat +1",
+    "itemId": 27850
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Runeist Mitons +1",
+    "itemId": 27986
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Runeist Trousers +1",
+    "itemId": 28133
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Runeist Bottes +1",
+    "itemId": 28266
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Runeist Bandeau +2",
+    "itemId": 23062
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Runeist Coat +2",
+    "itemId": 23129
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Runeist Mitons +2",
+    "itemId": 23196
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Rune. Trousers +2",
+    "itemId": 23263
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Runeist Bottes +2",
+    "itemId": 23330
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Runeist Bandeau +3",
+    "itemId": 23397
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Runeist Coat +3",
+    "itemId": 23464
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Runeist Mitons +3",
+    "itemId": 23531
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Rune. Trousers +3",
+    "itemId": 23598
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Runeist Bottes +3",
+    "itemId": 23665
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Runeist Bandeau +4",
+    "itemId": 23917
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Runeist Coat +4",
+    "itemId": 23962
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Runeist Mitons +4",
+    "itemId": 24007
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Rune. Trousers +4",
+    "itemId": 24052
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Runeist Boots +4",
+    "itemId": 24097
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Spaekona's Petasos",
+    "itemId": 27666
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Spaekona's Coat",
+    "itemId": 27810
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Spaekona's Gloves",
+    "itemId": 27946
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Spaekona's Tonban",
+    "itemId": 28093
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Spaekona's Sabots",
+    "itemId": 28226
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Spaekona's Petasos +1",
+    "itemId": 27687
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Spaekona's Coat +1",
+    "itemId": 27831
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Spaekona's Gloves +1",
+    "itemId": 27967
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Spaekona's Tonban +1",
+    "itemId": 28114
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Spaekona's Sabots +1",
+    "itemId": 28247
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Spaekona's Petasos +2",
+    "itemId": 23043
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Spaekona's Coat +2",
+    "itemId": 23110
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Spaekona's Gloves +2",
+    "itemId": 23177
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Spaekona's Tonban +2",
+    "itemId": 23244
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Spaekona's Sabots +2",
+    "itemId": 23311
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Spaekona's Petasos +3",
+    "itemId": 23378
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Spaekona's Coat +3",
+    "itemId": 23445
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Spaekona's Gloves +3",
+    "itemId": 23512
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Spaekona's Tonban +3",
+    "itemId": 23579
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Spaekona's Sabots +3",
+    "itemId": 23646
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Spaekona's Petasos +4",
+    "itemId": 23898
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Spaekona's Coat +4",
+    "itemId": 23943
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Spaekona's Gloves +4",
+    "itemId": 23988
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Spaekona's Tonban +4",
+    "itemId": 24033
+  },
+  {
+    "job": "Black Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Spaekona's Sabots +4",
+    "itemId": 24078
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Theophany Cap",
+    "itemId": 27665
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Theophany Bliaut",
+    "itemId": 27809
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Theophany Mitts",
+    "itemId": 27945
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Theophany Pantaloons",
+    "itemId": 28092
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Theophany Duckbills",
+    "itemId": 28225
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Theophany Cap +1",
+    "itemId": 27686
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Theophany Bliaut +1",
+    "itemId": 27830
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Theophany Mitts +1",
+    "itemId": 27966
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Theophany Pantaloons +1",
+    "itemId": 28113
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Theophany Duckbills +1",
+    "itemId": 28246
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Theophany Cap +2",
+    "itemId": 23042
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Theophany Bliaut +2",
+    "itemId": 23109
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Theophany Mitts +2",
+    "itemId": 23176
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Theophany Pantaloons +2",
+    "itemId": 23243
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Theophany Duckbills +2",
+    "itemId": 23310
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Theophany Cap +3",
+    "itemId": 23377
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Theophany Bliaut +3",
+    "itemId": 23444
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Theophany Mitts +3",
+    "itemId": 23511
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Theophany Pantaloons +3",
+    "itemId": 23578
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Theophany Duckbills +3",
+    "itemId": 23645
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Theophany Cap +4",
+    "itemId": 23897
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Theophany Bliaut +4",
+    "itemId": 23942
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Theophany Mitts +4",
+    "itemId": 23987
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Theophany Pantaloons +4",
+    "itemId": 24032
+  },
+  {
+    "job": "White Mage",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Theophany Duckbills +4",
+    "itemId": 24077
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Totemic Helm",
+    "itemId": 27671
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Totemic Jackcoat",
+    "itemId": 27815
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Totemic Gloves",
+    "itemId": 27951
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Totemic Trousers",
+    "itemId": 28098
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Totemic Gaiters",
+    "itemId": 28231
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Totemic Helm +1",
+    "itemId": 27692
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Totemic Jackcoat +1",
+    "itemId": 27836
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Totemic Gloves +1",
+    "itemId": 27972
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Totemic Trousers +1",
+    "itemId": 28119
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Totemic Gaiters +1",
+    "itemId": 28252
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Totemic Helm +2",
+    "itemId": 23048
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Totemic Jackcoat +2",
+    "itemId": 23115
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Totemic Gloves +2",
+    "itemId": 23182
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Totemic Trousers +2",
+    "itemId": 23249
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Totemic Gaiters +2",
+    "itemId": 23316
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Totemic Helm +3",
+    "itemId": 23383
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Totemic Jackcoat +3",
+    "itemId": 23450
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Totemic Gloves +3",
+    "itemId": 23517
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Totemic Trousers +3",
+    "itemId": 23584
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Totemic Gaiters +3",
+    "itemId": 23651
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Totemic Helm +4",
+    "itemId": 23903
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Totemic Jackcoat +4",
+    "itemId": 23948
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Totemic Gloves +4",
+    "itemId": 23993
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Totemic Trousers +4",
+    "itemId": 24038
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Totemic Gaiters +4",
+    "itemId": 24083
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Vishap Armet",
+    "itemId": 27676
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Vishap Mail",
+    "itemId": 27820
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Vishap Finger Gauntlets",
+    "itemId": 27956
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Vishap Brais",
+    "itemId": 28103
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Vishap Greaves",
+    "itemId": 28236
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Vishap Armet +1",
+    "itemId": 27697
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Vishap Mail +1",
+    "itemId": 27841
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Vishap Finger Gauntlets +1",
+    "itemId": 27977
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Vishap Brais +1",
+    "itemId": 28124
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Vishap Greaves +1",
+    "itemId": 28257
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Vishap Armet +2",
+    "itemId": 23053
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Vishap Mail +2",
+    "itemId": 23120
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Vishap Finger Gauntlets +2",
+    "itemId": 23187
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Vishap Brais +2",
+    "itemId": 23254
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Vishap Greaves +2",
+    "itemId": 23321
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Vishap Armet +3",
+    "itemId": 23388
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Vishap Mail +3",
+    "itemId": 23455
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Vishap Finger Gauntlets +3",
+    "itemId": 23522
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Vishap Brais +3",
+    "itemId": 23589
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Vishap Greaves +3",
+    "itemId": 23656
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Vishap Armet +4",
+    "itemId": 23908
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Vishap Mail +4",
+    "itemId": 23953
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Vishap Finger Gauntlets +4",
+    "itemId": 23998
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Vishap Brais +4",
+    "itemId": 24043
+  },
+  {
+    "job": "Dragoon",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Vishap Greaves +4",
+    "itemId": 24088
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Wakido Kabuto",
+    "itemId": 27674
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Wakido Domaru",
+    "itemId": 27818
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Wakido Kote",
+    "itemId": 27954
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Wakido Haidate",
+    "itemId": 28101
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Wakido Sune-Ate",
+    "itemId": 28234
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Wakido Kabuto +1",
+    "itemId": 27695
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Wakido Domaru +1",
+    "itemId": 27839
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Wakido Kote +1",
+    "itemId": 27975
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Wakido Haidate +1",
+    "itemId": 28122
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Wakido Sune-Ate +1",
+    "itemId": 28255
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Wakido Kabuto +2",
+    "itemId": 23051
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Wakido Domaru +2",
+    "itemId": 23118
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Wakido Kote +2",
+    "itemId": 23185
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Wakido Haidate +2",
+    "itemId": 23252
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Wakido Sune-Ate +2",
+    "itemId": 23319
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Wakido Kabuto +3",
+    "itemId": 23386
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Wakido Domaru +3",
+    "itemId": 23453
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Wakido Kote +3",
+    "itemId": 23520
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Wakido Haidate +3",
+    "itemId": 23587
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Wakido Sune-Ate +3",
+    "itemId": 23654
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "head",
+    "tier": "4",
+    "itemName": "Wakido Kabuto +4",
+    "itemId": 23906
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "body",
+    "tier": "4",
+    "itemName": "Wakido Domaru +4",
+    "itemId": 23951
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "hands",
+    "tier": "4",
+    "itemName": "Wakido Kote +4",
+    "itemId": 23996
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "legs",
+    "tier": "4",
+    "itemName": "Wakido Haidate +4",
+    "itemId": 24041
+  },
+  {
+    "job": "Samurai",
+    "setType": "af3",
+    "slot": "feet",
+    "tier": "4",
+    "itemName": "Wakido Sune-Ate +4",
+    "itemId": 24086
+  }
+]

@@ -1,0 +1,3522 @@
+[
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Amini Gapette",
+    "itemId": 26760
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Amini Caban",
+    "itemId": 26918
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Amini Glovelettes",
+    "itemId": 27072
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Amini Brague",
+    "itemId": 27257
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Amini Bottillons",
+    "itemId": 27431
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Amini Gapette +1",
+    "itemId": 26761
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Amini Caban +1",
+    "itemId": 26919
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Amini Glovelettes +1",
+    "itemId": 27073
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Amini Brague +1",
+    "itemId": 27258
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Amini Bottillons +1",
+    "itemId": 27432
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Amini Gapette +2",
+    "itemId": 23095
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Amini Caban +2",
+    "itemId": 23162
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Amini Glovelettes +2",
+    "itemId": 23229
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Amini Bragues +2",
+    "itemId": 23296
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Amini Bottillons +2",
+    "itemId": 23363
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Amini Gapette +3",
+    "itemId": 23430
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Amini Caban +3",
+    "itemId": 23497
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Amini Glovelettes +3",
+    "itemId": 23564
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Amini Bragues +3",
+    "itemId": 23631
+  },
+  {
+    "job": "Ranger",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Amini Bottillons +3",
+    "itemId": 23698
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Arbatel Bonnet",
+    "itemId": 26778
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Arbatel Gown",
+    "itemId": 26936
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Arbatel Bracers",
+    "itemId": 27090
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Arbatel Pants",
+    "itemId": 27275
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Arbatel Loafers",
+    "itemId": 27449
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Arbatel Bonnet +1",
+    "itemId": 26779
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Arbatel Gown +1",
+    "itemId": 26937
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Arbatel Bracers +1",
+    "itemId": 27091
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Arbatel Pants +1",
+    "itemId": 27276
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Arbatel Loafers +1",
+    "itemId": 27450
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Arbatel Bonnet +2",
+    "itemId": 23104
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Arbatel Gown +2",
+    "itemId": 23171
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Arbatel Bracers +2",
+    "itemId": 23238
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Arbatel Pants +2",
+    "itemId": 23305
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Arbatel Loafers +2",
+    "itemId": 23372
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Arbatel Bonnet +3",
+    "itemId": 23439
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Arbatel Gown +3",
+    "itemId": 23506
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Arbatel Bracers +3",
+    "itemId": 23573
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Arbatel Pants +3",
+    "itemId": 23640
+  },
+  {
+    "job": "Scholar",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Arbatel Loafers +3",
+    "itemId": 23707
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Azimuth Hood",
+    "itemId": 26780
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Azimuth Coat",
+    "itemId": 26938
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Azimuth Gloves",
+    "itemId": 27092
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Azimuth Tights",
+    "itemId": 27277
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Azimuth Gaiters",
+    "itemId": 27451
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Azimuth Hood +1",
+    "itemId": 26781
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Azimuth Coat +1",
+    "itemId": 26939
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Azimuth Gloves +1",
+    "itemId": 27093
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Azimuth Tights +1",
+    "itemId": 27278
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Azimuth Gaiters +1",
+    "itemId": 27452
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Azimuth Hood +2",
+    "itemId": 23105
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Azimuth Coat +2",
+    "itemId": 23172
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Azimuth Gloves +2",
+    "itemId": 23239
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Azimuth Tights +2",
+    "itemId": 23306
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Azimuth Gaiters +2",
+    "itemId": 23373
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Azimuth Hood +3",
+    "itemId": 23440
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Azimuth Coat +3",
+    "itemId": 23507
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Azimuth Gloves +3",
+    "itemId": 23574
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Azimuth Tights +3",
+    "itemId": 23641
+  },
+  {
+    "job": "Geomancer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Azimuth Gaiters +3",
+    "itemId": 23708
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Beckoner's Horn",
+    "itemId": 26768
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Beckoner's Doublet",
+    "itemId": 26926
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Beckoner's Bracers",
+    "itemId": 27080
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Beckoner's Spats",
+    "itemId": 27265
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Beckoner's Pigaches",
+    "itemId": 27439
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Beckoner's Horn +1",
+    "itemId": 26769
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Beckoner's Doublet +1",
+    "itemId": 26927
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Beckoner's Bracers +1",
+    "itemId": 27081
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Beckoner's Spats +1",
+    "itemId": 27266
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Beckoner's Pigaches +1",
+    "itemId": 27440
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Beckoner's Horn +2",
+    "itemId": 23099
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Beckoner's Doublet +2",
+    "itemId": 23166
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Beckoner's Bracers +2",
+    "itemId": 23233
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Beckoner's Spats +2",
+    "itemId": 23300
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Beckoner's Pigaches +2",
+    "itemId": 23367
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Beckoner's Horn +3",
+    "itemId": 23434
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Beckoner's Doublet +3",
+    "itemId": 23501
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Beckoner's Bracers +3",
+    "itemId": 23568
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Beckoner's Spats +3",
+    "itemId": 23635
+  },
+  {
+    "job": "Summoner",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Beckoner's Pigaches +3",
+    "itemId": 23702
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Bhikku Crown",
+    "itemId": 26742
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Bhikku Cyclas",
+    "itemId": 26900
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Bhikku Gloves",
+    "itemId": 27054
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Bhikku Hose",
+    "itemId": 27239
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Bhikku Gaiters",
+    "itemId": 27413
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Bhikku Crown +1",
+    "itemId": 26743
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Bhikku Cyclas +1",
+    "itemId": 26901
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Bhikku Gloves +1",
+    "itemId": 27055
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Bhikku Hose +1",
+    "itemId": 27240
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Bhikku Gaiters +1",
+    "itemId": 27414
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Bhikku Crown +2",
+    "itemId": 23086
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Bhikku Cyclas +2",
+    "itemId": 23153
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Bhikku Gloves +2",
+    "itemId": 23220
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Bhikku Hose +2",
+    "itemId": 23287
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Bhikku Gaiters +2",
+    "itemId": 23354
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Bhikku Crown +3",
+    "itemId": 23421
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Bhikku Cyclas +3",
+    "itemId": 23488
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Bhikku Gloves +3",
+    "itemId": 23555
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Bhikku Hose +3",
+    "itemId": 23622
+  },
+  {
+    "job": "Monk",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Bhikku Gaiters +3",
+    "itemId": 23689
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Boii Mask",
+    "itemId": 26740
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Boii Lorica",
+    "itemId": 26898
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Boii Mufflers",
+    "itemId": 27052
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Boii Cuisses",
+    "itemId": 27237
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Boii Calligae",
+    "itemId": 27411
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Boii Mask +1",
+    "itemId": 26741
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Boii Lorica +1",
+    "itemId": 26899
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Boii Mufflers +1",
+    "itemId": 27053
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Boii Cuisses +1",
+    "itemId": 27238
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Boii Calligae +1",
+    "itemId": 27412
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Boii Mask +2",
+    "itemId": 23085
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Boii Lorica +2",
+    "itemId": 23152
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Boii Mufflers +2",
+    "itemId": 23219
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Boii Cuisses +2",
+    "itemId": 23286
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Boii Calligae +2",
+    "itemId": 23353
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Boii Mask +3",
+    "itemId": 23420
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Boii Lorica +3",
+    "itemId": 23487
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Boii Mufflers +3",
+    "itemId": 23554
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Boii Cuisses +3",
+    "itemId": 23621
+  },
+  {
+    "job": "Warrior",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Boii Calligae +3",
+    "itemId": 23688
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Chasseur's Tricorne",
+    "itemId": 26772
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Chasseur's Frac",
+    "itemId": 26930
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Chasseur's Gants",
+    "itemId": 27084
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Chasseur's Culottes",
+    "itemId": 27269
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Chasseur's Bottes",
+    "itemId": 27443
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Chasseur's Tricorne +1",
+    "itemId": 26773
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Chasseur's Frac +1",
+    "itemId": 26931
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Chasseur's Gants +1",
+    "itemId": 27085
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Chasseur's Culottes +1",
+    "itemId": 27270
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Chasseur's Bottes +1",
+    "itemId": 27444
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Chasseur's Tricorne +2",
+    "itemId": 23101
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Chasseur's Frac +2",
+    "itemId": 23168
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Chasseur's Gants +2",
+    "itemId": 23235
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Chasseur's Culottes +2",
+    "itemId": 23302
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Chasseur's Bottes +2",
+    "itemId": 23369
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Chasseur's Tricorne +3",
+    "itemId": 23436
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Chasseur's Frac +3",
+    "itemId": 23503
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Chasseur's Gants +3",
+    "itemId": 23570
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Chasseur's Culottes +3",
+    "itemId": 23637
+  },
+  {
+    "job": "Corsair",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Chasseur's Bottes +3",
+    "itemId": 23704
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Chevalier's Armet",
+    "itemId": 26752
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Chevalier's Cuirass",
+    "itemId": 26910
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Chevalier's Gauntlets",
+    "itemId": 27064
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Chevalier's Cuisses",
+    "itemId": 27249
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Chevalier's Sabatons",
+    "itemId": 27423
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Chevalier's Armet +1",
+    "itemId": 26753
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Chevalier's Cuirass +1",
+    "itemId": 26911
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Chevalier's Gauntlets +1",
+    "itemId": 27065
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Chevalier's Cuisses +1",
+    "itemId": 27250
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Chevalier's Sabatons +1",
+    "itemId": 27424
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Chevalier's Armet +2",
+    "itemId": 23091
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Chevalier's Cuirass +2",
+    "itemId": 23158
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Chevalier's Gauntlets +2",
+    "itemId": 23225
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Chevalier's Cuisses +2",
+    "itemId": 23292
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Chevalier's Sabatons +2",
+    "itemId": 23359
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Chevalier's Armet +3",
+    "itemId": 23426
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Chevalier's Cuirass +3",
+    "itemId": 23493
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Chevalier's Gauntlets +3",
+    "itemId": 23560
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Chevalier's Cuisses +3",
+    "itemId": 23627
+  },
+  {
+    "job": "Paladin",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Chevalier's Sabatons +3",
+    "itemId": 23694
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Ebers Cap",
+    "itemId": 26744
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Ebers Bliaut",
+    "itemId": 26902
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Ebers Mitts",
+    "itemId": 27056
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Ebers Pantaloons",
+    "itemId": 27241
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Ebers Duckbills",
+    "itemId": 27415
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Ebers Cap +1",
+    "itemId": 26745
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Ebers Bliaut +1",
+    "itemId": 26903
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Ebers Mitts +1",
+    "itemId": 27057
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Ebers Pantaloons +1",
+    "itemId": 27242
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Ebers Duckbills +1",
+    "itemId": 27416
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Ebers Cap +2",
+    "itemId": 23087
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Ebers Bliaut +2",
+    "itemId": 23154
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Ebers Mitts +2",
+    "itemId": 23221
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Ebers Pantaloons +2",
+    "itemId": 23288
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Ebers Duckbills +2",
+    "itemId": 23355
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Ebers Cap +3",
+    "itemId": 23422
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Ebers Bliaut +3",
+    "itemId": 23489
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Ebers Mitts +3",
+    "itemId": 23556
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Ebers Pantaloons +3",
+    "itemId": 23623
+  },
+  {
+    "job": "White Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Ebers Duckbills +3",
+    "itemId": 23690
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Erilaz Galea",
+    "itemId": 26782
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Erilaz Surcoat",
+    "itemId": 26940
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Erilaz Gauntlets",
+    "itemId": 27094
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Erilaz Leg Guards",
+    "itemId": 27279
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Erilaz Greaves",
+    "itemId": 27453
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Erilaz Galea +1",
+    "itemId": 26783
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Erilaz Surcoat +1",
+    "itemId": 26941
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Erilaz Gauntlets +1",
+    "itemId": 27095
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Erilaz Leg Guards +1",
+    "itemId": 27280
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Erilaz Greaves +1",
+    "itemId": 27454
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Erilaz Galea +2",
+    "itemId": 23106
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Erilaz Surcoat +2",
+    "itemId": 23173
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Erilaz Gauntlets +2",
+    "itemId": 23240
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Erilaz Leg Guards +2",
+    "itemId": 23307
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Erilaz Greaves +2",
+    "itemId": 23374
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Erilaz Galea +3",
+    "itemId": 23441
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Erilaz Surcoat +3",
+    "itemId": 23508
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Erilaz Gauntlets +3",
+    "itemId": 23575
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Erilaz Leg Guards +3",
+    "itemId": 23642
+  },
+  {
+    "job": "Rune Fencer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Erilaz Greaves +3",
+    "itemId": 23709
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Fili Calot",
+    "itemId": 26758
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Fili Hongreline",
+    "itemId": 26916
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Fili Manchettes",
+    "itemId": 27070
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Fili Rhingrave",
+    "itemId": 27255
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Fili Cothurnes",
+    "itemId": 27429
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Fili Calot +1",
+    "itemId": 26759
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Fili Hongreline +1",
+    "itemId": 26917
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Fili Manchettes +1",
+    "itemId": 27071
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Fili Rhingrave +1",
+    "itemId": 27256
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Fili Cothurnes +1",
+    "itemId": 27430
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Fili Calot +2",
+    "itemId": 23094
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Fili Hongreline +2",
+    "itemId": 23161
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Fili Manchettes +2",
+    "itemId": 23228
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Fili Rhingrave +2",
+    "itemId": 23295
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Fili Cothurnes +2",
+    "itemId": 23362
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Fili Calot +3",
+    "itemId": 23429
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Fili Hongreline +3",
+    "itemId": 23496
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Fili Manchettes +3",
+    "itemId": 23563
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Fili Rhingrave +3",
+    "itemId": 23630
+  },
+  {
+    "job": "Bard",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Fili Cothurnes +3",
+    "itemId": 23697
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Hashishin Kavuk",
+    "itemId": 26770
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Hashishin Mintan",
+    "itemId": 26928
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Hashishin Bazubands",
+    "itemId": 27082
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Hashishin Tayt",
+    "itemId": 27267
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Hashishin Basmak",
+    "itemId": 27441
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Hashishin Kavuk +1",
+    "itemId": 26771
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Hashishin Mintan +1",
+    "itemId": 26929
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Hashishin Bazubands +1",
+    "itemId": 27083
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Hashishin Tayt +1",
+    "itemId": 27268
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Hashishin Basmak +1",
+    "itemId": 27442
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Hashishin Kavuk +2",
+    "itemId": 23100
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Hashishin Mintan +2",
+    "itemId": 23167
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Hashishin Bazubands +2",
+    "itemId": 23234
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Hashishin Tayt +2",
+    "itemId": 23301
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Hashishin Basmak +2",
+    "itemId": 23368
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Hashishin Kavuk +3",
+    "itemId": 23435
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Hashishin Mintan +3",
+    "itemId": 23502
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Hashishin Bazubands +3",
+    "itemId": 23569
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Hashishin Tayt +3",
+    "itemId": 23636
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Hashishin Basmak +3",
+    "itemId": 23703
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Hattori Zukin",
+    "itemId": 26764
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Hattori Ningi",
+    "itemId": 26922
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Hattori Tekko",
+    "itemId": 27076
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Hattori Hakama",
+    "itemId": 27261
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Hattori Kyahan",
+    "itemId": 27435
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Hattori Zukin +1",
+    "itemId": 26765
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Hattori Ningi +1",
+    "itemId": 26923
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Hattori Tekko +1",
+    "itemId": 27077
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Hattori Hakama +1",
+    "itemId": 27262
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Hattori Kyahan +1",
+    "itemId": 27436
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Hattori Zukin +2",
+    "itemId": 23097
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Hattori Ningi +2",
+    "itemId": 23164
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Hattori Tekko +2",
+    "itemId": 23231
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Hattori Hakama +2",
+    "itemId": 23298
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Hattori Kyahan +2",
+    "itemId": 23365
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Hattori Zukin +3",
+    "itemId": 23432
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Hattori Ningi +3",
+    "itemId": 23499
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Hattori Tekko +3",
+    "itemId": 23566
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Hattori Hakama +3",
+    "itemId": 23633
+  },
+  {
+    "job": "Ninja",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Hattori Kyahan +3",
+    "itemId": 23700
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Heathen's Burgeonet",
+    "itemId": 26754
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Heathen's Cuirass",
+    "itemId": 26912
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Heathen's Gauntlets",
+    "itemId": 27066
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Heathen's Flanchard",
+    "itemId": 27251
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Heathen's Sollerets",
+    "itemId": 27425
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Heathen's Burgeonet +1",
+    "itemId": 26755
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Heathen's Cuirass +1",
+    "itemId": 26913
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Heathen's Gauntlets +1",
+    "itemId": 27067
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Heathen's Flanchard +1",
+    "itemId": 27252
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Heathen's Sollerets +1",
+    "itemId": 27426
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Heathen's Burgeonet +2",
+    "itemId": 23092
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Heathen's Cuirass +2",
+    "itemId": 23159
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Heathen's Gauntlets +2",
+    "itemId": 23226
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Heathen's Flanchard +2",
+    "itemId": 23293
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Heathen's Sollerets +2",
+    "itemId": 23360
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Heathen's Burgeonet +3",
+    "itemId": 23427
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Heathen's Cuirass +3",
+    "itemId": 23494
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Heathen's Gauntlets +3",
+    "itemId": 23561
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Heathen's Flanchards +3",
+    "itemId": 23628
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Heathen's Sollerets +3",
+    "itemId": 23695
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Karagoz Cappello",
+    "itemId": 26774
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Karagoz Farsetto",
+    "itemId": 26932
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Karagoz Guanti",
+    "itemId": 27086
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Karagoz Pantaloni",
+    "itemId": 27271
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Karagoz Scarpe",
+    "itemId": 27445
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Karagoz Cappello +1",
+    "itemId": 26775
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Karagoz Farsetto +1",
+    "itemId": 26933
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Karagoz Guanti +1",
+    "itemId": 27087
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Karagoz Pantaloni +1",
+    "itemId": 27272
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Karagoz Scarpe +1",
+    "itemId": 27446
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Karagoz Cappello +2",
+    "itemId": 23102
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Karagoz Farsetto +2",
+    "itemId": 23169
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Karagoz Guanti +2",
+    "itemId": 23236
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Karagoz Pantaloni +2",
+    "itemId": 23303
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Karagoz Scarpe +2",
+    "itemId": 23370
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Karagoz Cappello +3",
+    "itemId": 23437
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Karagoz Farsetto +3",
+    "itemId": 23504
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Karagoz Guanti +3",
+    "itemId": 23571
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Karagoz Pantaloni +3",
+    "itemId": 23638
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Karagoz Scarpe +3",
+    "itemId": 23705
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Kasuga Kabuto",
+    "itemId": 26762
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Kasuga Domaru",
+    "itemId": 26920
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Kasuga Kote",
+    "itemId": 27074
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Kasuga Haidate",
+    "itemId": 27259
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Kasuga Sune-Ate",
+    "itemId": 27433
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Kasuga Kabuto +1",
+    "itemId": 26763
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Kasuga Domaru +1",
+    "itemId": 26921
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Kasuga Kote +1",
+    "itemId": 27075
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Kasuga Haidate +1",
+    "itemId": 27260
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Kasuga Sune-Ate +1",
+    "itemId": 27434
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Kasuga Kabuto +2",
+    "itemId": 23096
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Kasuga Domaru +2",
+    "itemId": 23163
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Kasuga Kote +2",
+    "itemId": 23230
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Kasuga Haidate +2",
+    "itemId": 23297
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Kasuga Sune-Ate +2",
+    "itemId": 23364
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Kasuga Kabuto +3",
+    "itemId": 23431
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Kasuga Domaru +3",
+    "itemId": 23498
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Kasuga Kote +3",
+    "itemId": 23565
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Kasuga Haidate +3",
+    "itemId": 23632
+  },
+  {
+    "job": "Samurai",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Kasuga Sune-Ate +3",
+    "itemId": 23699
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Lethargy Chappel",
+    "itemId": 26748
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Lethargy Sayon",
+    "itemId": 26906
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Lethargy Gantherots",
+    "itemId": 27060
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Lethargy Fuseau",
+    "itemId": 27245
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Lethargy Houseaux",
+    "itemId": 27419
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Lethargy Chappel +1",
+    "itemId": 26749
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Lethargy Sayon +1",
+    "itemId": 26907
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Lethargy Gantherots +1",
+    "itemId": 27061
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Lethargy Fuseau +1",
+    "itemId": 27246
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Lethargy Houseaux +1",
+    "itemId": 27420
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Lethargy Chappel +2",
+    "itemId": 23089
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Lethargy Sayon +2",
+    "itemId": 23156
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Lethargy Gantherots +2",
+    "itemId": 23223
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Lethargy Fuseau +2",
+    "itemId": 23290
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Lethargy Houseaux +2",
+    "itemId": 23357
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Lethargy Chappel +3",
+    "itemId": 23424
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Lethargy Sayon +3",
+    "itemId": 23491
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Lethargy Gantherots +3",
+    "itemId": 23558
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Lethargy Fuseau +3",
+    "itemId": 23625
+  },
+  {
+    "job": "Red Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Lethargy Houseaux +3",
+    "itemId": 23692
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Maculele Tiara",
+    "itemId": 26776
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Maculele Casaque",
+    "itemId": 26934
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Maculele Bangles",
+    "itemId": 27088
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Maculele Tights",
+    "itemId": 27273
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Maculele Toe Shoes",
+    "itemId": 27447
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Maculele Tiara +1",
+    "itemId": 26777
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Maculele Casaque +1",
+    "itemId": 26935
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Maculele Bangles +1",
+    "itemId": 27089
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Maculele Tights +1",
+    "itemId": 27274
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Maculele Toe Shoes +1",
+    "itemId": 27448
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Maculele Tiara +2",
+    "itemId": 23103
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Maculele Casaque +2",
+    "itemId": 23170
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Maculele Bangles +2",
+    "itemId": 23237
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Maculele Tights +2",
+    "itemId": 23304
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Maculele Toe Shoes +2",
+    "itemId": 23371
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Maculele Tiara +3",
+    "itemId": 23438
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Maculele Casaque +3",
+    "itemId": 23505
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Maculele Bangles +3",
+    "itemId": 23572
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Maculele Tights +3",
+    "itemId": 23639
+  },
+  {
+    "job": "Dancer",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Maculele Toe Shoes +3",
+    "itemId": 23706
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Nukumi Cabasset",
+    "itemId": 26756
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Nukumi Gausape",
+    "itemId": 26914
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Nukumi Manoplas",
+    "itemId": 27068
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Nukumi Quijotes",
+    "itemId": 27253
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Nukumi Ocreae",
+    "itemId": 27427
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Nukumi Cabasset +1",
+    "itemId": 26757
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Nukumi Gausape +1",
+    "itemId": 26915
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Nukumi Manoplas +1",
+    "itemId": 27069
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Nukumi Quijotes +1",
+    "itemId": 27254
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Nukumi Ocreae +1",
+    "itemId": 27428
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Nukumi Cabasset +2",
+    "itemId": 23093
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Nukumi Gausape +2",
+    "itemId": 23160
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Nukumi Manoplas +2",
+    "itemId": 23227
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Nukumi Quijotes +2",
+    "itemId": 23294
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Nukumi Ocreae +2",
+    "itemId": 23361
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Nukumi Cabasset +3",
+    "itemId": 23428
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Nukumi Gausape +3",
+    "itemId": 23495
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Nukumi Manoplas +3",
+    "itemId": 23562
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Nukumi Quijotes +3",
+    "itemId": 23629
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Nukumi Ocreae +3",
+    "itemId": 23696
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Peltast's Mezail",
+    "itemId": 26766
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Peltast's Plackart",
+    "itemId": 26924
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Peltast's Vambraces",
+    "itemId": 27078
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Peltast's Cuissots",
+    "itemId": 27263
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Peltast's Schynbalds",
+    "itemId": 27437
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Peltast's Mezail +1",
+    "itemId": 26767
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Peltast's Plackart +1",
+    "itemId": 26925
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Peltast's Vambraces +1",
+    "itemId": 27079
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Peltast's Cuissots +1",
+    "itemId": 27264
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Peltast's Schynbalds +1",
+    "itemId": 27438
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Peltast's Mezail +2",
+    "itemId": 23098
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Peltast's Plackart +2",
+    "itemId": 23165
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Peltast's Vambraces +2",
+    "itemId": 23232
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Peltast's Cuissots +2",
+    "itemId": 23299
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Peltast's Schynbalds +2",
+    "itemId": 23366
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Peltast's Mezail +3",
+    "itemId": 23433
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Peltast's Plackart +3",
+    "itemId": 23500
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Peltast's Vambraces +3",
+    "itemId": 23567
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Peltast's Cuissots +3",
+    "itemId": 23634
+  },
+  {
+    "job": "Dragoon",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Peltast's Schynbalds +3",
+    "itemId": 23701
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Skulker's Bonnet",
+    "itemId": 26750
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Skulker's Vest",
+    "itemId": 26908
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Skulker's Armlets",
+    "itemId": 27062
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Skulker's Culottes",
+    "itemId": 27247
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Skulker's Poulaines",
+    "itemId": 27421
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Skulker's Bonnet +1",
+    "itemId": 26751
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Skulker's Vest +1",
+    "itemId": 26909
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Skulker's Armlets +1",
+    "itemId": 27063
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Skulker's Culottes +1",
+    "itemId": 27248
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Skulker's Poulaines +1",
+    "itemId": 27422
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Skulker's Bonnet +2",
+    "itemId": 23090
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Skulker's Vest +2",
+    "itemId": 23157
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Skulker's Armlets +2",
+    "itemId": 23224
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Skulker's Culottes +2",
+    "itemId": 23291
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Skulker's Poulaines +2",
+    "itemId": 23358
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Skulker's Bonnet +3",
+    "itemId": 23425
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Skulker's Vest +3",
+    "itemId": 23492
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Skulker's Armlets +3",
+    "itemId": 23559
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Skulker's Culottes +3",
+    "itemId": 23626
+  },
+  {
+    "job": "Thief",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Skulker's Poulaines +3",
+    "itemId": 23693
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Wicce Petasos",
+    "itemId": 26746
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Wicce Coat",
+    "itemId": 26904
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Wicce Gloves",
+    "itemId": 27058
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Wicce Chausses",
+    "itemId": 27243
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Wicce Sabots",
+    "itemId": 27417
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Wicce Petasos +1",
+    "itemId": 26747
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Wicce Coat +1",
+    "itemId": 26905
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Wicce Gloves +1",
+    "itemId": 27059
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Wicce Chausses +1",
+    "itemId": 27244
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Wicce Sabots +1",
+    "itemId": 27418
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Wicce Petasos +2",
+    "itemId": 23088
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Wicce Coat +2",
+    "itemId": 23155
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Wicce Gloves +2",
+    "itemId": 23222
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Wicce Chausses +2",
+    "itemId": 23289
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Wicce Sabots +2",
+    "itemId": 23356
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "head",
+    "tier": "3",
+    "itemName": "Wicce Petasos +3",
+    "itemId": 23423
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "body",
+    "tier": "3",
+    "itemName": "Wicce Coat +3",
+    "itemId": 23490
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "hands",
+    "tier": "3",
+    "itemName": "Wicce Gloves +3",
+    "itemId": 23557
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "legs",
+    "tier": "3",
+    "itemName": "Wicce Chausses +3",
+    "itemId": 23624
+  },
+  {
+    "job": "Black Mage",
+    "setType": "empyrean",
+    "slot": "feet",
+    "tier": "3",
+    "itemName": "Wicce Sabots +3",
+    "itemId": 23691
+  }
+]

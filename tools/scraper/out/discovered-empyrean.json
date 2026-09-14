@@ -1,0 +1,116 @@
+{
+  "matched": [
+    {
+      "job": "Ranger",
+      "setType": "empyrean",
+      "setPageTitle": "Amini Attire Set"
+    },
+    {
+      "job": "Scholar",
+      "setType": "empyrean",
+      "setPageTitle": "Arbatel Attire Set"
+    },
+    {
+      "job": "Geomancer",
+      "setType": "empyrean",
+      "setPageTitle": "Azimuth Attire Set"
+    },
+    {
+      "job": "Summoner",
+      "setType": "empyrean",
+      "setPageTitle": "Beckoner's Attire Set"
+    },
+    {
+      "job": "Monk",
+      "setType": "empyrean",
+      "setPageTitle": "Bhikku Attire Set"
+    },
+    {
+      "job": "Warrior",
+      "setType": "empyrean",
+      "setPageTitle": "Boii Armor Set"
+    },
+    {
+      "job": "Corsair",
+      "setType": "empyrean",
+      "setPageTitle": "Chasseur's Attire Set"
+    },
+    {
+      "job": "Paladin",
+      "setType": "empyrean",
+      "setPageTitle": "Chevalier's Armor Set"
+    },
+    {
+      "job": "White Mage",
+      "setType": "empyrean",
+      "setPageTitle": "Ebers Attire Set"
+    },
+    {
+      "job": "Rune Fencer",
+      "setType": "empyrean",
+      "setPageTitle": "Erilaz Armor Set"
+    },
+    {
+      "job": "Bard",
+      "setType": "empyrean",
+      "setPageTitle": "Fili Attire Set"
+    },
+    {
+      "job": "Blue Mage",
+      "setType": "empyrean",
+      "setPageTitle": "Hashishin Attire Set"
+    },
+    {
+      "job": "Ninja",
+      "setType": "empyrean",
+      "setPageTitle": "Hattori Garb Set"
+    },
+    {
+      "job": "Dark Knight",
+      "setType": "empyrean",
+      "setPageTitle": "Heathen's Armor Set"
+    },
+    {
+      "job": "Puppetmaster",
+      "setType": "empyrean",
+      "setPageTitle": "Karagoz Attire Set"
+    },
+    {
+      "job": "Samurai",
+      "setType": "empyrean",
+      "setPageTitle": "Kasuga Armor Set"
+    },
+    {
+      "job": "Red Mage",
+      "setType": "empyrean",
+      "setPageTitle": "Lethargy Armor Set"
+    },
+    {
+      "job": "Dancer",
+      "setType": "empyrean",
+      "setPageTitle": "Maculele Attire Set"
+    },
+    {
+      "job": "Beastmaster",
+      "setType": "empyrean",
+      "setPageTitle": "Nukumi Armor Set"
+    },
+    {
+      "job": "Dragoon",
+      "setType": "empyrean",
+      "setPageTitle": "Peltast's Armor Set"
+    },
+    {
+      "job": "Thief",
+      "setType": "empyrean",
+      "setPageTitle": "Skulker's Attire Set"
+    },
+    {
+      "job": "Black Mage",
+      "setType": "empyrean",
+      "setPageTitle": "Wicce Attire Set"
+    }
+  ],
+  "unmatched": [],
+  "missingJobs": []
+}

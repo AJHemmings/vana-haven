@@ -1,0 +1,116 @@
+{
+  "matched": [
+    {
+      "job": "Scholar",
+      "setType": "af3",
+      "setPageTitle": "Academic's Attire Set"
+    },
+    {
+      "job": "Monk",
+      "setType": "af3",
+      "setPageTitle": "Anchorite's Attire Set"
+    },
+    {
+      "job": "Blue Mage",
+      "setType": "af3",
+      "setPageTitle": "Assimilator's Attire Set"
+    },
+    {
+      "job": "Red Mage",
+      "setType": "af3",
+      "setPageTitle": "Atrophy Armor Set"
+    },
+    {
+      "job": "Bard",
+      "setType": "af3",
+      "setPageTitle": "Brioso Attire Set"
+    },
+    {
+      "job": "Summoner",
+      "setType": "af3",
+      "setPageTitle": "Convoker's Attire Set"
+    },
+    {
+      "job": "Puppetmaster",
+      "setType": "af3",
+      "setPageTitle": "Foire Attire Set"
+    },
+    {
+      "job": "Geomancer",
+      "setType": "af3",
+      "setPageTitle": "Geomancy Attire Set"
+    },
+    {
+      "job": "Ninja",
+      "setType": "af3",
+      "setPageTitle": "Hachiya Garb Set"
+    },
+    {
+      "job": "Dark Knight",
+      "setType": "af3",
+      "setPageTitle": "Ignominy Armor Set"
+    },
+    {
+      "job": "Corsair",
+      "setType": "af3",
+      "setPageTitle": "Laksamana's Attire Set"
+    },
+    {
+      "job": "Dancer",
+      "setType": "af3",
+      "setPageTitle": "Maxixi Attire Set"
+    },
+    {
+      "job": "Ranger",
+      "setType": "af3",
+      "setPageTitle": "Orion Attire Set"
+    },
+    {
+      "job": "Thief",
+      "setType": "af3",
+      "setPageTitle": "Pillager's Attire Set"
+    },
+    {
+      "job": "Warrior",
+      "setType": "af3",
+      "setPageTitle": "Pummeler's Armor Set"
+    },
+    {
+      "job": "Paladin",
+      "setType": "af3",
+      "setPageTitle": "Reverence Armor Set"
+    },
+    {
+      "job": "Rune Fencer",
+      "setType": "af3",
+      "setPageTitle": "Runeist Armor Set"
+    },
+    {
+      "job": "Black Mage",
+      "setType": "af3",
+      "setPageTitle": "Spaekona's Attire Set"
+    },
+    {
+      "job": "White Mage",
+      "setType": "af3",
+      "setPageTitle": "Theophany Attire Set"
+    },
+    {
+      "job": "Beastmaster",
+      "setType": "af3",
+      "setPageTitle": "Totemic Armor Set"
+    },
+    {
+      "job": "Dragoon",
+      "setType": "af3",
+      "setPageTitle": "Vishap Armor Set"
+    },
+    {
+      "job": "Samurai",
+      "setType": "af3",
+      "setPageTitle": "Wakido Armor Set"
+    }
+  ],
+  "unmatched": [],
+  "missingJobs": []
+}
