@@ -1,0 +1,2282 @@
+[
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Abyss Burgeonet",
+    "itemId": 15079
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Abyss Cuirass",
+    "itemId": 15094
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Abyss Gauntlets",
+    "itemId": 15109
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Abyss Flanchard",
+    "itemId": 15124
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Abyss Sollerets",
+    "itemId": 15139
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Abyss Burgeonet +1",
+    "itemId": 15252
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Abyss Cuirass +1",
+    "itemId": 14507
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Abyss Gauntlets +1",
+    "itemId": 14916
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Abyss Flanchard +1",
+    "itemId": 15587
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Abyss Sollerets +1",
+    "itemId": 15672
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Abyss Burgeonet +2",
+    "itemId": 10657
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Abyss Cuirass +2",
+    "itemId": 10677
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Abyss Gauntlets +2",
+    "itemId": 10697
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Abyss Flanchard +2",
+    "itemId": 10717
+  },
+  {
+    "job": "Dark Knight",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Abyss Sollerets +2",
+    "itemId": 10737
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Argute Mortarboard",
+    "itemId": 11480
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Argute Gown",
+    "itemId": 11307
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Argute Bracers",
+    "itemId": 15040
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Argute Pants",
+    "itemId": 16362
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Argute Loafers",
+    "itemId": 11398
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Argute Mortarboard +1",
+    "itemId": 11481
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Argute Gown +1",
+    "itemId": 11308
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Argute Bracers +1",
+    "itemId": 15041
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Argute Pants +1",
+    "itemId": 16363
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Argute Loafers +1",
+    "itemId": 11399
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Argute Mortarboard +2",
+    "itemId": null
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Argute Gown +2",
+    "itemId": null
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Argute Bracers +2",
+    "itemId": null
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Argute Pants +2",
+    "itemId": null
+  },
+  {
+    "job": "Scholar",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Argute Loafers +2",
+    "itemId": null
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Assassin's Bonnet",
+    "itemId": 15077
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Assassin's Vest",
+    "itemId": 15092
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Assassin's Armlets",
+    "itemId": 15107
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Assassin's Culotte",
+    "itemId": 15122
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Assassin's Poulaines",
+    "itemId": 15137
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Assassin's Bonnet +1",
+    "itemId": 15250
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Assassin's Vest +1",
+    "itemId": 14505
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Assassin's Armlets +1",
+    "itemId": 14914
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Assassin's Culottes +1",
+    "itemId": 15585
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Assassin's Poulaines +1",
+    "itemId": 15670
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Assassin's Bonnet +2",
+    "itemId": null
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Assassin's Vest +2",
+    "itemId": null
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Assassin's Armlets +2",
+    "itemId": null
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Assassin's Culottes +2",
+    "itemId": null
+  },
+  {
+    "job": "Thief",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Assassin's Poulaines +2",
+    "itemId": null
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Bard's Roundlet",
+    "itemId": 15081
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Bard's Justaucorps",
+    "itemId": 15096
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Bard's Cuffs",
+    "itemId": 15111
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Bard's Cannions",
+    "itemId": 15126
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Bard's Slippers",
+    "itemId": 15141
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Bard's Roundlet +1",
+    "itemId": 15254
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Bard's Justaucorps +1",
+    "itemId": 14509
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Bard's Cuffs +1",
+    "itemId": 14918
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Bard's Cannions +1",
+    "itemId": 15589
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Bard's Slippers +1",
+    "itemId": 15674
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Bard's Roundlet +2",
+    "itemId": null
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Bard's Justaucorps +2",
+    "itemId": null
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Bard's Cuffs +2",
+    "itemId": null
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Bard's Cannions +2",
+    "itemId": null
+  },
+  {
+    "job": "Bard",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Bard's Slippers +2",
+    "itemId": null
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Cleric's Cap",
+    "itemId": 15074
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Cleric's Bliaut",
+    "itemId": 15089
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Cleric's Mitts",
+    "itemId": 15104
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Cleric's Pantaloons",
+    "itemId": 15119
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Cleric's Duckbills",
+    "itemId": 15134
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Cleric's Cap +1",
+    "itemId": 15247
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Cleric's Bliaut +1",
+    "itemId": 14502
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Cleric's Mitts +1",
+    "itemId": 14911
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Cleric's Pantaloons +1",
+    "itemId": 15582
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Cleric's Duckbills +1",
+    "itemId": 15667
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Cleric's Cap +2",
+    "itemId": null
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Cleric's Bliaut +2",
+    "itemId": 10672
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Cleric's Mitts +2",
+    "itemId": null
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Cleric's Pantaloons +2",
+    "itemId": null
+  },
+  {
+    "job": "White Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Cleric's Duckbills +2",
+    "itemId": null
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Commodore Tricorne",
+    "itemId": 11468
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Commodore Frac",
+    "itemId": 11295
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Commodore Gants",
+    "itemId": 15028
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Commodore Trews",
+    "itemId": 16349
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Commodore Bottes",
+    "itemId": 11385
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Commodore Tricorne +1",
+    "itemId": 11469
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Commodore Frac +1",
+    "itemId": 11296
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Commodore Gants +1",
+    "itemId": 15029
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Commodore Trews +1",
+    "itemId": 16350
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Commodore Bottes +1",
+    "itemId": 11386
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Commodore's Tricorne +2",
+    "itemId": null
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Commodore Frac +2",
+    "itemId": null
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Commodore Gants +2",
+    "itemId": null
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Commodore Trews +2",
+    "itemId": 10726
+  },
+  {
+    "job": "Corsair",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Commodore Bottes +2",
+    "itemId": null
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Etoile Tiara",
+    "itemId": 11478
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Etoile Casaque",
+    "itemId": 11305
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Etoile Bangles",
+    "itemId": 15038
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Etoile Tights",
+    "itemId": 16360
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Etoile Toe Shoes",
+    "itemId": 11396
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Etoile Tiara +1",
+    "itemId": 11479
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Etoile Casaque +1",
+    "itemId": 11306
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Etoile Bangles +1",
+    "itemId": 15039
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Etoile Tights +1",
+    "itemId": 16361
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Etoile Toe Shoes +1",
+    "itemId": 11397
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Etoile Tiara +2",
+    "itemId": null
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Etoile Casaque +2",
+    "itemId": null
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Etoile Bangles +2",
+    "itemId": null
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Etoile Tights +2",
+    "itemId": null
+  },
+  {
+    "job": "Dancer",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Etoile Toe Shoes +2",
+    "itemId": 10748
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Koga Hatsuburi",
+    "itemId": 15084
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Koga Chainmail",
+    "itemId": 15099
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Koga Tekko",
+    "itemId": 15114
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Koga Hakama",
+    "itemId": 15129
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Koga Kyahan",
+    "itemId": 15144
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Koga Hatsuburi +1",
+    "itemId": 15257
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Koga Chainmail +1",
+    "itemId": 14512
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Koga Tekko +1",
+    "itemId": 14921
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Koga Hakama +1",
+    "itemId": 15592
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Koga Kyahan +1",
+    "itemId": 15677
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Koga Hatsuburi +2",
+    "itemId": null
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Koga Chainmail +2",
+    "itemId": null
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Koga Tekko +2",
+    "itemId": null
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Koga Hakama +2",
+    "itemId": null
+  },
+  {
+    "job": "Ninja",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Koga Kyahan +2",
+    "itemId": null
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Melee Crown",
+    "itemId": 15073
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Melee Cyclas",
+    "itemId": 15088
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Melee Gloves",
+    "itemId": 15103
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Melee Hose",
+    "itemId": 15118
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Melee Gaiters",
+    "itemId": 15133
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Melee Crown +1",
+    "itemId": 15246
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Melee Cyclas +1",
+    "itemId": 14501
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Melee Gloves +1",
+    "itemId": 14910
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Melee Hose +1",
+    "itemId": 15581
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Melee Gaiters +1",
+    "itemId": 15666
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Melee Crown +2",
+    "itemId": null
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Melee Cyclas +2",
+    "itemId": null
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Melee Gloves +2",
+    "itemId": null
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Melee Hose +2",
+    "itemId": null
+  },
+  {
+    "job": "Monk",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Melee Gaiters +2",
+    "itemId": null
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Mirage Keffiyeh",
+    "itemId": 11465
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Mirage Jubbah",
+    "itemId": 11292
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Mirage Bazubands",
+    "itemId": 15025
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Mirage Shalwar",
+    "itemId": 16346
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Mirage Charuqs",
+    "itemId": 11382
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Mirage Keffiyeh +1",
+    "itemId": 11466
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Mirage Jubbah +1",
+    "itemId": 11293
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Mirage Bazubands +1",
+    "itemId": 15026
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Mirage Shalwar +1",
+    "itemId": 16347
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Mirage Charuqs +1",
+    "itemId": 11383
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Mirage Keffiyeh +2",
+    "itemId": null
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Mirage Jubbah +2",
+    "itemId": null
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Mirage Bazubands +2",
+    "itemId": null
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Mirage Shalwar +2",
+    "itemId": null
+  },
+  {
+    "job": "Blue Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Mirage Charuqs +2",
+    "itemId": null
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Monster Helm",
+    "itemId": 15080
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Monster Jackcoat",
+    "itemId": 15095
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Monster Gloves",
+    "itemId": 15110
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Monster Trousers",
+    "itemId": 15125
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Monster Gaiters",
+    "itemId": 15140
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Monster Helm +1",
+    "itemId": 15253
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Monster Jackcoat +1",
+    "itemId": 14508
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Monster Gloves +1",
+    "itemId": 14917
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Monster Trousers +1",
+    "itemId": 15588
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Monster Gaiters +1",
+    "itemId": 15673
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Monster Helm +2",
+    "itemId": null
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Monster Jackcoat +2",
+    "itemId": null
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Monster Gloves +2",
+    "itemId": null
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Monster Trousers +2",
+    "itemId": null
+  },
+  {
+    "job": "Beastmaster",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Monster Gaiters +2",
+    "itemId": null
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Pantin Taj",
+    "itemId": 11471
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Pantin Tobe",
+    "itemId": 11298
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Pantin Dastanas",
+    "itemId": 15031
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Pantin Churidars",
+    "itemId": 16352
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Pantin Babouches",
+    "itemId": 11388
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Pantin Taj +1",
+    "itemId": 11472
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Pantin Tobe +1",
+    "itemId": 11299
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Pantin Dastanas +1",
+    "itemId": 15032
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Pantin Churidars +1",
+    "itemId": 16353
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Pantin Babouches +1",
+    "itemId": 11389
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Pantin Taj +2",
+    "itemId": null
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Pantin Tobe +2",
+    "itemId": null
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Pantin Dastanas +2",
+    "itemId": null
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Pantin Churidars +2",
+    "itemId": null
+  },
+  {
+    "job": "Puppetmaster",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Pantin Babouches +2",
+    "itemId": null
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Saotome Kabuto",
+    "itemId": 15083
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Saotome Domaru",
+    "itemId": 15098
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Saotome Kote",
+    "itemId": 15113
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Saotome Haidate",
+    "itemId": 15128
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Saotome Sune-Ate",
+    "itemId": 15143
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Saotome Kabuto +1",
+    "itemId": 15256
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Saotome Domaru +1",
+    "itemId": 14511
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Saotome Kote +1",
+    "itemId": 14920
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Saotome Haidate +1",
+    "itemId": 15591
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Saotome Sune-Ate +1",
+    "itemId": 15676
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Saotome Kabuto +2",
+    "itemId": null
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Saotome Domaru +2",
+    "itemId": null
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Saotome Kote +2",
+    "itemId": null
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Saotome Haidate +2",
+    "itemId": null
+  },
+  {
+    "job": "Samurai",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Saotome Sune-Ate +2",
+    "itemId": null
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Scout's Beret",
+    "itemId": 15082
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Scout's Jerkin",
+    "itemId": 15097
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Scout's Bracers",
+    "itemId": 15112
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Scout's Braccae",
+    "itemId": 15127
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Scout's Socks",
+    "itemId": 15142
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Scout's Beret +1",
+    "itemId": 15255
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Scout's Jerkin +1",
+    "itemId": 14510
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Scout's Bracers +1",
+    "itemId": 14919
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Scout's Braccae +1",
+    "itemId": 15590
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Scout's Socks +1",
+    "itemId": 15675
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Scout's Beret +2",
+    "itemId": null
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Scout's Jerkin +2",
+    "itemId": null
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Scout's Bracers +2",
+    "itemId": null
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Scout's Braccae +2",
+    "itemId": null
+  },
+  {
+    "job": "Ranger",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Scout's Socks +2",
+    "itemId": null
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Sorcerer's Petasos",
+    "itemId": 15075
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Sorcerer's Coat",
+    "itemId": 15090
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Sorcerer's Gloves",
+    "itemId": 15105
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Sorcerer's Tonban",
+    "itemId": 15120
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Sorcerer's Sabots",
+    "itemId": 15135
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Sorcerer's Petasos +1",
+    "itemId": 15248
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Sorcerer's Coat +1",
+    "itemId": 14503
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Sorcerer's Gloves +1",
+    "itemId": 14912
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Sorcerer's Tonban +1",
+    "itemId": 15583
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Sorcerer's Sabots +1",
+    "itemId": 15668
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Sorcerer's Petasos +2",
+    "itemId": null
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Sorcerer's Coat +2",
+    "itemId": null
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Sorcerer's Gloves +2",
+    "itemId": null
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Sorcerer's Tonban +2",
+    "itemId": null
+  },
+  {
+    "job": "Black Mage",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Sorcerer's Sabots +2",
+    "itemId": null
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Summoner's Horn",
+    "itemId": 15086
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Summoner's Doublet",
+    "itemId": 15101
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Summoner's Bracers",
+    "itemId": 15116
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Summoner's Spats",
+    "itemId": 15131
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Summoner's Pigaches",
+    "itemId": 15146
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Summoner's Horn +1",
+    "itemId": 15259
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Summoner's Doublet +1",
+    "itemId": 14514
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Summoner's Bracers +1",
+    "itemId": 14923
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Summoner's Spats +1",
+    "itemId": 15594
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Summoner's Pigaches +1",
+    "itemId": 15679
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Summoner's Horn +2",
+    "itemId": null
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Summoner's Doublet +2",
+    "itemId": null
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Summoner's Bracers +2",
+    "itemId": null
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Summoner's Spats +2",
+    "itemId": null
+  },
+  {
+    "job": "Summoner",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Summoner's Pigaches +2",
+    "itemId": null
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Valor Coronet",
+    "itemId": 15078
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Valor Surcoat",
+    "itemId": 15093
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Valor Gauntlets",
+    "itemId": 15108
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Valor Breeches",
+    "itemId": 15123
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Valor Leggings",
+    "itemId": 15138
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Valor Coronet +1",
+    "itemId": 15251
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Valor Surcoat +1",
+    "itemId": 14506
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Valor Gauntlets +1",
+    "itemId": 14915
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Valor Breeches +1",
+    "itemId": 15586
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Valor Leggings +1",
+    "itemId": 15671
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Valor Coronet +2",
+    "itemId": null
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Valor Surcoat +2",
+    "itemId": null
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Valor Gauntlets +2",
+    "itemId": null
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Valor Breeches +2",
+    "itemId": null
+  },
+  {
+    "job": "Paladin",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Valor Leggings +2",
+    "itemId": null
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Warrior's Mask",
+    "itemId": 15072
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Warrior's Lorica",
+    "itemId": 15087
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Warrior's Mufflers",
+    "itemId": 15102
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Warrior's Cuisses",
+    "itemId": 15117
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Warrior's Calligae",
+    "itemId": 15132
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Warrior's Mask +1",
+    "itemId": 15245
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Warrior's Lorica +1",
+    "itemId": 14500
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Warrior's Mufflers +1",
+    "itemId": 14909
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Warrior's Cuisses +1",
+    "itemId": 15580
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Warrior's Calligae +1",
+    "itemId": 15665
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Warrior's Mask +2",
+    "itemId": null
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Warrior's Lorica +2",
+    "itemId": null
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Warrior's Mufflers +2",
+    "itemId": null
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Warrior's Cuisses +2",
+    "itemId": null
+  },
+  {
+    "job": "Warrior",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Warrior's Calligae +2",
+    "itemId": null
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "0",
+    "itemName": "Wyrm Armet",
+    "itemId": 15085
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "0",
+    "itemName": "Wyrm Mail",
+    "itemId": 15100
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "0",
+    "itemName": "Wyrm Finger Gauntlets",
+    "itemId": 15115
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "0",
+    "itemName": "Wyrm Brais",
+    "itemId": 15130
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "0",
+    "itemName": "Wyrm Greaves",
+    "itemId": 15145
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "1",
+    "itemName": "Wyrm Armet +1",
+    "itemId": 15258
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "1",
+    "itemName": "Wyrm Mail +1",
+    "itemId": 14513
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "1",
+    "itemName": "Wyrm Finger Gauntlets +1",
+    "itemId": 14922
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "1",
+    "itemName": "Wyrm Brais +1",
+    "itemId": 15593
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "1",
+    "itemName": "Wyrm Greaves +1",
+    "itemId": 15678
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "head",
+    "tier": "2",
+    "itemName": "Wyrm Armet +2",
+    "itemId": null
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "body",
+    "tier": "2",
+    "itemName": "Wyrm Mail +2",
+    "itemId": null
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "hands",
+    "tier": "2",
+    "itemName": "Wyrm Finger Gauntlets +2",
+    "itemId": null
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "legs",
+    "tier": "2",
+    "itemName": "Wyrm Brais +2",
+    "itemId": null
+  },
+  {
+    "job": "Dragoon",
+    "setType": "relic",
+    "slot": "feet",
+    "tier": "2",
+    "itemName": "Wyrm Greaves +2",
+    "itemId": null
+  }
+]
