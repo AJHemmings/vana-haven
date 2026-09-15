@@ -48,6 +48,15 @@ pub fn run() {
             let db_path = app_data_dir.join("vana-haven.db");
             let conn = Connection::open(db_path)?;
             db::init_db(&conn)?;
+
+            let af3_json = include_str!("../../tools/scraper/out/gearsets-af3.json");
+            let empyrean_json = include_str!("../../tools/scraper/out/gearsets-empyrean.json");
+            let relic_json = include_str!("../../tools/scraper/out/gearsets-relic.json");
+            let mut gear_rows = gear_reference::parse_gear_set_definitions(af3_json)?;
+            gear_rows.extend(gear_reference::parse_gear_set_definitions(empyrean_json)?);
+            gear_rows.extend(gear_reference::parse_gear_set_definitions(relic_json)?);
+            db::seed_gear_set_definitions_if_empty(&conn, &gear_rows)?;
+
             let db = Arc::new(Mutex::new(conn));
             app.manage(AppState { db: Arc::clone(&db) });
 

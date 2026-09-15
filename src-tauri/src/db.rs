@@ -44,6 +44,19 @@ pub fn init_db(conn: &Connection) -> Result<()> {
         )",
         (),
     )?;
+
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS gear_set_definitions (
+            job_id INTEGER NOT NULL,
+            set_type TEXT NOT NULL,
+            slot TEXT NOT NULL,
+            tier INTEGER NOT NULL,
+            item_name TEXT NOT NULL,
+            item_id INTEGER,
+            PRIMARY KEY (job_id, set_type, slot, tier)
+        )",
+        (),
+    )?;
     Ok(())
 }
 
@@ -194,6 +207,52 @@ pub struct GearSetDefinitionRow {
     pub tier: i64,
     pub item_name: String,
     pub item_id: Option<i64>,
+}
+
+pub fn seed_gear_set_definitions_if_empty(conn: &Connection, rows: &[GearSetDefinitionRow]) -> Result<()> {
+    let count: i64 = conn.query_row("SELECT COUNT(*) FROM gear_set_definitions", (), |row| row.get(0))?;
+    if count > 0 {
+        return Ok(());
+    }
+    conn.execute("BEGIN", ())?;
+    let result = (|| -> Result<()> {
+        for row in rows {
+            conn.execute(
+                "INSERT INTO gear_set_definitions (job_id, set_type, slot, tier, item_name, item_id)
+                 VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
+                (row.job_id, &row.set_type, &row.slot, row.tier, &row.item_name, row.item_id),
+            )?;
+        }
+        Ok(())
+    })();
+    match result {
+        Ok(()) => {
+            conn.execute("COMMIT", ())?;
+            Ok(())
+        }
+        Err(e) => {
+            let _ = conn.execute("ROLLBACK", ());
+            Err(e)
+        }
+    }
+}
+
+pub fn get_gear_set_definitions(conn: &Connection, job_id: i64) -> Result<Vec<GearSetDefinitionRow>> {
+    let mut stmt = conn.prepare(
+        "SELECT job_id, set_type, slot, tier, item_name, item_id FROM gear_set_definitions
+         WHERE job_id = ?1 ORDER BY set_type, slot, tier",
+    )?;
+    let rows = stmt.query_map((job_id,), |row| {
+        Ok(GearSetDefinitionRow {
+            job_id: row.get(0)?,
+            set_type: row.get(1)?,
+            slot: row.get(2)?,
+            tier: row.get(3)?,
+            item_name: row.get(4)?,
+            item_id: row.get(5)?,
+        })
+    })?;
+    rows.collect()
 }
 
 #[derive(Debug, PartialEq, serde::Serialize)]
@@ -519,5 +578,58 @@ mod tests {
             ItemHeld { item_id: 100, container: 2 },
         ]).unwrap();
         assert_eq!(get_character_items(&conn, 1).unwrap().len(), 2);
+    }
+
+    fn sample_definition_row(job_id: i64, tier: i64, item_id: Option<i64>) -> GearSetDefinitionRow {
+        GearSetDefinitionRow {
+            job_id,
+            set_type: "af3".to_string(),
+            slot: "head".to_string(),
+            tier,
+            item_name: format!("Test Item T{tier}"),
+            item_id,
+        }
+    }
+
+    #[test]
+    fn get_gear_set_definitions_is_empty_before_seeding() {
+        let conn = setup();
+        assert_eq!(get_gear_set_definitions(&conn, 1).unwrap(), vec![]);
+    }
+
+    #[test]
+    fn seed_gear_set_definitions_if_empty_inserts_rows() {
+        let conn = setup();
+        let rows = vec![sample_definition_row(20, 0, Some(1)), sample_definition_row(20, 1, Some(2))];
+        seed_gear_set_definitions_if_empty(&conn, &rows).unwrap();
+        assert_eq!(get_gear_set_definitions(&conn, 20).unwrap().len(), 2);
+    }
+
+    #[test]
+    fn seed_gear_set_definitions_if_empty_is_idempotent() {
+        let conn = setup();
+        let rows = vec![sample_definition_row(20, 0, Some(1))];
+        seed_gear_set_definitions_if_empty(&conn, &rows).unwrap();
+        // Second call with the same rows must not duplicate or error, even
+        // though the rows would collide on the PRIMARY KEY if inserted again.
+        seed_gear_set_definitions_if_empty(&conn, &rows).unwrap();
+        assert_eq!(get_gear_set_definitions(&conn, 20).unwrap().len(), 1);
+    }
+
+    #[test]
+    fn get_gear_set_definitions_only_returns_rows_for_the_given_job() {
+        let conn = setup();
+        let rows = vec![sample_definition_row(20, 0, Some(1)), sample_definition_row(21, 0, Some(2))];
+        seed_gear_set_definitions_if_empty(&conn, &rows).unwrap();
+        assert_eq!(get_gear_set_definitions(&conn, 20).unwrap().len(), 1);
+        assert_eq!(get_gear_set_definitions(&conn, 21).unwrap().len(), 1);
+    }
+
+    #[test]
+    fn get_gear_set_definitions_keeps_null_item_id_rows() {
+        let conn = setup();
+        let rows = vec![sample_definition_row(20, 2, None)];
+        seed_gear_set_definitions_if_empty(&conn, &rows).unwrap();
+        assert_eq!(get_gear_set_definitions(&conn, 20).unwrap()[0].item_id, None);
     }
 }
