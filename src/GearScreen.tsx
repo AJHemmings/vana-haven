@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchGearProgression, type GearProgression, type GearSetDefinitionRow } from "./bridge";
+import { fetchGearProgression, type GearProgression, type GearSetDefinitionRow, type GearSlot } from "./bridge";
 import { jobAbbreviation } from "./jobs";
 import ItemPlaceholderIcon from "./ItemPlaceholderIcon";
 
@@ -24,17 +24,22 @@ export default function GearScreen() {
   const job = Number(jobId);
   const [progression, setProgression] = useState<GearProgression | null>(null);
   const [manualSet, setManualSet] = useState<SetType | null>(null);
+  const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
+    setFetchError(false);
     fetchGearProgression(id, job)
       .then(setProgression)
-      .catch((err) => console.error("[vana-haven] failed to fetch gear progression", err));
+      .catch((err) => {
+        console.error("[vana-haven] failed to fetch gear progression", err);
+        setFetchError(true);
+      });
   }, [id, job]);
 
-  const currentTierFor = (setType: SetType, slot: string): number | null =>
+  const currentTierFor = (setType: SetType, slot: GearSlot): number | null =>
     progression?.current_tiers.find((t) => t.set_type === setType && t.slot === slot)?.current_tier ?? null;
 
-  const rowsFor = (setType: SetType, slot: string) =>
+  const rowsFor = (setType: SetType, slot: GearSlot) =>
     (progression?.definitions ?? [])
       .filter((d) => d.set_type === setType && d.slot === slot)
       .sort((a, b) => a.tier - b.tier);
@@ -69,7 +74,11 @@ export default function GearScreen() {
         ))}
       </div>
 
-      {!hasAnyDefinitions(activeSet) ? (
+      {fetchError ? (
+        <p className="text-neutral-400">failed to load gear data</p>
+      ) : progression === null ? (
+        <p className="text-neutral-400">waiting for gear data...</p>
+      ) : !hasAnyDefinitions(activeSet) ? (
         <p className="text-neutral-400">No {SET_TYPE_LABELS[activeSet]} armor exists for this job.</p>
       ) : (
         <ul className="divide-y divide-neutral-800">
