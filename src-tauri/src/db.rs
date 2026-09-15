@@ -262,6 +262,18 @@ pub struct SlotTier {
     pub current_tier: Option<i64>,
 }
 
+/// "Current tier" is the highest tier of each (set_type, slot) whose item_id
+/// the character currently holds. Two things make the SQL below less obvious
+/// than it looks:
+/// - `gsd.item_id` is NULL for the 87 unresolved Relic +2 rows (BG-Wiki
+///   never had their item ids). `ci.item_id = gsd.item_id` is never true
+///   when either side is NULL, so those rows always LEFT JOIN to nothing
+///   and never contribute to MAX — don't "simplify" this into an INNER JOIN
+///   or an equality check that assumes NULL behaves like a normal value.
+/// - A character can (per the schema, not expected in practice) hold the
+///   same item_id in two containers at once, which fans the LEFT JOIN out
+///   to two matching rows per gsd row. This is harmless: both carry the
+///   same gsd.tier, and MAX is idempotent over a duplicate value.
 pub fn compute_current_tiers(conn: &Connection, character_id: i64, job_id: i64) -> Result<Vec<SlotTier>> {
     let mut stmt = conn.prepare(
         "SELECT gsd.set_type, gsd.slot,
@@ -724,5 +736,25 @@ mod tests {
 
         let tiers = compute_current_tiers(&conn, 1, 20).unwrap();
         assert_eq!(tiers.len(), 3); // (af3,head), (af3,body), (relic,head)
+    }
+
+    #[test]
+    fn compute_current_tiers_is_not_inflated_by_the_same_item_in_two_containers() {
+        // Schema-permitted (see replace_character_items_allows_the_same_item_id_in_two_containers)
+        // but not expected in practice — the LEFT JOIN fans out to two rows
+        // for the one gsd row, and MAX must not double-count or misbehave.
+        let conn = setup();
+        upsert_character(&conn, &Character { game_character_id: 12345, name: "Gozoto".to_string(), last_seen_at: "2026-09-07T12:00:00Z".to_string() }).unwrap();
+        seed_gear_set_definitions_if_empty(&conn, &[
+            sample_definition_row(20, 0, Some(1)),
+            sample_definition_row(20, 1, Some(2)),
+        ]).unwrap();
+        replace_character_items(&conn, 1, &[
+            ItemHeld { item_id: 1, container: 0 },
+            ItemHeld { item_id: 1, container: EQUIPPED_CONTAINER },
+        ]).unwrap();
+
+        let tiers = compute_current_tiers(&conn, 1, 20).unwrap();
+        assert_eq!(tiers[0].current_tier, Some(0));
     }
 }
