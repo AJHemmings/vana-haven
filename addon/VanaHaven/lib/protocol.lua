@@ -19,6 +19,14 @@ function protocol.build_job_levels(game_character_id, main_job_id, sub_job_id, j
     }) .. "\n"
 end
 
+function protocol.build_character_items(game_character_id, items)
+    return json.encode({
+        type = "character_items",
+        game_character_id = game_character_id,
+        items = items,
+    }) .. "\n"
+end
+
 -- Exponential backoff capped at 30s: 1, 2, 4, 8, 16, 30, 30, ...
 function protocol.next_backoff_seconds(previous_seconds)
     if not previous_seconds or previous_seconds <= 0 then

@@ -6,6 +6,7 @@ _addon.commands = { "vanahaven", "vh" }
 local socket = require("socket")
 local packets = require("packets")
 local protocol = require("lib/protocol")
+local res = require('resources')
 
 local HOST = "127.0.0.1"
 local DEFAULT_PORT = 24244
@@ -23,6 +24,24 @@ local HEARTBEAT_INTERVAL = 5
 -- successful (re)connect (see finish_connect) so a restarted app still gets
 -- the player's current job levels without needing a fresh 0x01B to fire.
 local last_job_levels_payload = nil
+-- Mirrors last_job_levels_payload above: caching the last-built
+-- character_items payload lets finish_connect resend the last-known
+-- inventory/equipment snapshot once after a successful (re)connect, the
+-- same way it already does for job levels. Declared here (not down near
+-- flush_inventory_if_dirty/send_character_items, where the rest of the
+-- inventory-reading code lives) because finish_connect needs to see it as
+-- an upvalue, and Lua locals are only visible to code that appears after
+-- their declaration in the file — declaring them near their other use
+-- would silently make finish_connect read/write unrelated globals instead.
+local last_character_items_payload = nil
+-- Debounce window for inventory dirty-flushing (see flush_inventory_if_dirty
+-- below) — declared here, not next to INV_MAX_WAIT/flush_inventory_if_dirty,
+-- for the same forward-visibility reason as last_character_items_payload
+-- above: finish_connect resets the debounce clock on reconnect too.
+local INV_DEBOUNCE = 0.6
+local inv_dirty = false
+local inv_dirty_at = 0
+local inv_first_dirty = nil
 -- Neither a successful nor a failed non-blocking connect reliably shows up
 -- via socket.select()'s write-set in this runtime (confirmed via live
 -- testing) — connect completion is polled via getpeername() instead (see
@@ -103,6 +122,12 @@ local function finish_connect()
             if last_job_levels_payload then
                 sock:send(last_job_levels_payload)
             end
+            if last_character_items_payload then
+                sock:send(last_character_items_payload)
+            end
+            inv_dirty = true
+            inv_dirty_at = os.clock() - INV_DEBOUNCE
+            inv_first_dirty = os.clock() - INV_DEBOUNCE
         else
             sock:close()
             sock = nil
@@ -194,11 +219,100 @@ local function send_job_levels(p)
     end
 end
 
+-- container id -1 mirrors db::EQUIPPED_CONTAINER on the app side — a
+-- distinct sentinel, not one of Windower's real bag ids (all 0-16).
+local EQUIPPED_CONTAINER = -1
+
+-- Packet ids that mark inventory/bag contents as needing a re-scan.
+-- Ported from Alexandria's addon (F:\Projects\Alexandria\addon\Alexandria\
+-- Alexandria.lua), an existing, working FFXI/Windower companion addon that
+-- already solved this — not independently derived or guessed.
+local INVENTORY_DIRTY_PACKET_IDS = { [0x01D] = true, [0x01E] = true, [0x01F] = true, [0x020] = true }
+local INV_MAX_WAIT = 1.5
+local inv_last_sent_key = nil
+
+-- Reads every bag Windower's own resource table knows about (not a
+-- hand-picked list) and flags each held item with its container: the
+-- owning bag id, or EQUIPPED_CONTAINER if Windower reports it as
+-- currently worn. Ported from Alexandria's build_inventory(), trimmed to
+-- only what vana-haven needs (item_id + container, not name/count/
+-- augments/etc — Alexandria's own protocol carries much more per-item
+-- detail this app has no use for).
+local function collect_held_items()
+    local items = {}
+    for bag_id, bag in pairs(res.bags) do
+        local bag_items = windower.ffxi.get_items(bag_id)
+        -- Mog House storage bags (Safe=1, Storage=2, Temporary=3, Locker=4,
+        -- Safe 2=9) report enabled=false whenever the player isn't standing
+        -- at a Mog House/Nomad Moogle, even though their cached contents
+        -- are still readable — gating on `enabled` for these hides them for
+        -- anyone out in the field. Alexandria's own changelog calls this
+        -- "the 0.0.17 bug" before it was fixed this way; porting the fix,
+        -- not just the bug's absence.
+        local mog_bag = bag_id == 1 or bag_id == 2 or bag_id == 3 or bag_id == 4 or bag_id == 9
+        if type(bag_items) == 'table' and (bag_items.enabled or (mog_bag and (bag_items.count or 0) > 0)) then
+            local maxn = bag_items.max or 0
+            for s = 1, maxn do
+                local it = bag_items[s]
+                if it and it.id and it.id ~= 0 then
+                    -- status 5 = currently equipped (confirmed against
+                    -- Alexandria, which uses this same status value to
+                    -- detect locked/equipped slots it refuses to move).
+                    -- Equipped items live in the SAME bag slot arrays as
+                    -- everything else — Windower has no separate
+                    -- "equipment" read path, contrary to this app's
+                    -- original design-spec assumption (§4).
+                    local container = (it.status == 5) and EQUIPPED_CONTAINER or bag_id
+                    table.insert(items, { item_id = it.id, container = container })
+                end
+            end
+        end
+    end
+    return items
+end
+
+local function inventory_key(items)
+    local parts = {}
+    for _, it in ipairs(items) do
+        table.insert(parts, it.item_id .. ':' .. it.container)
+    end
+    table.sort(parts)
+    return table.concat(parts, ',')
+end
+
+-- Mirrors send_job_levels's cache-then-send-if-connected pattern: the
+-- payload is built and deduped regardless of connection state, so a
+-- reconnect can resend the last-known snapshot (see finish_connect).
+local function send_character_items()
+    local info = player_info()
+    if not info then return end
+    local items = collect_held_items()
+    local key = inventory_key(items)
+    if key == inv_last_sent_key then return end
+    inv_last_sent_key = key
+    local payload = protocol.build_character_items(info.id, items)
+    last_character_items_payload = payload
+    if sock then sock:send(payload) end
+end
+
+local function flush_inventory_if_dirty()
+    if not inv_dirty then return end
+    local now = os.clock()
+    if now - inv_dirty_at < INV_DEBOUNCE and now - inv_first_dirty < INV_MAX_WAIT then return end
+    inv_dirty = false
+    inv_first_dirty = nil
+    send_character_items()
+end
+
 windower.register_event("incoming chunk", function(id, data)
-    if id ~= 0x01B then return end
-    local p = packets.parse('incoming', data)
-    if not p then return end
-    send_job_levels(p)
+    if id == 0x01B then
+        local p = packets.parse('incoming', data)
+        if p then send_job_levels(p) end
+    elseif INVENTORY_DIRTY_PACKET_IDS[id] then
+        if not inv_dirty then inv_first_dirty = os.clock() end
+        inv_dirty = true
+        inv_dirty_at = os.clock()
+    end
 end)
 
 windower.register_event("prerender", function()
@@ -208,6 +322,7 @@ windower.register_event("prerender", function()
         try_connect()
     else
         send_heartbeat()
+        flush_inventory_if_dirty()
     end
 end)
 

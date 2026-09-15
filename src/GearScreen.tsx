@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchGearProgression, type GearProgression, type GearSetDefinitionRow, type GearSlot } from "./bridge";
+import {
+  fetchGearProgression,
+  onCharacterUpdated,
+  type GearProgression,
+  type GearSetDefinitionRow,
+  type GearSlot,
+} from "./bridge";
 import { jobAbbreviation } from "./jobs";
 import ItemPlaceholderIcon from "./ItemPlaceholderIcon";
 
@@ -27,13 +33,24 @@ export default function GearScreen() {
   const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
-    setFetchError(false);
-    fetchGearProgression(id, job)
-      .then(setProgression)
-      .catch((err) => {
-        console.error("[vana-haven] failed to fetch gear progression", err);
-        setFetchError(true);
-      });
+    let unlisten: (() => void) | undefined;
+
+    const load = () => {
+      setFetchError(false);
+      fetchGearProgression(id, job)
+        .then(setProgression)
+        .catch((err) => {
+          console.error("[vana-haven] failed to fetch gear progression", err);
+          setFetchError(true);
+        });
+    };
+
+    load();
+    onCharacterUpdated(load).then((fn) => {
+      unlisten = fn;
+    });
+
+    return () => unlisten?.();
   }, [id, job]);
 
   const currentTierFor = (setType: SetType, slot: GearSlot): number | null =>

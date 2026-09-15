@@ -8,6 +8,12 @@ pub struct JobEntry {
     pub mastered: bool,
 }
 
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
+pub struct ItemEntry {
+    pub item_id: i64,
+    pub container: i64,
+}
+
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 #[serde(tag = "type", rename_all = "snake_case")]
 pub enum AddonMessage {
@@ -18,6 +24,10 @@ pub enum AddonMessage {
         main_job_id: i64,
         sub_job_id: i64,
         jobs: Vec<JobEntry>,
+    },
+    CharacterItems {
+        game_character_id: i64,
+        items: Vec<ItemEntry>,
     },
 }
 
@@ -80,6 +90,30 @@ mod tests {
                 sub_job_id: 0,
                 jobs: vec![],
             }
+        );
+    }
+
+    #[test]
+    fn parses_character_items_message() {
+        let raw = r#"{"type":"character_items","game_character_id":12345,"items":[{"item_id":15079,"container":0},{"item_id":27683,"container":-1}]}"#;
+        assert_eq!(
+            parse_message(raw).unwrap(),
+            AddonMessage::CharacterItems {
+                game_character_id: 12345,
+                items: vec![
+                    ItemEntry { item_id: 15079, container: 0 },
+                    ItemEntry { item_id: 27683, container: -1 },
+                ],
+            }
+        );
+    }
+
+    #[test]
+    fn parses_character_items_message_with_empty_items() {
+        let raw = r#"{"type":"character_items","game_character_id":12345,"items":[]}"#;
+        assert_eq!(
+            parse_message(raw).unwrap(),
+            AddonMessage::CharacterItems { game_character_id: 12345, items: vec![] }
         );
     }
 }

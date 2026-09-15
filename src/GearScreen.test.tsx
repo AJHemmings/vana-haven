@@ -19,6 +19,10 @@ const AF3_HEAD_T1 = { ...AF3_HEAD, tier: 1, item_name: "Academic's Mortarboard +
 const RELIC_HEAD_UNRESOLVED = { job_id: 20, set_type: "relic" as const, slot: "head" as const, tier: 2, item_name: "Argute Mortarboard +2", item_id: null };
 
 describe("GearScreen", () => {
+  beforeEach(() => {
+    vi.spyOn(bridge, "onCharacterUpdated").mockResolvedValue(() => {});
+  });
+
   it("shows not-obtained for every slot when nothing is held", async () => {
     vi.spyOn(bridge, "fetchGearProgression").mockResolvedValue({
       definitions: [AF3_HEAD],

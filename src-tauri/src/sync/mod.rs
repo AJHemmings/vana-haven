@@ -93,6 +93,25 @@ async fn handle_connection(stream: TcpStream, db: Arc<Mutex<Connection>>, app: A
                     Err(e) => eprintln!("[vana-haven] failed to resolve character {game_character_id}: {e}"),
                 }
             }
+            Ok(AddonMessage::CharacterItems { game_character_id, items }) => {
+                let conn = db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+                match db::resolve_character_id(&conn, game_character_id) {
+                    Ok(Some(character_id)) => {
+                        let held: Vec<db::ItemHeld> = items
+                            .into_iter()
+                            .map(|i| db::ItemHeld { item_id: i.item_id, container: i.container })
+                            .collect();
+                        match db::replace_character_items(&conn, character_id, &held) {
+                            Ok(()) => { let _ = app.emit("character-updated", game_character_id); }
+                            Err(e) => eprintln!("[vana-haven] failed to save character items for {game_character_id}: {e}"),
+                        }
+                    }
+                    Ok(None) => {
+                        eprintln!("[vana-haven] ignoring character_items for unknown character {game_character_id}");
+                    }
+                    Err(e) => eprintln!("[vana-haven] failed to resolve character {game_character_id}: {e}"),
+                }
+            }
             Err(e) => {
                 // Skip the bad line and keep the connection open rather than
                 // dropping the whole session over one malformed message — but
