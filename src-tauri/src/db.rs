@@ -183,6 +183,16 @@ pub fn get_character_items(conn: &Connection, character_id: i64) -> Result<Vec<I
     rows.collect()
 }
 
+#[derive(Debug, PartialEq, Clone, serde::Serialize)]
+pub struct GearSetDefinitionRow {
+    pub job_id: i64,
+    pub set_type: String,
+    pub slot: String,
+    pub tier: i64,
+    pub item_name: String,
+    pub item_id: Option<i64>,
+}
+
 #[derive(Debug, PartialEq, serde::Serialize)]
 pub struct CharacterDetail {
     pub game_character_id: i64,

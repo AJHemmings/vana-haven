@@ -1,4 +1,5 @@
 mod db;
+mod gear_reference;
 mod sync;
 
 use rusqlite::Connection;
