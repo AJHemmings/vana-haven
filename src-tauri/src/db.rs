@@ -606,12 +606,15 @@ mod tests {
     }
 
     #[test]
-    fn seed_gear_set_definitions_if_empty_is_idempotent() {
+    fn seed_gear_set_definitions_if_empty_skips_seeding_when_table_already_populated() {
+        // This proves the COUNT(*)-guard short-circuits the second call —
+        // it does NOT prove re-seeding with new/changed rows against an
+        // already-populated table is safe (it currently isn't: the insert
+        // loop would hit a PRIMARY KEY collision if it ever ran a second
+        // time, since seeding is a one-time-ever operation by design).
         let conn = setup();
         let rows = vec![sample_definition_row(20, 0, Some(1))];
         seed_gear_set_definitions_if_empty(&conn, &rows).unwrap();
-        // Second call with the same rows must not duplicate or error, even
-        // though the rows would collide on the PRIMARY KEY if inserted again.
         seed_gear_set_definitions_if_empty(&conn, &rows).unwrap();
         assert_eq!(get_gear_set_definitions(&conn, 20).unwrap().len(), 1);
     }
