@@ -150,9 +150,17 @@ pub fn get_character_jobs(conn: &Connection, character_id: i64) -> Result<Vec<Jo
     rows.collect()
 }
 
-/// Windower bag ids are 0-16 (confirmed against Alexandria's `bagNames.ts`
-/// BAG_ORDER — all non-negative), so -1 is a safe, distinct sentinel for
-/// "this item is currently equipped," not one of the storage bags.
+/// Windower bag ids are 0-16 (per the addon's own `require('resources').bags`
+/// enumeration, iterated in `collect_held_items()` rather than a hardcoded
+/// list — see addon/VanaHaven/VanaHaven.lua), so -1 is a safe, distinct
+/// sentinel for "this item is currently equipped," not one of the storage
+/// bags.
+///
+/// `pub` but currently unreferenced outside this file's own tests: it's part
+/// of the general "what does this character currently hold" primitive the
+/// main design spec (§2) explicitly wants built generally enough for a
+/// future consumer (Key Item Cooldowns, §8.3) to reuse — not dead scaffolding.
+#[allow(dead_code)]
 pub const EQUIPPED_CONTAINER: i64 = -1;
 
 #[derive(Debug, PartialEq, Clone, serde::Serialize)]
@@ -186,6 +194,13 @@ pub fn replace_character_items(conn: &Connection, character_id: i64, items: &[It
     }
 }
 
+/// `pub` but currently unreferenced outside this file's own tests, same
+/// reasoning as `EQUIPPED_CONTAINER` above — the tier-computation query
+/// (`compute_current_tiers`) reads `character_items` directly via its own
+/// SQL rather than through this function, but a future feature (Key Item
+/// Cooldowns, §8.3 of the main design spec) needs exactly this "what does
+/// this character currently hold" read.
+#[allow(dead_code)]
 pub fn get_character_items(conn: &Connection, character_id: i64) -> Result<Vec<ItemHeld>> {
     let mut stmt = conn.prepare(
         "SELECT item_id, container FROM character_items WHERE character_id = ?1 ORDER BY item_id",
