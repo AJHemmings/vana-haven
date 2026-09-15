@@ -100,4 +100,15 @@ mod tests {
     fn parse_gear_set_definitions_rejects_malformed_json() {
         assert!(parse_gear_set_definitions("not json").is_err());
     }
+
+    #[test]
+    fn parses_real_bundled_gear_set_files_without_panicking() {
+        for json in [
+            include_str!("../../tools/scraper/out/gearsets-af3.json"),
+            include_str!("../../tools/scraper/out/gearsets-empyrean.json"),
+            include_str!("../../tools/scraper/out/gearsets-relic.json"),
+        ] {
+            parse_gear_set_definitions(json).unwrap();
+        }
+    }
 }

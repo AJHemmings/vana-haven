@@ -183,6 +183,9 @@ pub fn get_character_items(conn: &Connection, character_id: i64) -> Result<Vec<I
     rows.collect()
 }
 
+/// Lives here rather than in gear_reference.rs (which is the only current
+/// constructor) because it's also the row type this module's future
+/// gear_set_definitions insert/query functions will use.
 #[derive(Debug, PartialEq, Clone, serde::Serialize)]
 pub struct GearSetDefinitionRow {
     pub job_id: i64,
