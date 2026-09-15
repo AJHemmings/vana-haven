@@ -167,7 +167,7 @@ pub fn replace_character_items(conn: &Connection, character_id: i64, items: &[It
         conn.execute("DELETE FROM character_items WHERE character_id = ?1", (character_id,))?;
         for item in items {
             conn.execute(
-                "INSERT INTO character_items (character_id, item_id, container)
+                "INSERT OR IGNORE INTO character_items (character_id, item_id, container)
                  VALUES (?1, ?2, ?3)",
                 (character_id, item.item_id, item.container),
             )?;
@@ -618,6 +618,32 @@ mod tests {
             ItemHeld { item_id: 100, container: 2 },
         ]).unwrap();
         assert_eq!(get_character_items(&conn, 1).unwrap().len(), 2);
+    }
+
+    #[test]
+    fn replace_character_items_tolerates_duplicate_item_and_container_pairs() {
+        // A real, ordinary FFXI inventory shape: two identical unstackable items
+        // (e.g. two of the same ring) in the same bag produce two entries with
+        // the exact same (item_id, container) — the schema's PRIMARY KEY would
+        // otherwise reject the second one and roll back the ENTIRE snapshot,
+        // silently and permanently stalling gear sync for that character.
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        let result = replace_character_items(&conn, 1, &[
+            ItemHeld { item_id: 100, container: 0 },
+            ItemHeld { item_id: 100, container: 0 }, // exact duplicate
+            ItemHeld { item_id: 200, container: 0 }, // a distinct item in the same write
+        ]);
+        assert!(result.is_ok());
+        let items = get_character_items(&conn, 1).unwrap();
+        // Exactly one row for the duplicated pair (not two, not zero), plus the distinct item.
+        assert_eq!(items.len(), 2);
+        assert!(items.iter().any(|i| i.item_id == 100 && i.container == 0));
+        assert!(items.iter().any(|i| i.item_id == 200 && i.container == 0));
     }
 
     fn sample_definition_row(job_id: i64, tier: i64, item_id: Option<i64>) -> GearSetDefinitionRow {

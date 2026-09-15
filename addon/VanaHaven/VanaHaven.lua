@@ -250,6 +250,13 @@ local function collect_held_items()
         -- "the 0.0.17 bug" before it was fixed this way; porting the fix,
         -- not just the bug's absence.
         local mog_bag = bag_id == 1 or bag_id == 2 or bag_id == 3 or bag_id == 4 or bag_id == 9
+        -- Alexandria's build_inventory() also unconditionally scans bag id 17
+        -- regardless of `enabled` (alongside the 5 Mog House bags above) — that
+        -- exception was deliberately NOT ported here. What bag 17 actually
+        -- represents in Windower's resource table is unverified (it's absent
+        -- from Alexandria's own bagNames.ts display list too, same as bag 3);
+        -- if a character's items are ever missing from a report while out in
+        -- the field, this is the first place to check live, not guess at here.
         if type(bag_items) == 'table' and (bag_items.enabled or (mog_bag and (bag_items.count or 0) > 0)) then
             local maxn = bag_items.max or 0
             for s = 1, maxn do
