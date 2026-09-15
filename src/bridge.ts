@@ -16,10 +16,12 @@ export type JobLevel = {
   mastered: boolean;
 };
 
+export type GearSlot = "head" | "body" | "hands" | "legs" | "feet";
+
 export type GearSetDefinitionRow = {
   job_id: number;
   set_type: "af3" | "empyrean" | "relic";
-  slot: "head" | "body" | "hands" | "legs" | "feet";
+  slot: GearSlot;
   tier: number;
   item_name: string;
   item_id: number | null;
@@ -27,7 +29,7 @@ export type GearSetDefinitionRow = {
 
 export type SlotTier = {
   set_type: "af3" | "empyrean" | "relic";
-  slot: string;
+  slot: GearSlot;
   current_tier: number | null;
 };
 

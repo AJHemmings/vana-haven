@@ -61,11 +61,16 @@ export default function JobsScreen() {
             {JOBS.map((job) => {
               const entry = jobs.find((j) => j.job_id === job.id);
               return (
-                <li key={job.id} className="py-2 flex justify-between">
-                  <span>{job.abbreviation}</span>
-                  <span>
-                    Lv. {entry?.level ?? 0} &middot; ML {entry?.master_level ?? 0}
-                  </span>
+                <li key={job.id}>
+                  <Link
+                    to={`/character/${id}/jobs/${job.id}/gear`}
+                    className="py-2 flex justify-between hover:bg-neutral-900"
+                  >
+                    <span>{job.abbreviation}</span>
+                    <span>
+                      Lv. {entry?.level ?? 0} &middot; ML {entry?.master_level ?? 0}
+                    </span>
+                  </Link>
                 </li>
               );
             })}

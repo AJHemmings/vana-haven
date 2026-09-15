@@ -137,4 +137,22 @@ describe("JobsScreen", () => {
     const backLink = await screen.findByText("← back");
     expect(backLink.closest("a")).toHaveAttribute("href", "/character/1");
   });
+
+  it("links each job row to its gear screen", async () => {
+    vi.spyOn(bridge, "fetchCharacter").mockResolvedValue({
+      game_character_id: 1,
+      name: "Gozoto",
+      main_job_id: 4,
+      sub_job_id: 20,
+    });
+    vi.spyOn(bridge, "fetchCharacterJobs").mockResolvedValue([
+      { job_id: 4, level: 99, master_level: 12, mastered: true },
+    ]);
+
+    renderAt("1");
+
+    await screen.findByText("BLM");
+    const blmRow = screen.getByText("BLM").closest("a");
+    expect(blmRow).toHaveAttribute("href", "/character/1/jobs/4/gear");
+  });
 });
