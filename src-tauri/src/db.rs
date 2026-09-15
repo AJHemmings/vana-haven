@@ -255,6 +255,34 @@ pub fn get_gear_set_definitions(conn: &Connection, job_id: i64) -> Result<Vec<Ge
     rows.collect()
 }
 
+#[derive(Debug, PartialEq, Clone, serde::Serialize)]
+pub struct SlotTier {
+    pub set_type: String,
+    pub slot: String,
+    pub current_tier: Option<i64>,
+}
+
+pub fn compute_current_tiers(conn: &Connection, character_id: i64, job_id: i64) -> Result<Vec<SlotTier>> {
+    let mut stmt = conn.prepare(
+        "SELECT gsd.set_type, gsd.slot,
+                MAX(CASE WHEN ci.item_id IS NOT NULL THEN gsd.tier END) AS current_tier
+         FROM gear_set_definitions gsd
+         LEFT JOIN character_items ci
+           ON ci.character_id = ?1 AND ci.item_id = gsd.item_id
+         WHERE gsd.job_id = ?2
+         GROUP BY gsd.set_type, gsd.slot
+         ORDER BY gsd.set_type, gsd.slot",
+    )?;
+    let rows = stmt.query_map((character_id, job_id), |row| {
+        Ok(SlotTier {
+            set_type: row.get(0)?,
+            slot: row.get(1)?,
+            current_tier: row.get(2)?,
+        })
+    })?;
+    rows.collect()
+}
+
 #[derive(Debug, PartialEq, serde::Serialize)]
 pub struct CharacterDetail {
     pub game_character_id: i64,
@@ -634,5 +662,67 @@ mod tests {
         let rows = vec![sample_definition_row(20, 2, None)];
         seed_gear_set_definitions_if_empty(&conn, &rows).unwrap();
         assert_eq!(get_gear_set_definitions(&conn, 20).unwrap()[0].item_id, None);
+    }
+
+    #[test]
+    fn compute_current_tiers_reports_not_obtained_when_nothing_held() {
+        let conn = setup();
+        upsert_character(&conn, &Character { game_character_id: 12345, name: "Gozoto".to_string(), last_seen_at: "2026-09-07T12:00:00Z".to_string() }).unwrap();
+        seed_gear_set_definitions_if_empty(&conn, &[
+            sample_definition_row(20, 0, Some(1)),
+            sample_definition_row(20, 1, Some(2)),
+        ]).unwrap();
+
+        let tiers = compute_current_tiers(&conn, 1, 20).unwrap();
+        assert_eq!(tiers.len(), 1); // one (set_type, slot) group
+        assert_eq!(tiers[0].current_tier, None);
+    }
+
+    #[test]
+    fn compute_current_tiers_picks_highest_tier_when_multiple_are_held() {
+        let conn = setup();
+        upsert_character(&conn, &Character { game_character_id: 12345, name: "Gozoto".to_string(), last_seen_at: "2026-09-07T12:00:00Z".to_string() }).unwrap();
+        seed_gear_set_definitions_if_empty(&conn, &[
+            sample_definition_row(20, 0, Some(1)),
+            sample_definition_row(20, 1, Some(2)),
+            sample_definition_row(20, 2, Some(3)),
+        ]).unwrap();
+        // Shouldn't normally happen (upgrading is destructive) but the query
+        // must not assume it can't: both tier 0 and tier 1 items held.
+        replace_character_items(&conn, 1, &[
+            ItemHeld { item_id: 1, container: 0 },
+            ItemHeld { item_id: 2, container: 0 },
+        ]).unwrap();
+
+        let tiers = compute_current_tiers(&conn, 1, 20).unwrap();
+        assert_eq!(tiers[0].current_tier, Some(1));
+    }
+
+    #[test]
+    fn compute_current_tiers_ignores_null_item_id_rows() {
+        let conn = setup();
+        upsert_character(&conn, &Character { game_character_id: 12345, name: "Gozoto".to_string(), last_seen_at: "2026-09-07T12:00:00Z".to_string() }).unwrap();
+        seed_gear_set_definitions_if_empty(&conn, &[
+            sample_definition_row(20, 0, Some(1)),
+            sample_definition_row(20, 1, None), // unresolved item_id — can never be "held"
+        ]).unwrap();
+        replace_character_items(&conn, 1, &[ItemHeld { item_id: 1, container: 0 }]).unwrap();
+
+        let tiers = compute_current_tiers(&conn, 1, 20).unwrap();
+        assert_eq!(tiers[0].current_tier, Some(0)); // the null row never contributes, doesn't crash
+    }
+
+    #[test]
+    fn compute_current_tiers_covers_every_set_type_and_slot_for_the_job() {
+        let conn = setup();
+        upsert_character(&conn, &Character { game_character_id: 12345, name: "Gozoto".to_string(), last_seen_at: "2026-09-07T12:00:00Z".to_string() }).unwrap();
+        seed_gear_set_definitions_if_empty(&conn, &[
+            GearSetDefinitionRow { job_id: 20, set_type: "af3".to_string(), slot: "head".to_string(), tier: 0, item_name: "A".to_string(), item_id: Some(1) },
+            GearSetDefinitionRow { job_id: 20, set_type: "af3".to_string(), slot: "body".to_string(), tier: 0, item_name: "B".to_string(), item_id: Some(2) },
+            GearSetDefinitionRow { job_id: 20, set_type: "relic".to_string(), slot: "head".to_string(), tier: 0, item_name: "C".to_string(), item_id: Some(3) },
+        ]).unwrap();
+
+        let tiers = compute_current_tiers(&conn, 1, 20).unwrap();
+        assert_eq!(tiers.len(), 3); // (af3,head), (af3,body), (relic,head)
     }
 }

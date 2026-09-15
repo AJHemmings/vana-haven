@@ -38,6 +38,28 @@ fn get_character_jobs(
     }
 }
 
+#[derive(serde::Serialize)]
+struct GearProgression {
+    definitions: Vec<db::GearSetDefinitionRow>,
+    current_tiers: Vec<db::SlotTier>,
+}
+
+#[tauri::command]
+fn get_gear_progression(
+    game_character_id: i64,
+    job_id: i64,
+    state: tauri::State<AppState>,
+) -> Result<GearProgression, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    let definitions = db::get_gear_set_definitions(&conn, job_id).map_err(|e| e.to_string())?;
+    let character_id = db::resolve_character_id(&conn, game_character_id).map_err(|e| e.to_string())?;
+    let current_tiers = match character_id {
+        Some(id) => db::compute_current_tiers(&conn, id, job_id).map_err(|e| e.to_string())?,
+        None => vec![],
+    };
+    Ok(GearProgression { definitions, current_tiers })
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -75,7 +97,7 @@ pub fn run() {
 
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![get_characters, get_character, get_character_jobs])
+        .invoke_handler(tauri::generate_handler![get_characters, get_character, get_character_jobs, get_gear_progression])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
