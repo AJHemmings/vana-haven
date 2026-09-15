@@ -142,7 +142,7 @@ pub fn get_character_jobs(conn: &Connection, character_id: i64) -> Result<Vec<Jo
 /// "this item is currently equipped," not one of the storage bags.
 pub const EQUIPPED_CONTAINER: i64 = -1;
 
-#[derive(Debug, PartialEq, Clone, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, PartialEq, Clone, serde::Serialize)]
 pub struct ItemHeld {
     pub item_id: i64,
     pub container: i64,
