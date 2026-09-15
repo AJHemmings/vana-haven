@@ -34,6 +34,16 @@ pub fn init_db(conn: &Connection) -> Result<()> {
         )",
         (),
     )?;
+
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS character_items (
+            character_id INTEGER NOT NULL REFERENCES characters(id),
+            item_id INTEGER NOT NULL,
+            container INTEGER NOT NULL,
+            PRIMARY KEY (character_id, item_id, container)
+        )",
+        (),
+    )?;
     Ok(())
 }
 
@@ -123,6 +133,52 @@ pub fn get_character_jobs(conn: &Connection, character_id: i64) -> Result<Vec<Jo
             master_level: row.get(2)?,
             mastered: row.get(3)?,
         })
+    })?;
+    rows.collect()
+}
+
+/// Windower bag ids are 0-16 (confirmed against Alexandria's `bagNames.ts`
+/// BAG_ORDER — all non-negative), so -1 is a safe, distinct sentinel for
+/// "this item is currently equipped," not one of the storage bags.
+pub const EQUIPPED_CONTAINER: i64 = -1;
+
+#[derive(Debug, PartialEq, Clone, serde::Serialize, serde::Deserialize)]
+pub struct ItemHeld {
+    pub item_id: i64,
+    pub container: i64,
+}
+
+pub fn replace_character_items(conn: &Connection, character_id: i64, items: &[ItemHeld]) -> Result<()> {
+    conn.execute("BEGIN", ())?;
+    let result = (|| -> Result<()> {
+        conn.execute("DELETE FROM character_items WHERE character_id = ?1", (character_id,))?;
+        for item in items {
+            conn.execute(
+                "INSERT INTO character_items (character_id, item_id, container)
+                 VALUES (?1, ?2, ?3)",
+                (character_id, item.item_id, item.container),
+            )?;
+        }
+        Ok(())
+    })();
+    match result {
+        Ok(()) => {
+            conn.execute("COMMIT", ())?;
+            Ok(())
+        }
+        Err(e) => {
+            let _ = conn.execute("ROLLBACK", ());
+            Err(e)
+        }
+    }
+}
+
+pub fn get_character_items(conn: &Connection, character_id: i64) -> Result<Vec<ItemHeld>> {
+    let mut stmt = conn.prepare(
+        "SELECT item_id, container FROM character_items WHERE character_id = ?1 ORDER BY item_id",
+    )?;
+    let rows = stmt.query_map((character_id,), |row| {
+        Ok(ItemHeld { item_id: row.get(0)?, container: row.get(1)? })
     })?;
     rows.collect()
 }
@@ -379,5 +435,76 @@ mod tests {
 
         let detail = get_character(&conn, 12345).unwrap().unwrap();
         assert_eq!(detail.sub_job_id, Some(0));
+    }
+
+    #[test]
+    fn get_character_items_is_empty_for_unknown_character() {
+        let conn = setup();
+        assert_eq!(get_character_items(&conn, 1).unwrap(), vec![]);
+    }
+
+    #[test]
+    fn replace_character_items_inserts_all_rows() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        let items = vec![
+            ItemHeld { item_id: 15079, container: 0 },
+            ItemHeld { item_id: 27683, container: EQUIPPED_CONTAINER },
+        ];
+        replace_character_items(&conn, 1, &items).unwrap();
+        let mut result = get_character_items(&conn, 1).unwrap();
+        result.sort_by_key(|i| i.item_id);
+        assert_eq!(result, items);
+    }
+
+    #[test]
+    fn replace_character_items_replaces_wholesale_not_incrementally() {
+        let conn = setup();
+        upsert_character(&conn, &Character {
+            game_character_id: 12345,
+            name: "Gozoto".to_string(),
+            last_seen_at: "2026-09-07T12:00:00Z".to_string(),
+        }).unwrap();
+        replace_character_items(&conn, 1, &[
+            ItemHeld { item_id: 100, container: 0 },
+            ItemHeld { item_id: 200, container: 0 },
+        ]).unwrap();
+
+        // Second report omits item 200 entirely — it must be gone afterward,
+        // not stale (mirrors replace_character_jobs's wholesale-replace test).
+        replace_character_items(&conn, 1, &[
+            ItemHeld { item_id: 100, container: 0 },
+        ]).unwrap();
+
+        assert_eq!(get_character_items(&conn, 1).unwrap(), vec![ItemHeld { item_id: 100, container: 0 }]);
+    }
+
+    #[test]
+    fn get_character_items_only_returns_rows_for_the_given_character() {
+        let conn = setup();
+        upsert_character(&conn, &Character { game_character_id: 12345, name: "Gozoto".to_string(), last_seen_at: "2026-09-07T12:00:00Z".to_string() }).unwrap();
+        upsert_character(&conn, &Character { game_character_id: 67890, name: "Zootog".to_string(), last_seen_at: "2026-09-07T13:00:00Z".to_string() }).unwrap();
+        replace_character_items(&conn, 1, &[ItemHeld { item_id: 100, container: 0 }]).unwrap();
+        replace_character_items(&conn, 2, &[ItemHeld { item_id: 200, container: 0 }]).unwrap();
+
+        assert_eq!(get_character_items(&conn, 1), Ok(vec![ItemHeld { item_id: 100, container: 0 }]));
+        assert_eq!(get_character_items(&conn, 2), Ok(vec![ItemHeld { item_id: 200, container: 0 }]));
+    }
+
+    #[test]
+    fn replace_character_items_allows_the_same_item_id_in_two_containers() {
+        // Not expected in practice (unique gear), but the schema shouldn't assume
+        // it can't happen — e.g. two copies of a stackable-adjacent item.
+        let conn = setup();
+        upsert_character(&conn, &Character { game_character_id: 12345, name: "Gozoto".to_string(), last_seen_at: "2026-09-07T12:00:00Z".to_string() }).unwrap();
+        replace_character_items(&conn, 1, &[
+            ItemHeld { item_id: 100, container: 0 },
+            ItemHeld { item_id: 100, container: 2 },
+        ]).unwrap();
+        assert_eq!(get_character_items(&conn, 1).unwrap().len(), 2);
     }
 }
