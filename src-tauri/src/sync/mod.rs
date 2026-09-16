@@ -112,6 +112,32 @@ async fn handle_connection(stream: TcpStream, db: Arc<Mutex<Connection>>, app: A
                     Err(e) => eprintln!("[vana-haven] failed to resolve character {game_character_id}: {e}"),
                 }
             }
+            Ok(AddonMessage::KeyItemCatalog { key_items }) => {
+                let conn = db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+                let entries: Vec<db::KeyItemCatalogEntry> = key_items
+                    .into_iter()
+                    .map(|k| db::KeyItemCatalogEntry { key_item_id: k.key_item_id, name: k.name })
+                    .collect();
+                match db::replace_key_item_catalog(&conn, &entries) {
+                    Ok(()) => { let _ = app.emit("key-item-catalog-updated", ()); }
+                    Err(e) => eprintln!("[vana-haven] failed to save key item catalog: {e}"),
+                }
+            }
+            Ok(AddonMessage::KeyItemsHeld { game_character_id, key_item_ids }) => {
+                let conn = db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+                match db::resolve_character_id(&conn, game_character_id) {
+                    Ok(Some(character_id)) => {
+                        match db::report_key_items_held(&conn, character_id, &key_item_ids, &now) {
+                            Ok(()) => { let _ = app.emit("character-updated", game_character_id); }
+                            Err(e) => eprintln!("[vana-haven] failed to save key items held for {game_character_id}: {e}"),
+                        }
+                    }
+                    Ok(None) => {
+                        eprintln!("[vana-haven] ignoring key_items_held for unknown character {game_character_id}");
+                    }
+                    Err(e) => eprintln!("[vana-haven] failed to resolve character {game_character_id}: {e}"),
+                }
+            }
             Err(e) => {
                 // Skip the bad line and keep the connection open rather than
                 // dropping the whole session over one malformed message — but

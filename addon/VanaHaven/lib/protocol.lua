@@ -27,6 +27,23 @@ function protocol.build_character_items(game_character_id, items)
     }) .. "\n"
 end
 
+-- Global — no game_character_id — the whole game's key-item list, not
+-- scoped to any one character.
+function protocol.build_key_item_catalog(key_items)
+    return json.encode({
+        type = "key_item_catalog",
+        key_items = key_items,
+    }) .. "\n"
+end
+
+function protocol.build_key_items_held(game_character_id, key_item_ids)
+    return json.encode({
+        type = "key_items_held",
+        game_character_id = game_character_id,
+        key_item_ids = key_item_ids,
+    }) .. "\n"
+end
+
 -- Exponential backoff capped at 30s: 1, 2, 4, 8, 16, 30, 30, ...
 function protocol.next_backoff_seconds(previous_seconds)
     if not previous_seconds or previous_seconds <= 0 then

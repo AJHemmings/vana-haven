@@ -38,6 +38,21 @@ export type GearProgression = {
   current_tiers: SlotTier[];
 };
 
+export type KeyItemCatalogEntry = {
+  key_item_id: number;
+  name: string;
+};
+
+export type KeyItemTrackingRow = {
+  id: number;
+  key_item_id: number;
+  name: string;
+  granting_npc: string | null;
+  cooldown_duration_seconds: number;
+  last_acquired_at: string | null;
+  currently_held: boolean;
+};
+
 export async function fetchCharacters(): Promise<Character[]> {
   return invoke<Character[]>("get_characters");
 }
@@ -54,6 +69,36 @@ export async function fetchGearProgression(gameCharacterId: number, jobId: numbe
   return invoke<GearProgression>("get_gear_progression", { gameCharacterId, jobId });
 }
 
+export async function fetchKeyItemCatalog(): Promise<KeyItemCatalogEntry[]> {
+  return invoke<KeyItemCatalogEntry[]>("get_key_item_catalog");
+}
+
+export async function createKeyItemDefinition(
+  keyItemId: number,
+  name: string,
+  grantingNpc: string | null,
+  cooldownDurationSeconds: number
+): Promise<number> {
+  return invoke<number>("create_key_item_definition", {
+    keyItemId,
+    name,
+    grantingNpc,
+    cooldownDurationSeconds,
+  });
+}
+
+export async function deleteKeyItemDefinition(id: number): Promise<void> {
+  return invoke<void>("delete_key_item_definition", { id });
+}
+
+export async function fetchKeyItemTracking(gameCharacterId: number): Promise<KeyItemTrackingRow[]> {
+  return invoke<KeyItemTrackingRow[]>("get_key_item_tracking", { gameCharacterId });
+}
+
 export function onCharacterUpdated(callback: () => void): Promise<() => void> {
   return listen("character-updated", callback).then((unlisten) => unlisten);
+}
+
+export function onKeyItemCatalogUpdated(callback: () => void): Promise<() => void> {
+  return listen("key-item-catalog-updated", callback).then((unlisten) => unlisten);
 }

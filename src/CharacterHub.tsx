@@ -60,12 +60,20 @@ export default function CharacterHub() {
       </Link>
       <h1 className="text-xl font-semibold mt-2">{character.name}</h1>
       <p className="text-neutral-400 mb-4">{mainSummary}</p>
-      <Link
-        to={`/character/${id}/jobs`}
-        className="inline-block px-3 py-1.5 rounded bg-neutral-800 hover:bg-neutral-700"
-      >
-        Jobs
-      </Link>
+      <div className="flex gap-2">
+        <Link
+          to={`/character/${id}/jobs`}
+          className="inline-block px-3 py-1.5 rounded bg-neutral-800 hover:bg-neutral-700"
+        >
+          Jobs
+        </Link>
+        <Link
+          to={`/character/${id}/key-items`}
+          className="inline-block px-3 py-1.5 rounded bg-neutral-800 hover:bg-neutral-700"
+        >
+          Key Items
+        </Link>
+      </div>
     </main>
   );
 }
