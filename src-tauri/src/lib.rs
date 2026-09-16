@@ -60,6 +60,44 @@ fn get_gear_progression(
     Ok(GearProgression { definitions, current_tiers })
 }
 
+#[tauri::command]
+fn get_key_item_catalog(state: tauri::State<AppState>) -> Result<Vec<db::KeyItemCatalogEntry>, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    db::get_key_item_catalog(&conn).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn create_key_item_definition(
+    key_item_id: i64,
+    name: String,
+    granting_npc: Option<String>,
+    cooldown_duration_seconds: i64,
+    state: tauri::State<AppState>,
+) -> Result<i64, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    db::create_key_item_definition(&conn, key_item_id, &name, granting_npc.as_deref(), cooldown_duration_seconds)
+        .map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn delete_key_item_definition(id: i64, state: tauri::State<AppState>) -> Result<(), String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    db::delete_key_item_definition(&conn, id).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn get_key_item_tracking(
+    game_character_id: i64,
+    state: tauri::State<AppState>,
+) -> Result<Vec<db::KeyItemTracking>, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    let character_id = db::resolve_character_id(&conn, game_character_id).map_err(|e| e.to_string())?;
+    match character_id {
+        Some(id) => db::get_key_item_tracking(&conn, id).map_err(|e| e.to_string()),
+        None => Ok(vec![]),
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -97,7 +135,16 @@ pub fn run() {
 
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![get_characters, get_character, get_character_jobs, get_gear_progression])
+        .invoke_handler(tauri::generate_handler![
+            get_characters,
+            get_character,
+            get_character_jobs,
+            get_gear_progression,
+            get_key_item_catalog,
+            create_key_item_definition,
+            delete_key_item_definition,
+            get_key_item_tracking
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

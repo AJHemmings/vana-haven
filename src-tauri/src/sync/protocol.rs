@@ -14,6 +14,12 @@ pub struct ItemEntry {
     pub container: i64,
 }
 
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
+pub struct KeyItemEntry {
+    pub key_item_id: i64,
+    pub name: String,
+}
+
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 #[serde(tag = "type", rename_all = "snake_case")]
 pub enum AddonMessage {
@@ -28,6 +34,15 @@ pub enum AddonMessage {
     CharacterItems {
         game_character_id: i64,
         items: Vec<ItemEntry>,
+    },
+    // Global — no game_character_id — the whole game's key-item list, not
+    // scoped to any one character. See Key Item Cooldowns spec §4/§6.
+    KeyItemCatalog {
+        key_items: Vec<KeyItemEntry>,
+    },
+    KeyItemsHeld {
+        game_character_id: i64,
+        key_item_ids: Vec<i64>,
     },
 }
 
@@ -114,6 +129,44 @@ mod tests {
         assert_eq!(
             parse_message(raw).unwrap(),
             AddonMessage::CharacterItems { game_character_id: 12345, items: vec![] }
+        );
+    }
+
+    #[test]
+    fn parses_key_item_catalog_message() {
+        let raw = r#"{"type":"key_item_catalog","key_items":[{"key_item_id":1,"name":"Rubber Cockatrice"},{"key_item_id":2,"name":"Mystical Canteen"}]}"#;
+        assert_eq!(
+            parse_message(raw).unwrap(),
+            AddonMessage::KeyItemCatalog {
+                key_items: vec![
+                    KeyItemEntry { key_item_id: 1, name: "Rubber Cockatrice".to_string() },
+                    KeyItemEntry { key_item_id: 2, name: "Mystical Canteen".to_string() },
+                ],
+            }
+        );
+    }
+
+    #[test]
+    fn parses_key_item_catalog_message_with_empty_key_items() {
+        let raw = r#"{"type":"key_item_catalog","key_items":[]}"#;
+        assert_eq!(parse_message(raw).unwrap(), AddonMessage::KeyItemCatalog { key_items: vec![] });
+    }
+
+    #[test]
+    fn parses_key_items_held_message() {
+        let raw = r#"{"type":"key_items_held","game_character_id":12345,"key_item_ids":[1,42]}"#;
+        assert_eq!(
+            parse_message(raw).unwrap(),
+            AddonMessage::KeyItemsHeld { game_character_id: 12345, key_item_ids: vec![1, 42] }
+        );
+    }
+
+    #[test]
+    fn parses_key_items_held_message_with_empty_key_item_ids() {
+        let raw = r#"{"type":"key_items_held","game_character_id":12345,"key_item_ids":[]}"#;
+        assert_eq!(
+            parse_message(raw).unwrap(),
+            AddonMessage::KeyItemsHeld { game_character_id: 12345, key_item_ids: vec![] }
         );
     }
 }

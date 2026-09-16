@@ -34,6 +34,10 @@ local last_job_levels_payload = nil
 -- their declaration in the file — declaring them near their other use
 -- would silently make finish_connect read/write unrelated globals instead.
 local last_character_items_payload = nil
+-- Mirrors last_character_items_payload: lets finish_connect resend the last-
+-- known key-item possession snapshot once after a successful (re)connect.
+-- Declared here for the same forward-visibility reason.
+local last_key_items_held_payload = nil
 -- Debounce window for inventory dirty-flushing (see flush_inventory_if_dirty
 -- below) — declared here, not next to INV_MAX_WAIT/flush_inventory_if_dirty,
 -- for the same forward-visibility reason as last_character_items_payload
@@ -42,6 +46,14 @@ local INV_DEBOUNCE = 0.6
 local inv_dirty = false
 local inv_dirty_at = 0
 local inv_first_dirty = nil
+-- Debounce window for key-item dirty-flushing (see flush_key_items_if_dirty
+-- below) — declared here for the same forward-visibility reason as
+-- INV_DEBOUNCE above. No secondary max-wait ceiling (unlike INV_MAX_WAIT):
+-- key-item grants don't arrive in rapid bursts the way inventory-affecting
+-- packets can, per the Key Item Cooldowns spec §6.
+local KEY_ITEM_DEBOUNCE = 1.0
+local ki_dirty = false
+local ki_dirty_at = 0
 -- Neither a successful nor a failed non-blocking connect reliably shows up
 -- via socket.select()'s write-set in this runtime (confirmed via live
 -- testing) — connect completion is polled via getpeername() instead (see
@@ -54,6 +66,22 @@ local function player_info()
     local info = windower.ffxi.get_info()
     if not player or not info then return nil end
     return { id = info.character_id or player.id, name = player.name }
+end
+
+-- Dumps every entry in Windower's own res.key_items table (id + display
+-- name), not filtered to ownership — the whole game's key-item list, used
+-- purely to power the app's add-form dropdown. Declared here (ahead of
+-- finish_connect, which calls it directly rather than through a cached
+-- payload variable) so its lexical scope is visible where it's used — see
+-- the forward-visibility notes on the payload-cache locals above.
+local function build_key_item_catalog_payload()
+    local entries = {}
+    for id, ki in pairs(res.key_items) do
+        if ki and ki.en then
+            table.insert(entries, { key_item_id = id, name = ki.en })
+        end
+    end
+    return protocol.build_key_item_catalog(entries)
 end
 
 -- Mirrors the fallback tools/mock-addon-client.mjs already implements: prefer
@@ -125,9 +153,19 @@ local function finish_connect()
             if last_character_items_payload then
                 sock:send(last_character_items_payload)
             end
+            -- One-shot per-session snapshot of static game data (§6) — built
+            -- fresh here rather than cached/resent like the payloads above,
+            -- since there's no packet trigger to wait for and the game's own
+            -- key item table doesn't change mid-session.
+            sock:send(build_key_item_catalog_payload())
+            if last_key_items_held_payload then
+                sock:send(last_key_items_held_payload)
+            end
             inv_dirty = true
             inv_dirty_at = os.clock() - INV_DEBOUNCE
             inv_first_dirty = os.clock() - INV_DEBOUNCE
+            ki_dirty = true
+            ki_dirty_at = os.clock() - KEY_ITEM_DEBOUNCE
         else
             sock:close()
             sock = nil
@@ -311,6 +349,32 @@ local function flush_inventory_if_dirty()
     send_character_items()
 end
 
+-- Ported from Alexandria's build_keyitems() (F:\Projects\Alexandria\addon\
+-- Alexandria\Alexandria.lua) — wraps the read in pcall the same way
+-- Alexandria does, per the Key Item Cooldowns spec §6.
+local ki_last_sent_key = nil
+
+local function send_key_items_held()
+    local info = player_info()
+    if not info then return end
+    local ok, ids = pcall(windower.ffxi.get_key_items)
+    if not ok or type(ids) ~= 'table' then return end
+    table.sort(ids)
+    local key = table.concat(ids, ',')
+    if key == ki_last_sent_key then return end
+    ki_last_sent_key = key
+    local payload = protocol.build_key_items_held(info.id, ids)
+    last_key_items_held_payload = payload
+    if sock then sock:send(payload) end
+end
+
+local function flush_key_items_if_dirty()
+    if not ki_dirty then return end
+    if os.clock() - ki_dirty_at < KEY_ITEM_DEBOUNCE then return end
+    ki_dirty = false
+    send_key_items_held()
+end
+
 windower.register_event("incoming chunk", function(id, data)
     if id == 0x01B then
         local p = packets.parse('incoming', data)
@@ -319,6 +383,9 @@ windower.register_event("incoming chunk", function(id, data)
         if not inv_dirty then inv_first_dirty = os.clock() end
         inv_dirty = true
         inv_dirty_at = os.clock()
+    elseif id == 0x055 then
+        ki_dirty = true
+        ki_dirty_at = os.clock()
     end
 end)
 
@@ -330,6 +397,7 @@ windower.register_event("prerender", function()
     else
         send_heartbeat()
         flush_inventory_if_dirty()
+        flush_key_items_if_dirty()
     end
 end)
 
