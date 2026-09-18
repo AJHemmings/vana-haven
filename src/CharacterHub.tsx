@@ -73,6 +73,12 @@ export default function CharacterHub() {
         >
           Key Items
         </Link>
+        <Link
+          to={`/character/${id}/dailies`}
+          className="inline-block px-3 py-1.5 rounded bg-neutral-800 hover:bg-neutral-700"
+        >
+          Dailies
+        </Link>
       </div>
     </main>
   );

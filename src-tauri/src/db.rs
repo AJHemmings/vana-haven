@@ -108,6 +108,31 @@ pub fn init_db(conn: &Connection) -> Result<()> {
         )",
         (),
     )?;
+
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS daily_todo_items (
+            id INTEGER PRIMARY KEY,
+            character_id INTEGER NOT NULL REFERENCES characters(id),
+            text TEXT NOT NULL,
+            cadence TEXT NOT NULL CHECK (cadence IN ('daily', 'weekly', 'monthly')),
+            last_completed_at TEXT,
+            created_at TEXT NOT NULL
+        )",
+        (),
+    )?;
+
+    // Small generic key/value store — currently only holds
+    // monthly_cycle_started_at (see get_monthly_cycle_started_at), the
+    // manually-advanced marker monthly Dailies items reset against, since a
+    // version update's date can't be computed from a fixed formula the way
+    // the daily/weekly boundaries can (spec §8.4).
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS app_settings (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        )",
+        (),
+    )?;
     Ok(())
 }
 
@@ -599,6 +624,83 @@ pub fn get_key_item_tracking(conn: &Connection, character_id: i64) -> Result<Vec
         })
     })?;
     rows.collect()
+}
+
+#[derive(Debug, PartialEq, Clone, serde::Serialize)]
+pub struct DailyTodoItem {
+    pub id: i64,
+    pub text: String,
+    pub cadence: String,
+    pub last_completed_at: Option<String>,
+}
+
+pub fn create_daily_todo_item(
+    conn: &Connection,
+    character_id: i64,
+    text: &str,
+    cadence: &str,
+    created_at: &str,
+) -> Result<i64> {
+    conn.execute(
+        "INSERT INTO daily_todo_items (character_id, text, cadence, created_at) VALUES (?1, ?2, ?3, ?4)",
+        (character_id, text, cadence, created_at),
+    )?;
+    Ok(conn.last_insert_rowid())
+}
+
+pub fn delete_daily_todo_item(conn: &Connection, id: i64) -> Result<()> {
+    conn.execute("DELETE FROM daily_todo_items WHERE id = ?1", (id,))?;
+    Ok(())
+}
+
+pub fn get_daily_todo_items(conn: &Connection, character_id: i64) -> Result<Vec<DailyTodoItem>> {
+    let mut stmt = conn.prepare(
+        "SELECT id, text, cadence, last_completed_at FROM daily_todo_items
+         WHERE character_id = ?1 ORDER BY created_at",
+    )?;
+    let rows = stmt.query_map((character_id,), |row| {
+        Ok(DailyTodoItem {
+            id: row.get(0)?,
+            text: row.get(1)?,
+            cadence: row.get(2)?,
+            last_completed_at: row.get(3)?,
+        })
+    })?;
+    rows.collect()
+}
+
+/// `completed_at`: `Some(now)` to mark done, `None` to uncheck. The current
+/// period's done/not-done state is derived client-side from this raw
+/// timestamp plus cadence (spec §8.4) — this just stores the fact, it
+/// doesn't interpret it.
+pub fn set_daily_todo_completion(conn: &Connection, id: i64, completed_at: Option<&str>) -> Result<()> {
+    conn.execute(
+        "UPDATE daily_todo_items SET last_completed_at = ?1 WHERE id = ?2",
+        (completed_at, id),
+    )?;
+    Ok(())
+}
+
+/// The monthly reset boundary, unlike daily/weekly, isn't a fixed-formula
+/// wall-clock computation — a version update's date varies month to month
+/// (spec §8.4, §11) — so it's a marker the user advances manually rather
+/// than something derived from `now`.
+pub fn get_monthly_cycle_started_at(conn: &Connection) -> Result<Option<String>> {
+    conn.query_row(
+        "SELECT value FROM app_settings WHERE key = 'monthly_cycle_started_at'",
+        (),
+        |row| row.get(0),
+    )
+    .optional()
+}
+
+pub fn advance_monthly_cycle(conn: &Connection, started_at: &str) -> Result<()> {
+    conn.execute(
+        "INSERT INTO app_settings (key, value) VALUES ('monthly_cycle_started_at', ?1)
+         ON CONFLICT (key) DO UPDATE SET value = excluded.value",
+        (started_at,),
+    )?;
+    Ok(())
 }
 
 #[derive(Debug, PartialEq, serde::Serialize)]
@@ -1358,5 +1460,87 @@ mod tests {
         assert_eq!(get_key_item_tracking(&conn, char_a).unwrap().len(), 1);
         assert_eq!(get_key_item_tracking(&conn, char_b).unwrap().len(), 1); // tracked globally, both show up
         assert!(!get_key_item_tracking(&conn, char_b).unwrap()[0].currently_held);
+    }
+
+    #[test]
+    fn get_daily_todo_items_is_empty_on_fresh_character() {
+        let conn = setup();
+        let character_id = make_character(&conn, 1, "Gozoto");
+        assert_eq!(get_daily_todo_items(&conn, character_id).unwrap(), vec![]);
+    }
+
+    #[test]
+    fn create_daily_todo_item_starts_uncompleted() {
+        let conn = setup();
+        let character_id = make_character(&conn, 1, "Gozoto");
+        create_daily_todo_item(&conn, character_id, "Sortie run", "daily", "2026-09-17T12:00:00Z").unwrap();
+
+        let items = get_daily_todo_items(&conn, character_id).unwrap();
+        assert_eq!(items.len(), 1);
+        assert_eq!(items[0].text, "Sortie run");
+        assert_eq!(items[0].cadence, "daily");
+        assert_eq!(items[0].last_completed_at, None);
+    }
+
+    #[test]
+    fn create_daily_todo_item_rejects_unknown_cadence() {
+        let conn = setup();
+        let character_id = make_character(&conn, 1, "Gozoto");
+        let result = create_daily_todo_item(&conn, character_id, "bad", "fortnightly", "2026-09-17T12:00:00Z");
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn set_daily_todo_completion_marks_and_clears() {
+        let conn = setup();
+        let character_id = make_character(&conn, 1, "Gozoto");
+        let id = create_daily_todo_item(&conn, character_id, "Sortie run", "daily", "2026-09-17T12:00:00Z").unwrap();
+
+        set_daily_todo_completion(&conn, id, Some("2026-09-17T13:00:00Z")).unwrap();
+        assert_eq!(
+            get_daily_todo_items(&conn, character_id).unwrap()[0].last_completed_at,
+            Some("2026-09-17T13:00:00Z".to_string())
+        );
+
+        set_daily_todo_completion(&conn, id, None).unwrap();
+        assert_eq!(get_daily_todo_items(&conn, character_id).unwrap()[0].last_completed_at, None);
+    }
+
+    #[test]
+    fn delete_daily_todo_item_removes_it() {
+        let conn = setup();
+        let character_id = make_character(&conn, 1, "Gozoto");
+        let id = create_daily_todo_item(&conn, character_id, "Sortie run", "daily", "2026-09-17T12:00:00Z").unwrap();
+
+        delete_daily_todo_item(&conn, id).unwrap();
+
+        assert_eq!(get_daily_todo_items(&conn, character_id).unwrap(), vec![]);
+    }
+
+    #[test]
+    fn get_daily_todo_items_only_returns_rows_for_the_given_character() {
+        let conn = setup();
+        let char_a = make_character(&conn, 1, "Gozoto");
+        let char_b = make_character(&conn, 2, "Zootog");
+        create_daily_todo_item(&conn, char_a, "Sortie run", "daily", "2026-09-17T12:00:00Z").unwrap();
+
+        assert_eq!(get_daily_todo_items(&conn, char_a).unwrap().len(), 1);
+        assert_eq!(get_daily_todo_items(&conn, char_b).unwrap(), vec![]);
+    }
+
+    #[test]
+    fn monthly_cycle_started_at_is_none_until_advanced() {
+        let conn = setup();
+        assert_eq!(get_monthly_cycle_started_at(&conn).unwrap(), None);
+    }
+
+    #[test]
+    fn advance_monthly_cycle_sets_then_overwrites_the_marker() {
+        let conn = setup();
+        advance_monthly_cycle(&conn, "2026-09-01T15:00:00Z").unwrap();
+        assert_eq!(get_monthly_cycle_started_at(&conn).unwrap(), Some("2026-09-01T15:00:00Z".to_string()));
+
+        advance_monthly_cycle(&conn, "2026-10-01T15:00:00Z").unwrap();
+        assert_eq!(get_monthly_cycle_started_at(&conn).unwrap(), Some("2026-10-01T15:00:00Z".to_string()));
     }
 }

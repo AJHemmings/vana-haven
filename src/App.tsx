@@ -4,6 +4,7 @@ import CharacterHub from "./CharacterHub";
 import JobsScreen from "./JobsScreen";
 import GearScreen from "./GearScreen";
 import KeyItemsScreen from "./KeyItemsScreen";
+import DailiesScreen from "./DailiesScreen";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/character/:gameCharacterId/jobs" element={<JobsScreen />} />
         <Route path="/character/:gameCharacterId/jobs/:jobId/gear" element={<GearScreen />} />
         <Route path="/character/:gameCharacterId/key-items" element={<KeyItemsScreen />} />
+        <Route path="/character/:gameCharacterId/dailies" element={<DailiesScreen />} />
       </Routes>
     </HashRouter>
   );

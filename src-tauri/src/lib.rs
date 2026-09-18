@@ -98,6 +98,61 @@ fn get_key_item_tracking(
     }
 }
 
+#[tauri::command]
+fn get_daily_todo_items(
+    game_character_id: i64,
+    state: tauri::State<AppState>,
+) -> Result<Vec<db::DailyTodoItem>, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    let character_id = db::resolve_character_id(&conn, game_character_id).map_err(|e| e.to_string())?;
+    match character_id {
+        Some(id) => db::get_daily_todo_items(&conn, id).map_err(|e| e.to_string()),
+        None => Ok(vec![]),
+    }
+}
+
+#[tauri::command]
+fn create_daily_todo_item(
+    game_character_id: i64,
+    text: String,
+    cadence: String,
+    state: tauri::State<AppState>,
+) -> Result<i64, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    let character_id = db::resolve_character_id(&conn, game_character_id)
+        .map_err(|e| e.to_string())?
+        .ok_or_else(|| "unknown character".to_string())?;
+    let now = chrono::Utc::now().to_rfc3339();
+    db::create_daily_todo_item(&conn, character_id, &text, &cadence, &now).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn delete_daily_todo_item(id: i64, state: tauri::State<AppState>) -> Result<(), String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    db::delete_daily_todo_item(&conn, id).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn set_daily_todo_completed(id: i64, completed: bool, state: tauri::State<AppState>) -> Result<(), String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    let completed_at = if completed { Some(chrono::Utc::now().to_rfc3339()) } else { None };
+    db::set_daily_todo_completion(&conn, id, completed_at.as_deref()).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn get_monthly_cycle_started_at(state: tauri::State<AppState>) -> Result<Option<String>, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    db::get_monthly_cycle_started_at(&conn).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn advance_monthly_cycle(state: tauri::State<AppState>) -> Result<String, String> {
+    let conn = state.db.lock().unwrap_or_else(|poisoned| poisoned.into_inner());
+    let now = chrono::Utc::now().to_rfc3339();
+    db::advance_monthly_cycle(&conn, &now).map_err(|e| e.to_string())?;
+    Ok(now)
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -143,7 +198,13 @@ pub fn run() {
             get_key_item_catalog,
             create_key_item_definition,
             delete_key_item_definition,
-            get_key_item_tracking
+            get_key_item_tracking,
+            get_daily_todo_items,
+            create_daily_todo_item,
+            delete_daily_todo_item,
+            set_daily_todo_completed,
+            get_monthly_cycle_started_at,
+            advance_monthly_cycle
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

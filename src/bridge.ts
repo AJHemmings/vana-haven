@@ -53,6 +53,13 @@ export type KeyItemTrackingRow = {
   currently_held: boolean;
 };
 
+export type DailyTodoItem = {
+  id: number;
+  text: string;
+  cadence: "daily" | "weekly" | "monthly";
+  last_completed_at: string | null;
+};
+
 export async function fetchCharacters(): Promise<Character[]> {
   return invoke<Character[]>("get_characters");
 }
@@ -93,6 +100,34 @@ export async function deleteKeyItemDefinition(id: number): Promise<void> {
 
 export async function fetchKeyItemTracking(gameCharacterId: number): Promise<KeyItemTrackingRow[]> {
   return invoke<KeyItemTrackingRow[]>("get_key_item_tracking", { gameCharacterId });
+}
+
+export async function fetchDailyTodoItems(gameCharacterId: number): Promise<DailyTodoItem[]> {
+  return invoke<DailyTodoItem[]>("get_daily_todo_items", { gameCharacterId });
+}
+
+export async function createDailyTodoItem(
+  gameCharacterId: number,
+  text: string,
+  cadence: DailyTodoItem["cadence"]
+): Promise<number> {
+  return invoke<number>("create_daily_todo_item", { gameCharacterId, text, cadence });
+}
+
+export async function deleteDailyTodoItem(id: number): Promise<void> {
+  return invoke<void>("delete_daily_todo_item", { id });
+}
+
+export async function setDailyTodoCompleted(id: number, completed: boolean): Promise<void> {
+  return invoke<void>("set_daily_todo_completed", { id, completed });
+}
+
+export async function fetchMonthlyCycleStartedAt(): Promise<string | null> {
+  return invoke<string | null>("get_monthly_cycle_started_at");
+}
+
+export async function advanceMonthlyCycle(): Promise<string> {
+  return invoke<string>("advance_monthly_cycle");
 }
 
 export function onCharacterUpdated(callback: () => void): Promise<() => void> {
